@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/avatar.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Miriam Libre' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nanum Pen Script' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Aditeya Srivastava</title>
+
+  </head>
+  <body>
+    <!-- Avatar -->
+    <div class="avatar-div">
+      <img class="data" src="assets/avatar.png"  alt="Responsive image"/> 
+    </div>
+    <!-- Name -->
+    <div class="name-div">
+      <h1 class="data"><span class="initial">A</span>diteya <span class="initial">S</span>rivastava</h1>
+    </div>
+    <!-- Bio -->
+    <div class="bio-div">
+      <h4 class="bio-text">    
+        <span class="bio-text-initial">I'm a</span>  
+        <div class="bio-text-data"> 
+            <ul class="bio-list"> 
+                <li class="bio-list-item">traveller</li>  
+                <li class="bio-list-item">developer</li> 
+                <li class="bio-list-item">coder</li>              
+                <li class="bio-list-item">student</li>
+            </ul>
+        </div> 
+    </h4>
+
+    </div>
+    <!-- Download Reseume -->
+    <div class="button-div">
+      <button class="data"><i class="fa fa-download">  Reseume</button>
+    </div>
+    <!-- Social Connect -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/aditeyaaaa" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.twitter.com/aditeyaaaa" target="_blank" class="social-icon"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/aditeyaaaa" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/aditeyaaaa/" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+      <a href="https://t.me/aditeyaaaa" target="_blank" class="social-icon"><i class="fa fa-telegram"></i></a>
+    </div>
+  </body>
+  <!-- Loader -->
+  <script type="text/javascript">
+    $('body').append('<div id="loadingDiv"><div class="loader"></div></div>');
+    $(window).on('load', function(){
+      setTimeout(removeLoader, 500); //wait for page load PLUS 1 seconds.
+    });
+    function removeLoader(){
+      $( "#loadingDiv" ).fadeOut(500, function() {
+        $( "#loadingDiv" ).remove();
+      });  
+    }
+  </script>
+</html>
