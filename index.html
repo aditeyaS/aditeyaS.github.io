@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/avatar.png">
+    <link rel="icon" href="assets/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Miriam Libre' rel='stylesheet'>
@@ -38,7 +38,10 @@
     </div>
     <!-- Download Reseume -->
     <div class="button-div">
-      <button class="data"><i class="fa fa-download">  Reseume</button>
+      <button class="data">
+          <i class="fa fa-download"></i>  
+        Reseume
+      </button>
     </div>
     <!-- Social Connect -->
     <div class="social-icons">
@@ -53,7 +56,7 @@
   <script type="text/javascript">
     $('body').append('<div id="loadingDiv"><div class="loader"></div></div>');
     $(window).on('load', function(){
-      setTimeout(removeLoader, 500); //wait for page load PLUS 1 seconds.
+      setTimeout(removeLoader, 2000); //wait for page load PLUS 1 seconds.
     });
     function removeLoader(){
       $( "#loadingDiv" ).fadeOut(500, function() {
