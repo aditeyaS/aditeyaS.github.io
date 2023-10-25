@@ -10,7 +10,7 @@ import EducationCard from './EducationCard';
 import ExperienceCard from './ExperienceCard';
 import ProjectCard from './ProjectCard';
 
-const GitProfile = ({ themeConfig, skillConfig, userData }) => {
+const Main = ({ themeConfig, skillConfig, userData }) => {
   const [theme, setTheme] = useState(null);
 
   useEffect(() => {
@@ -67,10 +67,10 @@ const GitProfile = ({ themeConfig, skillConfig, userData }) => {
   );
 };
 
-GitProfile.propTypes = {
+Main.propTypes = {
   themeConfig: PropTypes.object.isRequired,
   skillConfig: PropTypes.object.isRequired,
   userData: PropTypes.object.isRequired,
 };
 
-export default GitProfile;
+export default Main;

@@ -20,7 +20,7 @@ const SkillCard = ({ skillList, skillConfig }) => {
                   {skill.skillIdList.map((skillId, idx) => (
                     <div
                       key={idx}
-                      className="tooltip"
+                      className="tooltip tooltip-accent z-10"
                       data-tip={skillConfig[skillId].name}
                     >
                       <img

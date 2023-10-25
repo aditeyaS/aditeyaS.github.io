@@ -1,16 +1,17 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 import themeConfig from './config/theme.config.json';
 import skillConfig from './config/skill.config.json';
 import userData from './data/user.data.json';
-import GitProfile from './components/GitProfile';
+import Main from './components/Main';
 
-function App() {
-  return (
-    <GitProfile
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <Main
       themeConfig={themeConfig}
       skillConfig={skillConfig}
       userData={userData}
     />
-  );
-}
-
-export default App;
+  </React.StrictMode>
+);
