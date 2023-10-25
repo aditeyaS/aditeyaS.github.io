@@ -1,104 +1,143 @@
 {
-    "basic": {
-        "name": "Aditeya Srivastava",
-        "bio": "CS Grad Student | Ex-Deloitte",
-        "imageLink": "https://github.com/aditeyaS.png",
-        "resumeLink": "https://drive.google.com/file/d/1tzveHUC7HB9iWXSCh8TWLoGNEDXa_thc/",
-        "linkedInLink": "https://www.linkedin.com/in/aditeyaaaa/",
-        "gitHubLink": "https://github.com/aditeyaS",
-        "socials": [
-            {
-                "skillId": "linkedin",
-                "link": "https://www.linkedin.com/in/aditeyaaaa/"
-            },
-            {
-                "skillId": "github",
-                "link": "https://github.com/aditeyaS"
-            }
-        ]
-    },
-    "skill": [
-        {
-            "title": "Languages",
-            "skillIdList": ["python", "c", "c++", "javascript", "typescript", "gnubash", "markdown", "php", "scala"]
-        },
-        {
-            "title": "Front End",
-            "skillIdList": ["html", "css", "sass", "bootstrap", "tailwindcss", "angular", "react", "mui", "npm", "redux"]
-        },
-        {
-            "title": "Mobile",
-            "skillIdList": ["android"]
-        },
-        {
-            "title": "Back End",
-            "skillIdList": ["mysql", "postgresql", "amazonaws", "django", "mongodb", "nodejs", "springboot"]
-        },
-        {
-            "title": "Testing",
-            "skillIdList": ["cypress", "jasmine", "chai"]
-        },
-        {
-            "title": "Others",
-            "skillIdList": ["linux", "postman", "git", "jira", "jupyter", "pandas", "trello", "anaconda", "figma"]
-        }
-    ],
-    "education": [
-        {
-            "duration": "08/22 - 05/24",
-            "degree": "Master of Science",
-            "major": "Computer Science",
-            "institute": "Clemson University"
-        },
-        {
-            "duration": "08/22 - 05/24",
-            "degree": "Bachelor of Technology",
-            "major": "Computer Science & Engineering",
-            "institute": "Dr APJ Abdul Kalam Technical University"
-        }
-    ],
-    "experience": [
-        {
-            "position": "Graduate Teaching Assistant",
-            "organization": "Clemson University",
-            "duration": "01/23 - Present",
-            "location": "Clemson, SC, US"
-        },
-        {
-            "position": "Software Engineer",
-            "organization": "Deloitte (HashedIn)",
-            "duration": "06/21 - 08/22",
-            "location": "Bangalore, KA, IN"
-        },
-        {
-            "position": "Software Engineer Intern",
-            "organization": "Deloitte (HashedIn)",
-            "duration": "03/21 - 06/21",
-            "location": "Remote, IN"
-        },
-        {
-            "position": "Android and Front End Engineer",
-            "organization": "TeamERP",
-            "duration": "06/21 - 08/22",
-            "location": "Ghaziabad, UP, IN"
-        }
-    ],
-    "projects": [
-        {
-            "title": "people's choice",
-            "description": "Shows the favourite anime, movie, and TV Series of all the contributors",
-            "isPersonal": true,
-            "isPublic": true,
-            "codeLink": "https://github.com/aditeyaS/peoples-choice",
-            "liveLink": "https://aditeyas.github.io/peoples-choice/",
-            "skillsIds": ["html", "css", "javascript"]
-        },
-        {
-            "title": "cpsc-3720-scripts",
-            "description": "Shows the favourite anime, movie, and TV Series of all the contributors",
-            "isPersonal": true,
-            "isPublic": false,
-            "skillsIds": ["python", "cypress", "javascript", "pandas"]
-        }
+  "basic": {
+    "name": "Aditeya Srivastava",
+    "bio": "CS Grad Student | Ex-Deloitte",
+    "imageLink": "https://github.com/aditeyaS.png",
+    "resumeLink": "https://drive.google.com/file/d/1tzveHUC7HB9iWXSCh8TWLoGNEDXa_thc/",
+    "linkedInLink": "https://www.linkedin.com/in/aditeyaaaa/",
+    "gitHubLink": "https://github.com/aditeyaS",
+    "socials": [
+      {
+        "skillId": "linkedin",
+        "link": "https://www.linkedin.com/in/aditeyaaaa/"
+      },
+      {
+        "skillId": "github",
+        "link": "https://github.com/aditeyaS"
+      }
     ]
+  },
+  "skill": [
+    {
+      "title": "Languages",
+      "skillIdList": [
+        "python",
+        "c",
+        "c++",
+        "javascript",
+        "typescript",
+        "gnubash",
+        "markdown",
+        "php",
+        "scala"
+      ]
+    },
+    {
+      "title": "Front End",
+      "skillIdList": [
+        "html",
+        "css",
+        "sass",
+        "bootstrap",
+        "tailwindcss",
+        "angular",
+        "react",
+        "mui",
+        "npm",
+        "redux"
+      ]
+    },
+    {
+      "title": "Mobile",
+      "skillIdList": ["android"]
+    },
+    {
+      "title": "Back End",
+      "skillIdList": [
+        "mysql",
+        "postgresql",
+        "amazonaws",
+        "django",
+        "mongodb",
+        "nodejs",
+        "springboot"
+      ]
+    },
+    {
+      "title": "Testing",
+      "skillIdList": ["cypress", "jasmine", "chai"]
+    },
+    {
+      "title": "Others",
+      "skillIdList": [
+        "linux",
+        "postman",
+        "git",
+        "jira",
+        "jupyter",
+        "pandas",
+        "trello",
+        "anaconda",
+        "figma"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "duration": "08/22 - 05/24",
+      "degree": "Master of Science",
+      "major": "Computer Science",
+      "institute": "Clemson University"
+    },
+    {
+      "duration": "08/22 - 05/24",
+      "degree": "Bachelor of Technology",
+      "major": "Computer Science & Engineering",
+      "institute": "Dr APJ Abdul Kalam Technical University"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Graduate Teaching Assistant",
+      "organization": "Clemson University",
+      "duration": "01/23 - Present",
+      "location": "Clemson, SC, US"
+    },
+    {
+      "position": "Software Engineer",
+      "organization": "Deloitte (HashedIn)",
+      "duration": "06/21 - 08/22",
+      "location": "Bangalore, KA, IN"
+    },
+    {
+      "position": "Software Engineer Intern",
+      "organization": "Deloitte (HashedIn)",
+      "duration": "03/21 - 06/21",
+      "location": "Remote, IN"
+    },
+    {
+      "position": "Android and Front End Engineer",
+      "organization": "TeamERP",
+      "duration": "06/21 - 08/22",
+      "location": "Ghaziabad, UP, IN"
+    }
+  ],
+  "projects": [
+    {
+      "title": "people's choice",
+      "description": "Shows the favourite anime, movie, and TV Series of all the contributors",
+      "isPersonal": true,
+      "isPublic": true,
+      "codeLink": "https://github.com/aditeyaS/peoples-choice",
+      "liveLink": "https://aditeyas.github.io/peoples-choice/",
+      "skillsIds": ["html", "css", "javascript"]
+    },
+    {
+      "title": "cpsc-3720-scripts",
+      "description": "Shows the favourite anime, movie, and TV Series of all the contributors",
+      "isPersonal": true,
+      "isPublic": false,
+      "skillsIds": ["python", "cypress", "javascript", "pandas"]
+    }
+  ]
 }

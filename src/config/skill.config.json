@@ -1,212 +1,212 @@
 {
-    "linkedin": {
-        "slug": "linkedin",
-        "color": "#0A66C2",
-        "name": "LinkedIn"
-    },
-    "github": {
-        "slug": "github",
-        "color": "#181717",
-        "name": "GitHub"
-    },
-    "python": {
-        "slug": "python",
-        "color": "#3776AB",
-        "name": "Python"
-    },
-    "c": {
-        "slug": "c",
-        "color": "#A8B9CC",
-        "name": "C"
-    },
-    "c++": {
-        "slug": "cplusplus",
-        "color": "cplusplus",
-        "name": "C++"
-    },
-    "javascript": {
-        "slug": "javascript",
-        "color": "#F7DF1E",
-        "name": "JavaScript"
-    },
-    "typescript": {
-        "slug": "typescript",
-        "color": "#3178C6",
-        "name": "TypeScript"
-    },
-    "gnubash": {
-        "slug": "gnubash",
-        "color": "#4EAA25",
-        "name": "Bash"
-    },
-    "markdown": {
-        "slug": "markdown",
-        "color": "#000000",
-        "name": "Markdown"
-    },
-    "php": {
-        "slug": "php",
-        "color": "#777BB4",
-        "name": "php"
-    },
-    "scala": {
-        "slug": "scala",
-        "color": "#DC322F",
-        "name": "Scala"
-    },
-    "html": {
-        "slug": "html5",
-        "color": "#E34F26",
-        "name": "HTML"
-    },
-    "css": {
-        "slug": "css3",
-        "color": "#1572B6",
-        "name": "CSS"
-    },
-    "sass": {
-        "slug": "sass",
-        "color": "#CC6699",
-        "name": "Sass"
-    },
-    "bootstrap": {
-        "slug": "bootstrap",
-        "color": "#7952B3",
-        "name": "Bootstrap"
-    },
-    "tailwindcss": {
-        "slug": "tailwindcss",
-        "color": "#06B6D4",
-        "name": "Tailwind CSS"
-    },
-    "angular": {
-        "slug": "angular",
-        "color": "#DD0031",
-        "name": "Angular"
-    },
-    "react": {
-        "slug": "react",
-        "color": "#61DAFB",
-        "name": "React"
-    },
-    "mui": {
-        "slug": "mui",
-        "color": "#007FFF",
-        "name": "MUI"
-    },
-    "npm": {
-        "slug": "npm",
-        "color": "#CB3837",
-        "name": "npm"
-    },
-    "redux": {
-        "slug": "redux",
-        "color": "#764ABC",
-        "name": "Redux"
-    },
-    "android": {
-        "slug": "android",
-        "color": "#3DDC84",
-        "name": "Android"
-    },
-    "mysql": {
-        "slug": "mysql",
-        "color": "#4479A1",
-        "name": "MySQL"
-    },
-    "postgresql": {
-        "slug": "postgresql",
-        "color": "#4169E1",
-        "name": "PostgreSQL"
-    },
-    "amazonaws": {
-        "slug": "amazonaws",
-        "color": "#232F3E",
-        "name": "AWS"
-    },
-    "django": {
-        "slug": "django",
-        "color": "#092E20",
-        "name": "Django"
-    },
-    "mongodb": {
-        "slug": "mongodb",
-        "color": "#47A248",
-        "name": "MongoDB"
-    },
-    "nodejs": {
-        "slug": "nodedotjs",
-        "color": "#339933",
-        "name": "NodeJs"
-    },
-    "springboot": {
-        "slug": "springboot",
-        "color": "#6DB33F",
-        "name": "Spring Boot"
-    },
-    "cypress": {
-        "slug": "cypress",
-        "color": "#17202C",
-        "name": "Cypress"
-    },
-    "jasmine": {
-        "slug": "jasmine",
-        "color": "#8A4182",
-        "name": "Jasmine"
-    },
-    "chai": {
-        "slug": "chai",
-        "color": "#A30701",
-        "name": "Chai"
-    },
-    "linux": {
-        "slug": "linux",
-        "color": "#FCC624",
-        "name": "Linux"
-    },
-    "postman": {
-        "slug": "postman",
-        "color": "#FF6C37",
-        "name": "Postman"
-    },
-    "git": {
-        "slug": "git",
-        "color": "#F05032",
-        "name": "Git"
-    },
-    "jira": {
-        "slug": "jira",
-        "color": "#0052CC",
-        "name": "Jira"
-    },
-    "jupyter": {
-        "slug": "jupyter",
-        "color": "#F37626",
-        "name": "Jupyter"
-    },
-    "pandas": {
-        "slug": "pandas",
-        "color": "#150458",
-        "name": "Pandas"
-    },
-    "trello": {
-        "slug": "trello",
-        "color": "#0052CC",
-        "name": "Trello"
-    },
-    "anaconda": {
-        "slug": "anaconda",
-        "color": "#44A833",
-        "name": "Anaconda"
-    },
-    "figma": {
-        "slug": "figma",
-        "color": "#F24E1E",
-        "name": "Figma"
-    },
-    "githubpages": {
-        "slug": "githubpages",
-        "color": "#222222",
-        "name": "GitHub Pages"
-    }
+  "linkedin": {
+    "slug": "linkedin",
+    "color": "#0A66C2",
+    "name": "LinkedIn"
+  },
+  "github": {
+    "slug": "github",
+    "color": "#181717",
+    "name": "GitHub"
+  },
+  "python": {
+    "slug": "python",
+    "color": "#3776AB",
+    "name": "Python"
+  },
+  "c": {
+    "slug": "c",
+    "color": "#A8B9CC",
+    "name": "C"
+  },
+  "c++": {
+    "slug": "cplusplus",
+    "color": "cplusplus",
+    "name": "C++"
+  },
+  "javascript": {
+    "slug": "javascript",
+    "color": "#F7DF1E",
+    "name": "JavaScript"
+  },
+  "typescript": {
+    "slug": "typescript",
+    "color": "#3178C6",
+    "name": "TypeScript"
+  },
+  "gnubash": {
+    "slug": "gnubash",
+    "color": "#4EAA25",
+    "name": "Bash"
+  },
+  "markdown": {
+    "slug": "markdown",
+    "color": "#000000",
+    "name": "Markdown"
+  },
+  "php": {
+    "slug": "php",
+    "color": "#777BB4",
+    "name": "php"
+  },
+  "scala": {
+    "slug": "scala",
+    "color": "#DC322F",
+    "name": "Scala"
+  },
+  "html": {
+    "slug": "html5",
+    "color": "#E34F26",
+    "name": "HTML"
+  },
+  "css": {
+    "slug": "css3",
+    "color": "#1572B6",
+    "name": "CSS"
+  },
+  "sass": {
+    "slug": "sass",
+    "color": "#CC6699",
+    "name": "Sass"
+  },
+  "bootstrap": {
+    "slug": "bootstrap",
+    "color": "#7952B3",
+    "name": "Bootstrap"
+  },
+  "tailwindcss": {
+    "slug": "tailwindcss",
+    "color": "#06B6D4",
+    "name": "Tailwind CSS"
+  },
+  "angular": {
+    "slug": "angular",
+    "color": "#DD0031",
+    "name": "Angular"
+  },
+  "react": {
+    "slug": "react",
+    "color": "#61DAFB",
+    "name": "React"
+  },
+  "mui": {
+    "slug": "mui",
+    "color": "#007FFF",
+    "name": "MUI"
+  },
+  "npm": {
+    "slug": "npm",
+    "color": "#CB3837",
+    "name": "npm"
+  },
+  "redux": {
+    "slug": "redux",
+    "color": "#764ABC",
+    "name": "Redux"
+  },
+  "android": {
+    "slug": "android",
+    "color": "#3DDC84",
+    "name": "Android"
+  },
+  "mysql": {
+    "slug": "mysql",
+    "color": "#4479A1",
+    "name": "MySQL"
+  },
+  "postgresql": {
+    "slug": "postgresql",
+    "color": "#4169E1",
+    "name": "PostgreSQL"
+  },
+  "amazonaws": {
+    "slug": "amazonaws",
+    "color": "#232F3E",
+    "name": "AWS"
+  },
+  "django": {
+    "slug": "django",
+    "color": "#092E20",
+    "name": "Django"
+  },
+  "mongodb": {
+    "slug": "mongodb",
+    "color": "#47A248",
+    "name": "MongoDB"
+  },
+  "nodejs": {
+    "slug": "nodedotjs",
+    "color": "#339933",
+    "name": "NodeJs"
+  },
+  "springboot": {
+    "slug": "springboot",
+    "color": "#6DB33F",
+    "name": "Spring Boot"
+  },
+  "cypress": {
+    "slug": "cypress",
+    "color": "#17202C",
+    "name": "Cypress"
+  },
+  "jasmine": {
+    "slug": "jasmine",
+    "color": "#8A4182",
+    "name": "Jasmine"
+  },
+  "chai": {
+    "slug": "chai",
+    "color": "#A30701",
+    "name": "Chai"
+  },
+  "linux": {
+    "slug": "linux",
+    "color": "#FCC624",
+    "name": "Linux"
+  },
+  "postman": {
+    "slug": "postman",
+    "color": "#FF6C37",
+    "name": "Postman"
+  },
+  "git": {
+    "slug": "git",
+    "color": "#F05032",
+    "name": "Git"
+  },
+  "jira": {
+    "slug": "jira",
+    "color": "#0052CC",
+    "name": "Jira"
+  },
+  "jupyter": {
+    "slug": "jupyter",
+    "color": "#F37626",
+    "name": "Jupyter"
+  },
+  "pandas": {
+    "slug": "pandas",
+    "color": "#150458",
+    "name": "Pandas"
+  },
+  "trello": {
+    "slug": "trello",
+    "color": "#0052CC",
+    "name": "Trello"
+  },
+  "anaconda": {
+    "slug": "anaconda",
+    "color": "#44A833",
+    "name": "Anaconda"
+  },
+  "figma": {
+    "slug": "figma",
+    "color": "#F24E1E",
+    "name": "Figma"
+  },
+  "githubpages": {
+    "slug": "githubpages",
+    "color": "#222222",
+    "name": "GitHub Pages"
+  }
 }
