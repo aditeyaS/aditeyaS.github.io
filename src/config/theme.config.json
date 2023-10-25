@@ -1,0 +1,77 @@
+{
+  "default": "light",
+  "themes": [
+    {
+      "themeId": "light",
+      "displayName": "Light"
+    },
+    {
+      "themeId": "dark",
+      "displayName": "Dark"
+    },
+    {
+      "themeId": "chess",
+      "displayName": "Chess"
+    },
+    {
+      "themeId": "amoled",
+      "displayName": "AMOLED"
+    },
+    {
+      "themeId": "neon",
+      "displayName": "Neon"
+    }
+  ],
+  "theme_settings": [
+    {
+      "light": {
+        "base-100": "#ffffff",
+        "base-200": "#d3d3d3",
+        "base-300": "#ffffff",
+        "accent": "#000000",
+        "primary-focus": "#000000",
+        "primary-content": "#000000"
+      }
+    },
+    {
+      "dark": {
+        "base-100": "#000000",
+        "base-200": "#232023",
+        "base-300": "#373737",
+        "accent": "#d3d3d3",
+        "primary-focus": "#ffffff",
+        "primary-content": "#ffffff"
+      }
+    },
+    {
+      "chess": {
+        "base-100": "#000000",
+        "base-200": "#ffffff",
+        "base-300": "#ffffff",
+        "accent": "#000000",
+        "primary-focus": "#000000",
+        "primary-content": "#000000"
+      }
+    },
+    {
+      "amoled": {
+        "base-100": "#000000",
+        "base-200": "#000000",
+        "base-300": "#000000",
+        "accent": "#d3d3d3",
+        "primary-focus": "#ffffff",
+        "primary-content": "#ffffff"
+      }
+    },
+    {
+      "neon": {
+        "base-100": "#aaff00",
+        "base-200": "#ffffff",
+        "base-300": "#ffaa00",
+        "accent": "#00aaff",
+        "primary-focus": "#aa00ff",
+        "primary-content": "#ff00aa"
+      }
+    }
+  ]
+}
