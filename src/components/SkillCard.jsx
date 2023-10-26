@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { isColorDark } from '../helpers/utils';
 
 const SkillCard = ({ skillList, skillConfig }) => {
   return (
@@ -12,23 +13,38 @@ const SkillCard = ({ skillList, skillConfig }) => {
           </div>
           <div className="p-3 flow-root">
             {skillList.map((skill, idx) => (
-              <div key={idx} className={idx == 0 ? '' : 'mt-2'}>
-                <div className="flex flex-wrap justify-center text-primary-content">
+              <div key={idx} className={idx == 0 ? 'mt-0' : 'mt-2'}>
+                <div className="flex flex-wrap justify-center text-primary-content text-opacity-60">
                   {skill.title}
                 </div>
-                <div className="-m-1 flex flex-wrap justify-center mt-1">
+                <div className="-m-1 flex flex-wrap justify-center items-center	mt-1">
                   {skill.skillIdList.map((skillId, idx) => (
                     <div
                       key={idx}
-                      className="tooltip tooltip-accent z-10"
+                      className="tooltip tooltip-accent"
                       data-tip={skillConfig[skillId].name}
                     >
-                      <img
-                        className="m-1"
-                        height="25"
-                        width="25"
-                        src={`https://cdn.simpleicons.org/${skillConfig[skillId].slug}/${skillConfig[skillId].color}`}
-                      />
+                      {skillConfig[skillId].slug == undefined ? (
+                        <span
+                          key={idx}
+                          className="m-1 p-1 text-xs rounded-md"
+                          style={{
+                            backgroundColor: skillConfig[skillId].color,
+                            color: isColorDark(skillConfig[skillId].color)
+                              ? '#ffffff'
+                              : '#000000',
+                          }}
+                        >
+                          {skillConfig[skillId].name}
+                        </span>
+                      ) : (
+                        <img
+                          className="m-1"
+                          height="25"
+                          width="25"
+                          src={`https://cdn.simpleicons.org/${skillConfig[skillId].slug}/${skillConfig[skillId].color}`}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>

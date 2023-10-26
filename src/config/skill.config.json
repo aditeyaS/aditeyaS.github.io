@@ -9,6 +9,10 @@
     "color": "#181717",
     "name": "GitHub"
   },
+  "java": {
+    "color": "#f89820",
+    "name": "Java"
+  },
   "python": {
     "slug": "python",
     "color": "#3776AB",
@@ -208,5 +212,14 @@
     "slug": "githubpages",
     "color": "#222222",
     "name": "GitHub Pages"
+  },
+  "tkinter": {
+    "color": "#3776AB",
+    "name": "tkinter"
+  },
+  "androidstudio": {
+    "slug": "androidstudio",
+    "color": "#3DDC84",
+    "name": "Android Studio"
   }
 }

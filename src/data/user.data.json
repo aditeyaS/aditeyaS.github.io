@@ -21,6 +21,7 @@
     {
       "title": "Languages",
       "skillIdList": [
+        "java",
         "python",
         "c",
         "c++",
@@ -133,11 +134,56 @@
       "skillsIds": ["html", "css", "javascript"]
     },
     {
+      "title": "React Portfolio",
+      "description": "A simple react portfolio website that is easily configurable and can be deployed in minutes",
+      "isPersonal": true,
+      "isPublic": true,
+      "codeLink": "https://github.com/aditeyaS/aditeyaS.github.io",
+      "liveLink": "https://aditeyas.github.io/",
+      "skillsIds": ["react", "javascript"]
+    },
+    {
       "title": "cpsc-3720-scripts",
       "description": "Shows the favourite anime, movie, and TV Series of all the contributors",
       "isPersonal": true,
       "isPublic": false,
-      "skillsIds": ["python", "cypress", "javascript", "pandas"]
+      "skillsIds": ["python", "cypress", "pandas"]
+    },
+    {
+      "title": "cpsc-6430",
+      "description": "Course files for CPSC 6430 (Machine Learning: Implementation and Evaluation)",
+      "isPersonal": true,
+      "isPublic": false,
+      "skillsIds": ["python", "pandas", "jupyter"]
+    },
+    {
+      "title": "Taylor's Pizzeria",
+      "description": "Pizza store management system",
+      "isPersonal": true,
+      "isPublic": false,
+      "skillsIds": ["java", "mysql"]
+    },
+    {
+      "title": "SysC: Linux System Monitor",
+      "description": "Linux system monitor tool made in python using tkinter",
+      "isPersonal": true,
+      "isPublic": false,
+      "skillsIds": ["python", "tkinter"]
+    },
+    {
+      "title": "Halloween Rescue",
+      "description": "Python game based on Tkinter",
+      "isPersonal": true,
+      "isPublic": false,
+      "skillsIds": ["python", "tkinter"]
+    },
+    {
+      "title": "KIET Applications",
+      "description": "Worked on android app developement",
+      "isPersonal": false,
+      "isPublic": false,
+      "liveLink": "https://play.google.com/store/apps/developer?id=KIET",
+      "skillsIds": ["android", "androidstudio"]
     }
   ]
 }

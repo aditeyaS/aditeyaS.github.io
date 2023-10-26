@@ -2,15 +2,15 @@ import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const ListItem = ({ duration, degree, major, institute }) => (
-  <li className="mb-5 ml-4">
+  <li className="mb-5 ml-4 text-primary-content">
     <div
       className="absolute w-2 h-2 bg-accent rounded-full border border-base-300 mt-1.5"
       style={{ left: '-4.5px' }}
     ></div>
-    <div className="my-0.5 font-normal text-primary-content">{duration}</div>
+    <div className="my-0.5 font-normal">{duration}</div>
     <h3 className="font-semibold text-primary-focus">{degree}</h3>
-    <div className="font-normal text-primary-content">{major}</div>
-    <div className="mb-4 font-normal text-primary-content">{institute}</div>
+    <div className="font-normal">{major}</div>
+    <div className="mb-4 font-normal">{institute}</div>
   </li>
 );
 ListItem.propTypes = {
@@ -30,8 +30,8 @@ const EducationCard = ({ educationList }) => {
               <span className="text-accent opacity-70">Education</span>
             </h5>
           </div>
-          <div className="text-base-content text-opacity-60">
-            <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
+          <div>
+            <ol className="relative border-l border-accent my-2 mx-4">
               <Fragment>
                 {educationList.map((education, index) => (
                   <ListItem

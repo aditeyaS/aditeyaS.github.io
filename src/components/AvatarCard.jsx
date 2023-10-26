@@ -46,11 +46,11 @@ const AvatarCard = ({ basicDetails, skillConfig }) => {
         <a
           href={basicDetails.resumeLink}
           target="_blank"
-          className="btn btn-outline btn-sm text-xs mt-6 text-accent"
+          className="btn btn-outline btn-sm text-xs mt-2 text-accent"
           download
           rel="noreferrer"
         >
-          View Resumee
+          View Resume
         </a>
       </div>
     </div>

@@ -13,29 +13,25 @@ const ExperienceCard = ({ experienceList }) => {
         <div className="flex justify-between flex-col p-8 h-full w-full">
           <div>
             <div className="flex items-center">
-              <div className="card-title text-lg tracking-wide flex text-primary-focus opacity-60">
+              <div className="card-title text-lg tracking-wide flex text-primary-focus">
                 <span>{experience.position}</span>
               </div>
             </div>
-            <p className="mb-5 mt-1 text-primary-content text-opacity-60 text-sm">
+            <p className="mb-5 mt-1 text-primary-content text-sm">
               {experience.organization}
             </p>
           </div>
-          <div className="flex justify-between text-sm text-base-content text-opacity-60 truncate">
+          <div className="flex justify-between text-sm text-primary-content text-opacity-60 truncate">
             <div className="flex flex-grow">
               <span className="mr-3 flex items-center">
-                <AiFillCalendar className="mr-0.5 text-primary-content" />
-                <span className="text-primary-content">
-                  {experience.duration}
-                </span>
+                <AiFillCalendar className="mr-0.5" />
+                <span>{experience.duration}</span>
               </span>
             </div>
             <div>
               <span className="flex items-center">
-                <FaLocationDot className="mr-0.5 text-primary-content" />
-                <span className="text-primary-content">
-                  {experience.location}
-                </span>
+                <FaLocationDot className="mr-0.5" />
+                <span>{experience.location}</span>
               </span>
             </div>
           </div>

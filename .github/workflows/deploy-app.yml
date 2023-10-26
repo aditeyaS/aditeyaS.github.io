@@ -1,6 +1,7 @@
 # name of the workflow
 name: Test, build, and deploy to GithubPages
 
+# when someone pushes to the main branch
 on:
   push:
     branches: [main]
@@ -12,6 +13,7 @@ permissions:
   pages: write
   id-token: write
 
+# cancel any other concurrent process
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

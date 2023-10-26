@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { MdPublic, MdOutlineLock } from 'react-icons/md';
 import { BiCodeAlt } from 'react-icons/bi';
 import { BsPlayFill, BsInfoCircle } from 'react-icons/bs';
+import { isColorDark } from '../helpers/utils';
 
 const ProjectCard = ({ projectList, skillConfig }) => {
   const getRepoAccess = (project) => {
@@ -11,16 +12,16 @@ const ProjectCard = ({ projectList, skillConfig }) => {
     } else {
       if (project.isPersonal) {
         return (
-          <div className="flex">
-            <BsInfoCircle className="my-auto mr-1 text-primary-content" />
-            <span className="text-primary-content">Can show if required</span>
+          <div className="flex text-primary-content mt-1">
+            <BsInfoCircle className="my-auto mr-1 " />
+            <span>Can show if required</span>
           </div>
         );
       } else {
         return (
-          <div className="flex">
-            <BsInfoCircle className="my-auto mr-1 text-primary-content" />
-            <span className="text-primary-content">External project</span>
+          <div className="flex text-primary-content mt-1">
+            <BsInfoCircle className="my-auto mr-1" />
+            <span>External project</span>
           </div>
         );
       }
@@ -37,13 +38,13 @@ const ProjectCard = ({ projectList, skillConfig }) => {
         <div className="flex justify-between flex-col p-8 h-full w-full">
           <div>
             <div className="flex items-center">
-              <div className="card-title text-lg tracking-wide flex text-base-content opacity-60">
+              <div className="card-title text-lg tracking-wide flex text-primary-focus">
                 {project.isPublic ? (
-                  <MdPublic className="my-auto" style={{ color: 'blue' }} />
+                  <MdPublic className="my-auto text-primary-content" />
                 ) : (
-                  <MdOutlineLock className="my-auto" style={{ color: 'red' }} />
+                  <MdOutlineLock className="my-auto" />
                 )}
-                <span className="text-primary-focus">{project.title}</span>
+                <span>{project.title}</span>
               </div>
             </div>
             <p className="mb-1 mt-1 text-primary-content text-sm">
@@ -54,14 +55,19 @@ const ProjectCard = ({ projectList, skillConfig }) => {
                 <span
                   key={idx}
                   className="m-1 pt-1 pb-1 pr-2 pl-2 text-xs rounded-md"
-                  style={{ backgroundColor: skillConfig[skillId].color }}
+                  style={{
+                    backgroundColor: skillConfig[skillId].color,
+                    color: isColorDark(skillConfig[skillId].color)
+                      ? '#ffffff'
+                      : '#000000',
+                  }}
                 >
                   {skillConfig[skillId].name}
                 </span>
               ))}
             </div>
           </div>
-          <div className="flex mt-2 gap-2 justify-between text-sm text-base-content text-opacity-60 truncate">
+          <div className="flex mt-2 gap-2 justify-between text-sm text-primary-content">
             {project.codeLink == undefined ? (
               <></>
             ) : (
@@ -71,7 +77,7 @@ const ProjectCard = ({ projectList, skillConfig }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <BiCodeAlt className="my-auto text-primary-content" />
+                <BiCodeAlt className="my-auto" />
               </a>
             )}
             {project.liveLink == undefined ? (
@@ -83,11 +89,11 @@ const ProjectCard = ({ projectList, skillConfig }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <BsPlayFill className="my-auto text-primary-content" />
+                <BsPlayFill className="my-auto" />
               </a>
             )}
-            {getRepoAccess(project)}
           </div>
+          {getRepoAccess(project)}
         </div>
       </div>
     ));
