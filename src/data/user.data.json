@@ -43,8 +43,6 @@
         "tailwindcss",
         "angular",
         "react",
-        "mui",
-        "npm",
         "redux"
       ]
     },
@@ -58,10 +56,12 @@
         "mysql",
         "postgresql",
         "amazonaws",
+        "express",
         "django",
         "mongodb",
-        "nodejs",
-        "springboot"
+        "springboot",
+        "graphql",
+        "docker"
       ]
     },
     {
@@ -124,6 +124,33 @@
     }
   ],
   "projects": [
+    {
+      "title": "MyCoverLetter",
+      "description": "This app saves your cover letter templates, which can be edited easily and used again.",
+      "isPersonal": true,
+      "isPublic": true,
+      "codeLink": "https://github.com/aditeyaS/MyCoverLetter",
+      "liveLink": "https://mycoverletter-client.onrender.com/",
+      "skillsIds": ["react", "tailwindcss", "express"]
+    },
+    {
+      "title": "ToolHub",
+      "description": "ToolHub offers a suite of powerful time management tools designed to supercharge your productivity and help you seize every moment.",
+      "isPersonal": true,
+      "isPublic": true,
+      "codeLink": "https://github.com/aditeyaS/ToolHub",
+      "liveLink": "https://toolhub.onrender.com/",
+      "skillsIds": ["react", "tailwindcss", "typescript"]
+    },
+    {
+      "title": "top20trending",
+      "description": "Shows the top 20 trending Movies, TV Shows, and Music",
+      "isPersonal": true,
+      "isPublic": true,
+      "codeLink": "https://github.com/aditeyaS/top20trending",
+      "liveLink": "https://top20trending.onrender.com/",
+      "skillsIds": ["react", "tailwindcss", "typescript"]
+    },
     {
       "title": "people's choice",
       "description": "Shows the favourite anime, movie, and TV Series of all the contributors",

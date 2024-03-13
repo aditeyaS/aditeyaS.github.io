@@ -221,5 +221,20 @@
     "slug": "androidstudio",
     "color": "#3DDC84",
     "name": "Android Studio"
+  },
+  "graphql": {
+    "slug": "graphql",
+    "color": "#E10098",
+    "name": "GraphQL"
+  },
+  "docker": {
+    "slug": "docker",
+    "color": "#2496ED",
+    "name": "Docker"
+  },
+  "express": {
+    "slug": "express",
+    "color": "#000000",
+    "name": "Express"
   }
 }
