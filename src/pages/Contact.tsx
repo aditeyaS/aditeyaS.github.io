@@ -1,7 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import ContactIcon from "../icons/ContactIcon";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

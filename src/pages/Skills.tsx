@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CodingIcon from "../icons/CodingIcon";
 
 interface SkillModel {
@@ -7,21 +8,21 @@ interface SkillModel {
 }
 
 const languageList: SkillModel[] = [
-  { name: "Java", rating: 6 },
   { name: "Python", slug: "python", rating: 7 },
-  { name: "C", slug: "c", rating: 4 },
+  { name: "Java", rating: 6 },
+  { name: "typescript", slug: "typescript", rating: 7 },
   { name: "JavaScript", slug: "javascript", rating: 7 },
-  { name: "Markdown", slug: "markdown", rating: 8 },
+  { name: "C", slug: "c", rating: 4 },
   { name: "PHP", slug: "php", rating: 5 },
   { name: "R", slug: "r", rating: 5 },
   { name: "Scala", slug: "scala", rating: 5 },
-  { name: "typescript", slug: "typescript", rating: 7 },
+  { name: "Markdown", slug: "markdown", rating: 8 },
   { name: "YAML", slug: "yaml", rating: 7 },
 ];
 
 const feList: SkillModel[] = [
-  { name: "Angular", slug: "angular", rating: 7 },
   { name: "React", slug: "react", rating: 7 },
+  { name: "Angular", slug: "angular", rating: 7 },
   { name: "React Hook Form", slug: "reacthookform", rating: 7 },
   { name: "React Router", slug: "reactrouter", rating: 7 },
   { name: "Redux", slug: "redux", rating: 7 },
@@ -56,6 +57,7 @@ const beList: SkillModel[] = [
 
 const mobileList: SkillModel[] = [
   { name: "Android", slug: "android", rating: 6 },
+  { name: "React Native", slug: "react", rating: 5 },
 ];
 
 const cloudList: SkillModel[] = [
@@ -82,6 +84,8 @@ const testingList: SkillModel[] = [
 const librariesList: SkillModel[] = [
   { name: "Axios", slug: "axios", rating: 8 },
   { name: "i18next", slug: "i18next", rating: 6 },
+  { name: "pandas", slug: "pandas", rating: 7 },
+  { name: "NumPy", slug: "numpy", rating: 8 },
 ];
 
 const othersList: SkillModel[] = [
@@ -101,9 +105,7 @@ const othersList: SkillModel[] = [
   { name: "Jupyter", slug: "jupyter", rating: 5 },
   { name: "macOS", slug: "macos", rating: 9 },
   { name: "npm", slug: "npm", rating: 8 },
-  { name: "NumPy", slug: "numpy", rating: 8 },
   { name: "OpenAI", slug: "openai", rating: 5 },
-  { name: "pandas", slug: "pandas", rating: 7 },
   { name: "Postman", slug: "postman", rating: 9 },
   { name: "PowerShell", slug: "powershell", rating: 6 },
   { name: "Prettier", slug: "prettier", rating: 7 },
@@ -116,6 +118,10 @@ const othersList: SkillModel[] = [
 ];
 
 const Skills = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section className="py-10">
       <div className="flex justify-center flex flex-col items-center py-10 gap-4">
@@ -126,162 +132,144 @@ const Skills = () => {
       </div>
       <div className="flex flex-col gap-2">
         <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+          <div className="card-body gap-5">
             <h2 className="text-center text-secondary">Languages</h2>
             <div className="flex gap-2 flex-wrap justify-center">
               {languageList.map((lang, index) =>
                 lang.slug ? (
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
-                  />
+                  <div
+                    className="tooltip tooltip-accent"
+                    data-tip={`${lang.name} (${lang.rating}/10)`}
+                  >
+                    <img
+                      key={index}
+                      className="w-12 h-12"
+                      src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                    />
+                  </div>
                 ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
+                  <div
+                    className="tooltip tooltip-accent"
+                    data-tip={`${lang.name} (${lang.rating}/10)`}
+                  >
+                    <div className="w-12 h-12 px-2 py-1 bg-base-content text-base-100 rounded flex justify-center items-center">
+                      <span>{lang.name}</span>
+                    </div>
+                  </div>
                 )
               )}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
-            <h2 className="text-center text-secondary">Frontend</h2>
+
+            <h2 className="text-center text-secondary">Frontend Tech</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {feList.map((lang, index) =>
-                lang.slug ? (
+              {feList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Backend</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {beList.map((lang, index) =>
-                lang.slug ? (
+              {beList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Mobile</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {mobileList.map((lang, index) =>
-                lang.slug ? (
+              {mobileList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Cloud</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {cloudList.map((lang, index) =>
-                lang.slug ? (
+              {cloudList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Testing</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {testingList.map((lang, index) =>
-                lang.slug ? (
+              {testingList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Libraries</h2>
             <div className="flex gap-2 flex-wrap justify-center">
-              {librariesList.map((lang, index) =>
-                lang.slug ? (
+              {librariesList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="card bg-base-200">
-          <div className="card-body py-4 px-2">
+
             <h2 className="text-center text-secondary">Others</h2>
             <div className="flex gap-2 flex-wrap justify-between">
-              {othersList.map((lang, index) =>
-                lang.slug ? (
+              {othersList.map((lang, index) => (
+                <div
+                  className="tooltip tooltip-accent"
+                  data-tip={`${lang.name} (${lang.rating}/10)`}
+                >
                   <img
                     key={index}
                     className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}`}
+                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
                   />
-                ) : (
-                  <span className="px-2 py-1 bg-accent rounded flex justify-center items-center">
-                    {lang.name}
-                  </span>
-                )
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

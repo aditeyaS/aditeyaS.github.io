@@ -2,6 +2,7 @@ import clemson from "../assets/education/clemson.png";
 import aktu from "../assets/education/aktu.png";
 import bhs from "../assets/education/bhs.png";
 import EducationIcon from "../icons/EducationIcon";
+import { useEffect } from "react";
 
 interface EducationModel {
   logo: string;
@@ -40,6 +41,9 @@ const educationList: EducationModel[] = [
 ];
 
 const Education = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="py-10">
       <div className="flex justify-center flex flex-col items-center py-10 gap-4">

@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import AdditionalIcon from "../icons/AdditionalIcon";
 
 const Additional = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="py-10">
       <div className="flex justify-center flex flex-col items-center py-10 gap-4">
@@ -12,27 +16,25 @@ const Additional = () => {
         </h1>
       </div>
       <div className="flex flex-col gap-2">
-        {/* {educationList.map((education, index) => (
-          <div className="card bg-base-200" key={index}>
-            <div className="card-body flex flex-col gap-5 items-center md:flex-row">
-              <div className="rounded-full ring ring-accent ring-offset-base-200 ring-offset-4">
-                <img className="w-32 h-32" src={education.logo} />
-              </div>
-              <div className="flex flex-col text-center md:text-left">
-                <h3 className="font-serif text-xl">{education.institute}</h3>
-                <span className="text-lg  text-neutral">
-                  {education.location}
-                </span>
-                <span className="font-serif text-xl ">
-                  {education.degree}, {education.major}
-                </span>
-                <span className="text-lg  text-neutral">
-                  {education.duration}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))} */}
+        <div className="flex gap-4 justify-center">
+          <button
+            className="flex items-center gap-2 px-2 py-1 border rounded-lg"
+            style={{ borderColor: "#FFDD00" }}
+          >
+            <img
+              className="w-8 h-8"
+              src={`https://cdn.simpleicons.org/buymeacoffee`}
+            />
+            <span style={{ color: "#FFDD00" }}>Buy Me A Coffee</span>
+          </button>
+          <button
+            className="flex items-center gap-2 px-2 py-1 border rounded-lg"
+            style={{ borderColor: "#FF5E5B" }}
+          >
+            <img className="w-8 h-8" src={`https://cdn.simpleicons.org/kofi`} />
+            <span style={{ color: "#FF5E5B" }}>Ko-fi</span>
+          </button>
+        </div>
       </div>
     </section>
   );

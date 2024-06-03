@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import grow_your_x from "../assets/project/grow_your_x.png";
 import job_cred_fill from "../assets/project/job_cred_fill.png";
 import GithubIcon from "../icons/GithubIcon";
@@ -34,6 +35,10 @@ const projectList: ProjectModel[] = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section>
       <div className="flex justify-center flex flex-col items-center py-10 gap-4 md:py-20">

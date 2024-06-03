@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProgrammerVector from "../assets/ProgrammerVector";
 import teamwork from "../assets/values/teamwork.png";
 import learning from "../assets/values/learning.png";
@@ -7,6 +7,10 @@ import flexibility from "../assets/values/flexibility.png";
 import integrity from "../assets/values/intregity.png";
 
 const About: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section className="flex flex-col items-center gap-10 py-10">
       <ProgrammerVector />

@@ -3,6 +3,7 @@ import clemson from "../assets/experience/clemson.png";
 import rc from "../assets/experience/rc.png";
 import hashedin from "../assets/experience/hashedin.png";
 import erp from "../assets/experience/erp.png";
+import { useEffect } from "react";
 
 interface ExperienceModel {
   logo: string;
@@ -50,6 +51,9 @@ const experienceList: ExperienceModel[] = [
   },
 ];
 const Experience = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <section className="py-10">
       <div className="flex justify-center flex flex-col items-center py-10 gap-4">
