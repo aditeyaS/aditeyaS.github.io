@@ -41,13 +41,14 @@ const educationList: EducationModel[] = [
 
 const Education = () => {
   return (
-    <section>
+    <section className="py-10">
       <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-        {/* <EducationIllustration /> */}
         <div className="motion-safe:animate-bounce">
           <EducationIcon size="lg" />
         </div>
-        <h1 className="text-primary text-4xl font-bold">Education</h1>
+        <h1 className="text-primary text-4xl font-bold md:text-8xl">
+          Education
+        </h1>
       </div>
       <div className="flex flex-col gap-2">
         {educationList.map((education, index) => (

@@ -8,14 +8,14 @@ import integrity from "../assets/values/intregity.png";
 
 const About: React.FC = () => {
   return (
-    <section className="flex flex-col items-center gap-10">
+    <section className="flex flex-col items-center gap-10 py-10">
       <ProgrammerVector />
       <h1 className="text-7xl text-primary text-center">Aditeya Srivastava</h1>
       <span className="text-2xl font-mono text-secondary text-center">
         A Software Engineer by hobby, passion, and profession with a pinch of
         creativity.
       </span>
-      <button className="btn btn-accent btn-outline">R E S U M E</button>
+      <button className="btn btn-accent btn-lg">R E S U M E</button>
       <span className="text-2xl text-secondary">My values</span>
       <div className="carousel carousel-center rounded-box">
         <div className="carousel-item">
@@ -33,6 +33,38 @@ const About: React.FC = () => {
         <div className="carousel-item">
           <img src={integrity} alt="Integrity" />
         </div>
+      </div>
+      <div className="flex gap-2">
+        <button className="btn btn-circle btn-lg">
+          <img
+            className="m-1 w-8 h-8"
+            src={`https://cdn.simpleicons.org/gmail/EA4335`}
+          />
+        </button>
+        <button className="btn btn-circle btn-lg">
+          <img
+            className="m-1 w-8 h-8"
+            src={`https://cdn.simpleicons.org/github/ffffff`}
+          />
+        </button>
+        <button className="btn btn-circle btn-lg">
+          <img
+            className="m-1 w-8 h-8"
+            src={`https://cdn.simpleicons.org/linkedin/0A66C2`}
+          />
+        </button>
+        <button className="btn btn-circle btn-lg">
+          <img
+            className="m-1 w-8 h-8"
+            src={`https://cdn.simpleicons.org/instagram/E4405F`}
+          />
+        </button>
+        <button className="btn btn-circle btn-lg">
+          <img
+            className="m-1 w-8 h-8"
+            src={`https://cdn.simpleicons.org/x/000000`}
+          />
+        </button>
       </div>
     </section>
   );

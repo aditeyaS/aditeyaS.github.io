@@ -26,7 +26,8 @@ const projectList: ProjectModel[] = [
     logo: job_cred_fill,
     name: "JobCredFill",
     skills: ["typescript", "react", "chrome api"],
-    description: "Auto fills credentials on job boards to save your time.",
+    description:
+      "A chrome extension that fills credentials on job boards to save your time.",
     github: "",
     website: "",
   },
@@ -35,12 +36,13 @@ const projectList: ProjectModel[] = [
 const Projects = () => {
   return (
     <section>
-      <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-        {/* <EducationIllustration /> */}
+      <div className="flex justify-center flex flex-col items-center py-10 gap-4 md:py-20">
         <div className="motion-safe:animate-bounce">
           <ProjectIcon size="lg" />
         </div>
-        <h1 className="text-primary text-4xl font-bold">Projects</h1>
+        <h1 className="text-primary text-4xl font-bold md:text-8xl">
+          Projects
+        </h1>
       </div>
       <div className="flex flex-col gap-2">
         {projectList.map((project, index) => (
