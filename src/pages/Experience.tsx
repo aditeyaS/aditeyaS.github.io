@@ -4,6 +4,8 @@ import rc from "../assets/experience/rc.png";
 import hashedin from "../assets/experience/hashedin.png";
 import erp from "../assets/experience/erp.png";
 import { useEffect } from "react";
+import Card from "../components/Card";
+import PageContainer from "../components/PageContainer";
 
 interface ExperienceModel {
   logo: string;
@@ -55,41 +57,43 @@ const Experience = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <section className="py-10">
-      <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-        <div className="motion-safe:animate-bounce">
-          <ExperienceIcon size="lg" />
+    <PageContainer
+      title="Experience"
+      icon={<ExperienceIcon size="lg" />}
+      pageBody={
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+          {experienceList.map((experience, index) => (
+            <Card
+              key={index}
+              body={
+                <div className="flex flex-col gap-5 items-center md:flex-row">
+                  <div className="ring ring-accent ring-offset-base-200 ring-offset-4">
+                    <img
+                      className="w-32 h-32 min-w-32 min-h-32"
+                      src={experience.logo}
+                    />
+                  </div>
+                  <div className="flex flex-col text-center md:text-left">
+                    <h3 className="font-serif text-xl">
+                      {experience.organization}
+                    </h3>
+                    <span className="text-lg  text-neutral">
+                      {experience.location}
+                    </span>
+                    <span className="text-lg  text-neutral">
+                      {experience.position}
+                    </span>
+                    <span className="text-lg  text-neutral">
+                      {experience.duration}
+                    </span>
+                  </div>
+                </div>
+              }
+            />
+          ))}
         </div>
-        <h1 className="text-primary text-4xl font-bold md:text-8xl">
-          Experience
-        </h1>
-      </div>
-      <div className="flex flex-col gap-2">
-        {experienceList.map((experience, index) => (
-          <div className="card bg-base-200" key={index}>
-            <div className="card-body flex flex-col gap-5 items-center md:flex-row">
-              <div className="ring ring-accent ring-offset-base-200 ring-offset-4">
-                <img className="w-32 h-32" src={experience.logo} />
-              </div>
-              <div className="flex flex-col text-center md:text-left">
-                <h3 className="font-serif text-xl">
-                  {experience.organization}
-                </h3>
-                <span className="text-lg  text-neutral">
-                  {experience.location}
-                </span>
-                <span className="text-lg  text-neutral">
-                  {experience.position}
-                </span>
-                <span className="text-lg  text-neutral">
-                  {experience.duration}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+      }
+    />
   );
 };
 

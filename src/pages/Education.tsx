@@ -3,6 +3,8 @@ import aktu from "../assets/education/aktu.png";
 import bhs from "../assets/education/bhs.png";
 import EducationIcon from "../icons/EducationIcon";
 import { useEffect } from "react";
+import PageContainer from "../components/PageContainer";
+import Card from "../components/Card";
 
 interface EducationModel {
   logo: string;
@@ -45,39 +47,43 @@ const Education = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <section className="py-10">
-      <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-        <div className="motion-safe:animate-bounce">
-          <EducationIcon size="lg" />
+    <PageContainer
+      title="Education"
+      icon={<EducationIcon size="lg" />}
+      pageBody={
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {educationList.map((education, index) => (
+            <Card
+              key={index}
+              body={
+                <div className="flex flex-col gap-5 items-center md:flex-row">
+                  <div className="rounded-full ring ring-accent ring-offset-base-200 ring-offset-4">
+                    <img
+                      className="w-32 h-32 min-w-32 min-h-32"
+                      src={education.logo}
+                    />
+                  </div>
+                  <div className="flex flex-col text-center md:text-left">
+                    <h3 className="font-serif text-xl">
+                      {education.institute}
+                    </h3>
+                    <span className="text-lg  text-neutral">
+                      {education.location}
+                    </span>
+                    <span className="font-serif text-xl ">
+                      {education.degree}, {education.major}
+                    </span>
+                    <span className="text-lg  text-neutral">
+                      {education.duration}
+                    </span>
+                  </div>
+                </div>
+              }
+            />
+          ))}
         </div>
-        <h1 className="text-primary text-4xl font-bold md:text-8xl">
-          Education
-        </h1>
-      </div>
-      <div className="flex flex-col gap-2">
-        {educationList.map((education, index) => (
-          <div className="card bg-base-200" key={index}>
-            <div className="card-body flex flex-col gap-5 items-center md:flex-row">
-              <div className="rounded-full ring ring-accent ring-offset-base-200 ring-offset-4">
-                <img className="w-32 h-32" src={education.logo} />
-              </div>
-              <div className="flex flex-col text-center md:text-left">
-                <h3 className="font-serif text-xl">{education.institute}</h3>
-                <span className="text-lg  text-neutral">
-                  {education.location}
-                </span>
-                <span className="font-serif text-xl ">
-                  {education.degree}, {education.major}
-                </span>
-                <span className="text-lg  text-neutral">
-                  {education.duration}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+      }
+    />
   );
 };
 

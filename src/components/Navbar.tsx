@@ -1,10 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "../icons/MenuIcon";
 import routesList from "../config/routesList";
 import ThemeChanger from "./ThemeChanger";
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
+
+  const isLinkActive = (path: string) => {
+    return location.pathname === path ? "bg-accent" : "";
+  };
+
   return (
     <div className="navbar sticky top-0 bg-base-200 w-full z-50 md:hidden">
       <div className="navbar-start">
@@ -17,7 +23,7 @@ const Navbar: React.FC = () => {
             className="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-max"
           >
             {routesList.map((route) => (
-              <li key={route.name}>
+              <li key={route.name} className={isLinkActive(route.path)}>
                 <Link to={route.path}>
                   {route.icon}
                   <span>{route.name}</span>

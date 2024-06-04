@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProgrammerVector from "../assets/ProgrammerVector";
 import teamwork from "../assets/values/teamwork.png";
 import learning from "../assets/values/learning.png";
@@ -7,17 +7,50 @@ import flexibility from "../assets/values/flexibility.png";
 import integrity from "../assets/values/intregity.png";
 
 const About: React.FC = () => {
+  const [name, setName] = useState<string>();
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    const nameEnglish = ["A", "di", "te", "ya", " ", "Sri", "va", "st", "ava"];
+    const nameHindi = ["आ", "दी", "ते", "य", " ", "श्री", "वा", "स्त", "वा"];
+    const nameList = [nameEnglish, nameHindi];
+    let i = 0;
+    let j = 0;
+    let currentName: string[] = [];
+    let isDeleting = false;
+    const type = () => {
+      currentName = nameList[i];
+      if (isDeleting) {
+        setName(currentName.slice(0, j - 1).join(""));
+        j--;
+        if (j == 1) {
+          isDeleting = false;
+          i++;
+          i = i == nameList.length ? 0 : i;
+        }
+      } else {
+        setName(currentName.slice(0, j + 1).join(""));
+        j++;
+        if (j == currentName.length) {
+          isDeleting = true;
+        }
+      }
+      setTimeout(type, 200);
+    };
+    type();
   }, []);
 
   return (
     <section className="flex flex-col items-center gap-10 py-10">
       <ProgrammerVector />
-      <h1 className="text-7xl text-primary text-center">Aditeya Srivastava</h1>
-      <span className="text-2xl font-mono text-secondary text-center">
-        A Software Engineer by hobby, passion, and profession with a pinch of
-        creativity.
+      <h1 className="text-3xl md:text-4xl lg:text-7xl text-primary text-center font-title">
+        {name}
+      </h1>
+      <span className="text-xl md:text-2xl text-secondary text-center">
+        A Software Engineer by hobby, passion, and profession.
       </span>
       <button className="btn btn-accent btn-lg">R E S U M E</button>
       <span className="text-2xl text-secondary">My values</span>
@@ -39,34 +72,37 @@ const About: React.FC = () => {
         </div>
       </div>
       <div className="flex gap-2">
-        <button className="btn btn-circle btn-lg">
+        <a
+          className="btn btn-circle btn-md"
+          href="mailto:this.is.aditeya@gmail.com"
+        >
           <img
-            className="m-1 w-8 h-8"
-            src={`https://cdn.simpleicons.org/gmail/EA4335`}
+            className="m-1 w-6 h-6"
+            src={`https://cdn.simpleicons.org/gmail`}
+          />
+        </a>
+        <button className="btn btn-circle btn-md">
+          <img
+            className="m-1 w-6 h-6"
+            src={`https://cdn.simpleicons.org/github/000000/ffffff`}
           />
         </button>
-        <button className="btn btn-circle btn-lg">
+        <button className="btn btn-circle btn-md">
           <img
-            className="m-1 w-8 h-8"
-            src={`https://cdn.simpleicons.org/github/ffffff`}
+            className="m-1 w-6 h-6"
+            src={`https://cdn.simpleicons.org/linkedin`}
           />
         </button>
-        <button className="btn btn-circle btn-lg">
+        <button className="btn btn-circle btn-md">
           <img
-            className="m-1 w-8 h-8"
-            src={`https://cdn.simpleicons.org/linkedin/0A66C2`}
+            className="m-1 w-6 h-6"
+            src={`https://cdn.simpleicons.org/instagram`}
           />
         </button>
-        <button className="btn btn-circle btn-lg">
+        <button className="btn btn-circle btn-md">
           <img
-            className="m-1 w-8 h-8"
-            src={`https://cdn.simpleicons.org/instagram/E4405F`}
-          />
-        </button>
-        <button className="btn btn-circle btn-lg">
-          <img
-            className="m-1 w-8 h-8"
-            src={`https://cdn.simpleicons.org/x/000000`}
+            className="m-1 w-6 h-6"
+            src={`https://cdn.simpleicons.org/x/000000/ffffff`}
           />
         </button>
       </div>

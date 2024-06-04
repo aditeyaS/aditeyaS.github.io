@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import CodingIcon from "../icons/CodingIcon";
+import PageContainer from "../components/PageContainer";
+import Card from "../components/Card";
 
 interface SkillModel {
   name: string;
@@ -23,22 +25,22 @@ const languageList: SkillModel[] = [
 const feList: SkillModel[] = [
   { name: "React", slug: "react", rating: 7 },
   { name: "Angular", slug: "angular", rating: 7 },
+  { name: "Tailwind CSS", slug: "tailwindcss", rating: 8 },
+  { name: "Bootstrap", slug: "bootstrap", rating: 6 },
+  { name: "HTML", slug: "html5", rating: 8 },
+  { name: "CSS", slug: "css3", rating: 8 },
+  { name: "jQuery", slug: "jquery", rating: 6 },
   { name: "React Hook Form", slug: "reacthookform", rating: 7 },
   { name: "React Router", slug: "reactrouter", rating: 7 },
   { name: "Redux", slug: "redux", rating: 7 },
   { name: "Sass", slug: "sass", rating: 7 },
-  { name: "Autoprefixer", slug: "autoprefixer", rating: 2 },
-  { name: "Bootstrap", slug: "bootstrap", rating: 6 },
-  { name: "CSS", slug: "css3", rating: 8 },
-  { name: "HTML", slug: "html5", rating: 8 },
-  { name: "jQuery", slug: "jquery", rating: 6 },
   { name: "DaisyUI", slug: "daisyui", rating: 9 },
   { name: "MUI", slug: "mui", rating: 8 },
   { name: "NgRx", slug: "ngrx", rating: 8 },
-  { name: "PostCSS", slug: "postcss", rating: 8 },
-  { name: "Tailwind CSS", slug: "tailwindcss", rating: 8 },
   { name: "Vite", slug: "vite", rating: 8 },
   { name: "Webpack", slug: "webpack", rating: 6 },
+  { name: "Autoprefixer", slug: "autoprefixer", rating: 2 },
+  { name: "PostCSS", slug: "postcss", rating: 8 },
 ];
 
 const beList: SkillModel[] = [
@@ -46,13 +48,13 @@ const beList: SkillModel[] = [
   { name: "Django", slug: "django", rating: 7 },
   { name: "Express", slug: "express", rating: 7 },
   { name: "Flask", slug: "flask", rating: 5 },
-  { name: "MongoDB", slug: "mongodb", rating: 6 },
+  { name: "Spring Boot", slug: "springboot", rating: 6 },
   { name: "MySQL", slug: "mysql", rating: 8 },
+  { name: "MongoDB", slug: "mongodb", rating: 6 },
   { name: "Node.js", slug: "nodedotjs", rating: 8 },
-  { name: "Nodemon", slug: "nodemon", rating: 6 },
   { name: "phpMyAdmin", slug: "phpmyadmin", rating: 8 },
   { name: "PostgreSQL", slug: "postgresql", rating: 8 },
-  { name: "Spring Boot", slug: "springboot", rating: 6 },
+  { name: "Nodemon", slug: "nodemon", rating: 6 },
 ];
 
 const mobileList: SkillModel[] = [
@@ -89,13 +91,14 @@ const librariesList: SkillModel[] = [
 ];
 
 const othersList: SkillModel[] = [
-  { name: ".env", slug: "dotenv", rating: 10 },
-  { name: "Anaconda", slug: "anaconda", rating: 6 },
-  { name: "Android Studio", slug: "androidstudio", rating: 7 },
-  { name: "Jira", slug: "jira", rating: 6 },
   { name: "Docker", slug: "docker", rating: 6 },
-  { name: "Figma", slug: "figma", rating: 5 },
+  { name: "Postman", slug: "postman", rating: 9 },
+  { name: "Qt", slug: "qt", rating: 6 },
+  { name: ".env", slug: "dotenv", rating: 10 },
   { name: "Git", slug: "git", rating: 8 },
+  { name: "Anaconda", slug: "anaconda", rating: 6 },
+  { name: "Jira", slug: "jira", rating: 6 },
+  { name: "Figma", slug: "figma", rating: 5 },
   { name: "GitHub Pages", slug: "githubpages", rating: 10 },
   { name: "Bash", slug: "gnubash", rating: 5 },
   { name: "Google Analytics", slug: "googleanalytics", rating: 4 },
@@ -106,14 +109,13 @@ const othersList: SkillModel[] = [
   { name: "macOS", slug: "macos", rating: 9 },
   { name: "npm", slug: "npm", rating: 8 },
   { name: "OpenAI", slug: "openai", rating: 5 },
-  { name: "Postman", slug: "postman", rating: 9 },
   { name: "PowerShell", slug: "powershell", rating: 6 },
   { name: "Prettier", slug: "prettier", rating: 7 },
-  { name: "Qt", slug: "qt", rating: 6 },
-  { name: "Render", slug: "render", rating: 7 },
   { name: "scikit-learn", slug: "scikitlearn", rating: 5 },
   { name: "swagger", slug: "swagger", rating: 6 },
+  { name: "Render", slug: "render", rating: 7 },
   { name: "vercel", slug: "vercel", rating: 7 },
+  { name: "Android Studio", slug: "androidstudio", rating: 7 },
   { name: "Visual Studio Code", slug: "visualstudiocode", rating: 7 },
 ];
 
@@ -123,174 +125,190 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="py-10">
-      <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-        <div className="motion-safe:animate-bounce">
-          <CodingIcon size="lg" />
-        </div>
-        <h1 className="text-primary text-4xl font-bold md:text-8xl">Skills</h1>
-      </div>
-      <div className="flex flex-col gap-2">
-        <div className="card bg-base-200">
-          <div className="card-body gap-5">
-            <h2 className="text-center text-secondary">Languages</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {languageList.map((lang, index) =>
-                lang.slug ? (
-                  <div
-                    className="tooltip tooltip-accent"
-                    data-tip={`${lang.name} (${lang.rating}/10)`}
-                  >
-                    <img
+    <PageContainer
+      title="Skills"
+      icon={<CodingIcon size="lg" />}
+      pageBody={
+        <div className="flex flex-col gap-2">
+          <Card
+            body={
+              <div className="flex flex-col gap-5">
+                <h2 className="text-center text-secondary text-xl">
+                  Programming Languages
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {languageList.map((lang, index) =>
+                    lang.slug ? (
+                      <div
+                        key={index}
+                        className="tooltip tooltip-accent"
+                        data-tip={`${lang.name} (${lang.rating}/10)`}
+                      >
+                        <img
+                          className="w-12 h-12"
+                          src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        key={index}
+                        className="tooltip tooltip-accent"
+                        data-tip={`${lang.name} (${lang.rating}/10)`}
+                      >
+                        <div className="w-12 h-12 px-2 py-1 bg-base-content text-base-100 rounded flex justify-center items-center">
+                          <span>{lang.name}</span>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+
+                <h2 className="text-center text-secondary text-xl">
+                  Front End Technologies
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {feList.map((lang, index) => (
+                    <div
                       key={index}
-                      className="w-12 h-12"
-                      src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="tooltip tooltip-accent"
-                    data-tip={`${lang.name} (${lang.rating}/10)`}
-                  >
-                    <div className="w-12 h-12 px-2 py-1 bg-base-content text-base-100 rounded flex justify-center items-center">
-                      <span>{lang.name}</span>
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
                     </div>
-                  </div>
-                )
-              )}
-            </div>
-
-            <h2 className="text-center text-secondary">Frontend Tech</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {feList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Backend</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {beList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">
+                  Backend Technologies
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {beList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Mobile</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {mobileList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">
+                  Mobile Application
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {mobileList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Cloud</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {cloudList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">
+                  Cloud Services
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {cloudList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Testing</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {testingList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">
+                  Testing Frameworks
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {testingList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Libraries</h2>
-            <div className="flex gap-2 flex-wrap justify-center">
-              {librariesList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">
+                  Other popular libraries
+                </h2>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {librariesList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <h2 className="text-center text-secondary">Others</h2>
-            <div className="flex gap-2 flex-wrap justify-between">
-              {othersList.map((lang, index) => (
-                <div
-                  className="tooltip tooltip-accent"
-                  data-tip={`${lang.name} (${lang.rating}/10)`}
-                >
-                  <img
-                    key={index}
-                    className="w-12 h-12"
-                    src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
-                  />
+                <h2 className="text-center text-secondary text-xl">Others</h2>
+                <div className="flex gap-2 flex-wrap justify-between">
+                  {othersList.map((lang, index) => (
+                    <div
+                      key={index}
+                      className="tooltip tooltip-accent"
+                      data-tip={`${lang.name} (${lang.rating}/10)`}
+                    >
+                      <img
+                        className="w-12 h-12"
+                        src={`https://cdn.simpleicons.org/${lang.slug}/000000/ffffff`}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            }
+          />
+
+          <div role="alert" className="alert alert-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="stroke-current shrink-0 w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <span>These are the things that I have worked on.</span>
           </div>
         </div>
-        <div role="alert" className="alert alert-info">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="stroke-current shrink-0 w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-          <span>These are the things that I have worked on.</span>
-        </div>
-      </div>
-    </section>
+      }
+    />
   );
 };
 
