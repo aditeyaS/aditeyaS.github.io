@@ -4,6 +4,8 @@ import job_cred_fill from "../assets/project/job_cred_fill.png";
 import github_viewer from "../assets/project/github_viewer.png";
 import mscs_cu from "../assets/project/mscs_cu.png";
 import online_resume from "../assets/project/online_resume.png";
+import top20trending from "../assets/project/top20trending.png";
+import peoples_choice from "../assets/project/peoples_choice.png";
 import GithubIcon from "../icons/GithubIcon";
 import ProjectIcon from "../icons/ProjectIcon";
 import WebIcon from "../icons/WebIcon";
@@ -77,6 +79,23 @@ const projectList: ProjectModel[] = [
     github: "https://github.com/aditeyaS/online-resume",
     website: "https://aditeyas.github.io/online-resume",
   },
+  {
+    logo: top20trending,
+    name: "top20trending",
+    skills: ["react", "typescript", "tailwind css", "rest api"],
+    description: "Shows the top 20 trending Movies, TV Shows, and Music",
+    github: "https://github.com/aditeyaS/top20trending",
+    website: "https://top20trending.onrender.com",
+  },
+  {
+    logo: peoples_choice,
+    name: "peoples-choice",
+    skills: ["HTML", "CSS", "javascript"],
+    description:
+      "Created this simple repo for students to contribute. It tracks the contributor's favourite anime, movie, and Tv series.",
+    github: "https://github.com/aditeyaS/peoples-choice",
+    website: "https://aditeyas.github.io/peoples-choice",
+  },
 ];
 
 const Projects = () => {
@@ -117,12 +136,22 @@ const Projects = () => {
                       ))}
                     </div>
                     <div className="flex gap-2 justify-center md:justify-start">
-                      <button className="btn btn-circle">
-                        <GithubIcon />
-                      </button>
-                      <button className="btn btn-circle">
-                        <WebIcon />
-                      </button>
+                      {project.github && (
+                        <button
+                          className="btn btn-circle"
+                          onClick={() => window.open(project.github, "_blank")}
+                        >
+                          <GithubIcon />
+                        </button>
+                      )}
+                      {project.website && (
+                        <button
+                          className="btn btn-circle"
+                          onClick={() => window.open(project.website, "_blank")}
+                        >
+                          <WebIcon />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

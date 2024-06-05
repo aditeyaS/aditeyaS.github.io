@@ -52,7 +52,17 @@ const About: React.FC = () => {
       <span className="text-xl md:text-2xl text-secondary text-center">
         A Software Engineer by hobby, passion, and profession.
       </span>
-      <button className="btn btn-accent btn-lg">R E S U M E</button>
+      <button
+        className="btn btn-accent btn-lg"
+        onClick={() => {
+          window.open(
+            "https://drive.google.com/file/d/1tzveHUC7HB9iWXSCh8TWLoGNEDXa_thc",
+            "_blank"
+          );
+        }}
+      >
+        View Resume
+      </button>
       <span className="text-2xl text-secondary">My values</span>
       <div className="carousel carousel-center rounded-box">
         <div className="carousel-item">
@@ -75,36 +85,43 @@ const About: React.FC = () => {
         <a
           className="btn btn-circle btn-md"
           href="mailto:this.is.aditeya@gmail.com"
+          target="_blank"
         >
           <img
             className="m-1 w-6 h-6"
             src={`https://cdn.simpleicons.org/gmail`}
           />
         </a>
-        <button className="btn btn-circle btn-md">
+        <a
+          className="btn btn-circle btn-md"
+          href="https://www.github.com/aditeyaS"
+          target="_blank"
+        >
           <img
             className="m-1 w-6 h-6"
             src={`https://cdn.simpleicons.org/github/000000/ffffff`}
           />
-        </button>
-        <button className="btn btn-circle btn-md">
+        </a>
+        <a
+          className="btn btn-circle btn-md"
+          href="https://www.linkedin.com/in/aditeya"
+          target="_blank"
+        >
           <img
             className="m-1 w-6 h-6"
             src={`https://cdn.simpleicons.org/linkedin`}
           />
-        </button>
-        <button className="btn btn-circle btn-md">
-          <img
-            className="m-1 w-6 h-6"
-            src={`https://cdn.simpleicons.org/instagram`}
-          />
-        </button>
-        <button className="btn btn-circle btn-md">
+        </a>
+        <a
+          className="btn btn-circle btn-md"
+          href="https://www.x.com/aditeyaaaa"
+          target="_blank"
+        >
           <img
             className="m-1 w-6 h-6"
             src={`https://cdn.simpleicons.org/x/000000/ffffff`}
           />
-        </button>
+        </a>
       </div>
     </section>
   );

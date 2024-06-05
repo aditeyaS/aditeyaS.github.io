@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Fira Code", "Roboto", "sans-serif"],
+      sans: ["Montserrat", "Roboto", "sans-serif"],
       title: ["Rampart One", "Roboto", "sans-serif"],
     },
   },

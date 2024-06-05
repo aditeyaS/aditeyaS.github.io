@@ -2,16 +2,35 @@ import { ChangeEvent, useEffect, useState } from "react";
 import ContactIcon from "../icons/ContactIcon";
 import PageContainer from "../components/PageContainer";
 import Card from "../components/Card";
+import emailjs from "@emailjs/browser";
+import ToastModel from "../common/ToastModel";
+import Toast from "../components/Toast";
+
+const successMessage =
+  "Thank you for contacting me. I'll get back to you as soon as possible. :)";
+const errorMessage =
+  "Some error occoured while sending the message. Please reach out to me through the email in my about section. :(";
 
 const Contact = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+    emailjs.init({ publicKey: PUBLIC_KEY });
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const [showToast, setShowToast] = useState<boolean>(false);
+  const [toastData, setToastData] = useState<ToastModel>();
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,15 +42,51 @@ const Contact = () => {
     }));
   };
 
+  const isFormValid = () => {
+    const validEmailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (
+      formData.name === "" ||
+      formData.email === "" ||
+      formData.message === ""
+    ) {
+      return false;
+    }
+    if (!formData.email.match(validEmailRegEx)) {
+      return false;
+    }
+    return true;
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+    try {
+      setIsLoading(true);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData);
+      setToastData({ message: successMessage, type: "SUCCESS" });
+      setFormData({ name: "", email: "", message: "" });
+      setShowToast(true);
+    } catch (error) {
+      setToastData({ message: errorMessage, type: "ERROR" });
+      setShowToast(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <PageContainer
       title="Contact"
       icon={<ContactIcon size="lg" />}
       pageBody={
         <div className="flex flex-col gap-2">
+          {showToast && toastData && (
+            <Toast data={toastData} onClose={() => setShowToast(false)} />
+          )}
           <Card
             body={
-              <form className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4" onSubmit={onSubmit}>
                 <label className="form-control">
                   <div className="label">
                     <span className="label-text">Name</span>
@@ -72,13 +127,9 @@ const Contact = () => {
                 </label>
                 <button
                   className="btn btn-primary btn-sm"
-                  disabled={
-                    formData.name === "" ||
-                    formData.email === "" ||
-                    formData.message === ""
-                  }
+                  disabled={!isFormValid() || isLoading}
                 >
-                  Send
+                  {isLoading ? "Sending..." : "Send"}
                 </button>
               </form>
             }
