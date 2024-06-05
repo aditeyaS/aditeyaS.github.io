@@ -1,8 +1,19 @@
 {
   "name": "aditeyas-github-io",
-  "private": true,
+  "description": "MacOS style portfolio",
+  "private": false,
+  "author": {
+    "name": "Aditeya Srivastava",
+    "email": "this.is.aditeya@gmail.com"
+  },
+  "homepage": "https://aditeyaS.github.io",
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aditeyaS/aditeyaS.github.io.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
