@@ -47,5 +47,9 @@ jobs:
           # Upload dist folder
           path: "./dist"
       - name: Deploy to GitHub Pages
+        env:
+          VITE_EMAIL_JS_PUBLIC_KEY: ${{ secrets.VITE_EMAIL_JS_PUBLIC_KEY }}
+          VITE_EMAIL_JS_SERVICE_ID: ${{ secrets.VITE_EMAIL_JS_SERVICE_ID }}
+          VITE_EMAIL_JS_TEMPLATE_ID: ${{ secrets.VITE_EMAIL_JS_TEMPLATE_ID }}
         id: deployment
         uses: actions/deploy-pages@v4
