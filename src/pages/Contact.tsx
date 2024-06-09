@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   const isFormValid = () => {
-    const validEmailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const validEmailRegEx = new RegExp(/\S+@\S+\.\S+/);
     if (
       formData.name === "" ||
       formData.email === "" ||
