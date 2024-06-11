@@ -6,7 +6,9 @@ const ThemeChanger = () => {
   const [darkTheme, setDarkTheme] = useState<boolean>(false);
 
   useEffect(() => {
-    const previousTheme = localStorage.getItem("data-theme") || "light";
+    const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)");
+    const previousTheme =
+      localStorage.getItem("data-theme") || isSystemDark ? "dark" : "light";
     if (previousTheme === "light") {
       setDarkTheme(false);
     } else {

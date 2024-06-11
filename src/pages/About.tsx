@@ -6,6 +6,38 @@ import work_ethic from "../assets/values/work_ethic.png";
 import flexibility from "../assets/values/flexibility.png";
 import integrity from "../assets/values/intregity.png";
 
+interface HobbyModel {
+  emoji: string;
+  name: string;
+}
+
+const hobbyList: HobbyModel[] = [
+  {
+    emoji: "🥾",
+    name: "Hiking",
+  },
+  {
+    emoji: "🎧",
+    name: "Music",
+  },
+  {
+    emoji: "✈️",
+    name: "Travelling",
+  },
+  {
+    emoji: "🏋🏾‍♂️",
+    name: "Gym",
+  },
+  {
+    emoji: "📸",
+    name: "Photograohy",
+  },
+  {
+    emoji: "📺",
+    name: "Entertainment",
+  },
+];
+
 const About: React.FC = () => {
   const [name, setName] = useState<string>();
 
@@ -48,9 +80,10 @@ const About: React.FC = () => {
       <ProgrammerVector />
       <h1 className="text-3xl md:text-4xl lg:text-7xl text-primary text-center font-title">
         {name}
+        <span className="text-base-content font-sans">|</span>
       </h1>
       <span className="text-xl md:text-2xl text-secondary text-center">
-        A Software Engineer by hobby, passion, and profession.
+        A Software Engineer by hobby, and profession.
       </span>
       <button
         className="btn btn-accent btn-lg"
@@ -63,6 +96,21 @@ const About: React.FC = () => {
       >
         View Resume
       </button>
+      <span className="text-2xl text-secondary">What I do in my free time</span>
+      <ul className="flex gap-2 flex-wrap">
+        {hobbyList.map((hobby, index) => (
+          <li
+            key={index}
+            className="p-2 md:p-4 border-2 border-accent rounded-md hover:bg-accent hover:text-accent-content"
+          >
+            <div className="flex flex-col items-center">
+              <span className="text-xl mb-2 md:text-4xl">{hobby.emoji}</span>
+              <span className="text-sm md:text-xl">{hobby.name}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className="flex"></div>
       <span className="text-2xl text-secondary">My values</span>
       <div className="carousel carousel-center rounded-box">
         <div className="carousel-item">
