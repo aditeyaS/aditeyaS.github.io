@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import CodingIcon from "../icons/CodingIcon";
-import PageContainer from "../components/PageContainer";
-import Card from "../components/Card";
-import { AppScreenContainer } from "../components";
+import CodingIcon from "../../icons/CodingIcon";
+import { AppScreenContainer, Card, PageContainer } from "../../components";
 
 interface SkillModel {
   name: string;

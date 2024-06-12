@@ -4,7 +4,6 @@ import AdditionalIcon from "../../icons/AdditionalIcon";
 import CodingIcon from "../../icons/CodingIcon";
 import ContactIcon from "../../icons/ContactIcon";
 import { SettingsIcon } from "../../icons/apps";
-import Additional from "../../pages/Additional";
 import Dock from "./Dock";
 import MenuBar from "./MenuBar";
 

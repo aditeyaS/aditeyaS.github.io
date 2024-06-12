@@ -1,6 +1,3 @@
-import { Link, useLocation } from "react-router-dom";
-import routesList from "../../config/routesList";
-import ThemeChanger from "../../components/ThemeChanger";
 import { AppIcon } from "../../components";
 import ProfileIcon from "../../icons/ProfileIcon";
 import { routes } from "../../common";
@@ -9,10 +6,6 @@ import EducationIcon from "../../icons/EducationIcon";
 import ProjectIcon from "../../icons/ProjectIcon";
 
 const Dock = () => {
-  const location = useLocation();
-  const isLinkActive = (path: string) => {
-    return location.pathname === path;
-  };
   return (
     <div className="flex justify-center w-full p-1">
       <div className="flex w-full justify-around bg-base-200 p-2 rounded-2xl items-center gap-4">

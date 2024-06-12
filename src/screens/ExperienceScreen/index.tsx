@@ -1,12 +1,10 @@
-import ExperienceIcon from "../icons/ExperienceIcon";
-import clemson from "../assets/experience/clemson.png";
-import rc from "../assets/experience/rc.png";
-import hashedin from "../assets/experience/hashedin.png";
-import erp from "../assets/experience/erp.png";
+import ExperienceIcon from "../../icons/ExperienceIcon";
+import clemson from "../../assets/experience/clemson.png";
+import rc from "../../assets/experience/rc.png";
+import hashedin from "../../assets/experience/hashedin.png";
+import erp from "../../assets/experience/erp.png";
 import { useEffect } from "react";
-import Card from "../components/Card";
-import PageContainer from "../components/PageContainer";
-import { AppScreenContainer } from "../components";
+import { AppScreenContainer, Card, PageContainer } from "../../components";
 
 interface ExperienceModel {
   logo: string;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import favicon from "../../../public/favicon.png";
+import favicon from "/favicon.png";
 import BatterIcon from "../../icons/BatteryIcon";
 import { WiFiIcon } from "../../icons/system";
 

@@ -1,11 +1,13 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import ContactIcon from "../icons/ContactIcon";
-import PageContainer from "../components/PageContainer";
-import Card from "../components/Card";
+import ContactIcon from "../../icons/ContactIcon";
 import emailjs from "@emailjs/browser";
-import ToastModel from "../common/ToastModel";
-import Toast from "../components/Toast";
-import { AppScreenContainer } from "../components";
+import ToastModel from "../../common/ToastModel";
+import {
+  AppScreenContainer,
+  Card,
+  PageContainer,
+  Toast,
+} from "../../components";
 
 const successMessage =
   "Thank you for contacting me. I'll get back to you as soon as possible. :)";

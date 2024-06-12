@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import AdditionalIcon from "../icons/AdditionalIcon";
-import PageContainer from "../components/PageContainer";
-import { AppScreenContainer } from "../components";
+import AdditionalIcon from "../../icons/AdditionalIcon";
+import { AppScreenContainer, PageContainer } from "../../components";
 
 export const AdditionalScreen = () => {
   useEffect(() => {

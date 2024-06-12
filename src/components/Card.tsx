@@ -4,12 +4,10 @@ interface CardProps {
   body: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ body }) => {
+export const Card: React.FC<CardProps> = ({ body }) => {
   return (
     <div className="card bg-base-100 border border-r-8 border-b-8 border-primary">
       <div className="card-body">{body}</div>
     </div>
   );
 };
-
-export default Card;

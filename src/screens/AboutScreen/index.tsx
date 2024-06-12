@@ -4,8 +4,8 @@ import learning from "../../assets/values/learning.png";
 import work_ethic from "../../assets/values/work_ethic.png";
 import flexibility from "../../assets/values/flexibility.png";
 import integrity from "../../assets/values/intregity.png";
-import ProgrammerVector from "../../assets/ProgrammerVector";
-import AppContainer from "../AppContainer";
+import { AppScreenContainer } from "../../components";
+import ProgrammerVector from "./ProgrammerVector";
 
 interface HobbyModel {
   emoji: string;
@@ -39,7 +39,7 @@ const hobbyList: HobbyModel[] = [
   },
 ];
 
-const About: React.FC = () => {
+export const AboutScreen: React.FC = () => {
   const [name, setName] = useState<string>();
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <AppContainer
+    <AppScreenContainer
       body={
         <section className="flex flex-col items-center gap-10 py-10">
           <ProgrammerVector />
@@ -183,5 +183,3 @@ const About: React.FC = () => {
     />
   );
 };
-
-export default About;

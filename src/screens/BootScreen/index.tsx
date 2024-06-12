@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "../../public/favicon.png";
+import favicon from "/favicon.png";
 import { useNavigate } from "react-router-dom";
-import { routes } from "../common";
+import { routes } from "../../common";
 
 export const BootScreen = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const BootScreen = () => {
     <div className="fixed inset-0 bg-base-100 flex justify-center items-center">
       <div className="flex flex-col items-center gap-5">
         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-          <img src={logo} alt="App logo" />
+          <img src={favicon} alt="App logo" />
         </div>
         <progress
           className="progress progress-primary w-56"

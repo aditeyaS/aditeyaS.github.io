@@ -6,7 +6,7 @@ interface ToastProps {
   onClose: () => void;
 }
 
-const Toast: React.FC<ToastProps> = ({ data, onClose }) => {
+export const Toast: React.FC<ToastProps> = ({ data, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
@@ -26,5 +26,3 @@ const Toast: React.FC<ToastProps> = ({ data, onClose }) => {
     </div>
   );
 };
-
-export default Toast;

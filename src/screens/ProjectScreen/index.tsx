@@ -1,17 +1,15 @@
 import React from "react";
-import grow_your_x from "../assets/project/grow_your_x.png";
-import job_cred_fill from "../assets/project/job_cred_fill.png";
-import github_viewer from "../assets/project/github_viewer.png";
-import mscs_cu from "../assets/project/mscs_cu.png";
-import online_resume from "../assets/project/online_resume.png";
-import top20trending from "../assets/project/top20trending.png";
-import peoples_choice from "../assets/project/peoples_choice.png";
-import GithubIcon from "../icons/GithubIcon";
-import ProjectIcon from "../icons/ProjectIcon";
-import WebIcon from "../icons/WebIcon";
-import PageContainer from "../components/PageContainer";
-import Card from "../components/Card";
-import { AppScreenContainer } from "../components";
+import grow_your_x from "../../assets/project/grow_your_x.png";
+import job_cred_fill from "../../assets/project/job_cred_fill.png";
+import github_viewer from "../../assets/project/github_viewer.png";
+import mscs_cu from "../../assets/project/mscs_cu.png";
+import online_resume from "../../assets/project/online_resume.png";
+import top20trending from "../../assets/project/top20trending.png";
+import peoples_choice from "../../assets/project/peoples_choice.png";
+import GithubIcon from "../../icons/GithubIcon";
+import ProjectIcon from "../../icons/ProjectIcon";
+import WebIcon from "../../icons/WebIcon";
+import { AppScreenContainer, Card, PageContainer } from "../../components";
 
 interface ProjectModel {
   logo: string;

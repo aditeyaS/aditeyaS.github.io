@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { routes } from "../common";
+import { routes } from "../../common";
 
 export const PowerScreen = () => {
   const navigate = useNavigate();

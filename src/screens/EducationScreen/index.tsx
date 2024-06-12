@@ -1,11 +1,9 @@
-import clemson from "../assets/education/clemson.png";
-import aktu from "../assets/education/aktu.png";
-import bhs from "../assets/education/bhs.png";
-import EducationIcon from "../icons/EducationIcon";
+import clemson from "../../assets/education/clemson.png";
+import aktu from "../../assets/education/aktu.png";
+import bhs from "../../assets/education/bhs.png";
+import EducationIcon from "../../icons/EducationIcon";
 import React from "react";
-import PageContainer from "../components/PageContainer";
-import Card from "../components/Card";
-import { AppScreenContainer } from "../components";
+import { AppScreenContainer, Card, PageContainer } from "../../components";
 
 interface EducationModel {
   logo: string;
