@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import About from "../pages/About";
 import Experience from "../pages/Experience";
 import Education from "../pages/Education";
 import Projects from "../pages/Projects";
@@ -13,6 +12,7 @@ import ContactIcon from "../icons/ContactIcon";
 import Additional from "../pages/Additional";
 import AdditionalIcon from "../icons/AdditionalIcon";
 import ProjectIcon from "../icons/ProjectIcon";
+import About from "../components/apps/About";
 
 interface RoutesModel {
   path: string;
@@ -23,7 +23,7 @@ interface RoutesModel {
 
 const routesList: RoutesModel[] = [
   {
-    path: "/",
+    path: "/about",
     name: "About",
     element: <About />,
     icon: <ProfileIcon />,
