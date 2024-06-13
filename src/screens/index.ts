@@ -9,3 +9,4 @@ export * from "./ProjectScreen";
 export * from "./SkillScreen";
 export * from "./ContactScreen";
 export * from "./AdditionalScreen";
+export * from "./SettingsScreen";

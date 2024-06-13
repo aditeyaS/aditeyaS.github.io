@@ -10,6 +10,7 @@ import {
   LockScreen,
   PowerScreen,
   ProjectScreen,
+  SettingsScreen,
   SkillScreen,
 } from "../screens";
 import { routes } from "../common";
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: routes.ADDITIONAL,
     element: <AdditionalScreen />,
+  },
+  {
+    path: routes.SETTINGS,
+    element: <SettingsScreen />,
   },
 ]);
 

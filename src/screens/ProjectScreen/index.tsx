@@ -7,9 +7,9 @@ import online_resume from "../../assets/project/online_resume.png";
 import top20trending from "../../assets/project/top20trending.png";
 import peoples_choice from "../../assets/project/peoples_choice.png";
 import GithubIcon from "../../icons/GithubIcon";
-import ProjectIcon from "../../icons/ProjectIcon";
 import WebIcon from "../../icons/WebIcon";
 import { AppScreenContainer, Card, PageContainer } from "../../components";
+import { ProjectIcon } from "./ProjectIcon";
 
 interface ProjectModel {
   logo: string;
@@ -103,7 +103,7 @@ export const ProjectScreen: React.FC = () => {
       body={
         <PageContainer
           title="Projects"
-          icon={<ProjectIcon size="lg" />}
+          icon={<ProjectIcon />}
           pageBody={
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
               {projectList.map((project, index) => (

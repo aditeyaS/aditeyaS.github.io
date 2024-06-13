@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import CodingIcon from "../../icons/CodingIcon";
 import { AppScreenContainer, Card, PageContainer } from "../../components";
+import { SkillsIcon } from "./SkillsIcon";
 
 interface SkillModel {
   name: string;
@@ -128,7 +128,7 @@ export const SkillScreen = () => {
       body={
         <PageContainer
           title="Skills"
-          icon={<CodingIcon size="lg" />}
+          icon={<SkillsIcon />}
           pageBody={
             <div className="flex flex-col gap-2">
               <Card

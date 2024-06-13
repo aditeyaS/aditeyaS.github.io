@@ -1,10 +1,10 @@
-import ExperienceIcon from "../../icons/ExperienceIcon";
 import clemson from "../../assets/experience/clemson.png";
 import rc from "../../assets/experience/rc.png";
 import hashedin from "../../assets/experience/hashedin.png";
 import erp from "../../assets/experience/erp.png";
 import { useEffect } from "react";
 import { AppScreenContainer, Card, PageContainer } from "../../components";
+import { ExperienceIcon } from "./ExperienceIcon";
 
 interface ExperienceModel {
   logo: string;
@@ -61,7 +61,7 @@ export const ExperienceScreen = () => {
       body={
         <PageContainer
           title="Experience"
-          icon={<ExperienceIcon size="lg" />}
+          icon={<ExperienceIcon />}
           pageBody={
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
               {experienceList.map((experience, index) => (

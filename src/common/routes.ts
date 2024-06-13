@@ -10,4 +10,5 @@ export enum routes {
   SKILLS = "/skills",
   CONTACT = "/contact",
   ADDITIONAL = "/additional",
+  SETTINGS = "/settings",
 }

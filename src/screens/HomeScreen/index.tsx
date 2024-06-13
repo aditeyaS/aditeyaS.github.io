@@ -1,9 +1,11 @@
 import { routes } from "../../common";
 import { AppIcon } from "../../components";
-import AdditionalIcon from "../../icons/AdditionalIcon";
-import CodingIcon from "../../icons/CodingIcon";
-import ContactIcon from "../../icons/ContactIcon";
-import { SettingsIcon } from "../../icons/apps";
+import {
+  SettingsIcon,
+  AdditionalIcon,
+  SkillsIcon,
+  ContactIcon,
+} from "../../icons/apps";
 import Dock from "./Dock";
 import MenuBar from "./MenuBar";
 
@@ -13,21 +15,18 @@ export const HomeScreen = () => {
       <div className="fixed top-0 w-full">
         <MenuBar />
       </div>
-      <div className="fixed bottom-24 flex justify-around w-full p-1">
+      <div className="fixed bottom-24 flex justify-around w-full p-1 md:hidden">
         <div>
-          <AppIcon icon={<CodingIcon size="sm" />} url={routes.SKILLS} />
+          <AppIcon icon={<SkillsIcon />} url={routes.SKILLS} />
         </div>
         <div>
-          <AppIcon icon={<ContactIcon size="sm" />} url={routes.CONTACT} />
+          <AppIcon icon={<ContactIcon />} url={routes.CONTACT} />
         </div>
         <div>
-          <AppIcon
-            icon={<AdditionalIcon size="sm" />}
-            url={routes.ADDITIONAL}
-          />
+          <AppIcon icon={<AdditionalIcon />} url={routes.ADDITIONAL} />
         </div>
         <div>
-          <AppIcon icon={<SettingsIcon />} url={routes.SKILLS} />
+          <AppIcon icon={<SettingsIcon />} url={routes.SETTINGS} />
         </div>
       </div>
       <div className="fixed bottom-0 w-full">

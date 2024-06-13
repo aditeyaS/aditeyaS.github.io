@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import ContactIcon from "../../icons/ContactIcon";
+import { ContactIcon } from "./ContactIcon";
 import emailjs from "@emailjs/browser";
 import ToastModel from "../../common/ToastModel";
 import {
@@ -83,7 +83,7 @@ export const ContactScreen = () => {
       body={
         <PageContainer
           title="Contact"
-          icon={<ContactIcon size="lg" />}
+          icon={<ContactIcon />}
           pageBody={
             <div className="flex flex-col gap-2">
               {showToast && toastData && (

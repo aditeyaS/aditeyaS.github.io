@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import favicon from "/favicon.png";
-import BatterIcon from "../../icons/BatteryIcon";
-import { WiFiIcon } from "../../icons/system";
+import { WiFiIcon, BatterIcon } from "../../icons/system";
 
 const MenuBar: React.FC = () => {
   const [dateTime, setDateTime] = useState<string>();
@@ -50,7 +49,7 @@ const MenuBar: React.FC = () => {
         <div>
           <BatterIcon />
         </div>
-        <span className="hidden">{dateTime}</span>
+        <span className="hidden md:flex">{dateTime}</span>
       </div>
     </div>
   );

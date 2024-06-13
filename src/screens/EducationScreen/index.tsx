@@ -1,9 +1,9 @@
 import clemson from "../../assets/education/clemson.png";
 import aktu from "../../assets/education/aktu.png";
 import bhs from "../../assets/education/bhs.png";
-import EducationIcon from "../../icons/EducationIcon";
 import React from "react";
 import { AppScreenContainer, Card, PageContainer } from "../../components";
+import { EducationIcon } from "./EducationIcon";
 
 interface EducationModel {
   logo: string;
@@ -47,7 +47,7 @@ export const EducationScreen: React.FC = () => {
       body={
         <PageContainer
           title="Education"
-          icon={<EducationIcon size="lg" />}
+          icon={<EducationIcon />}
           pageBody={
             <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
               {educationList.map((education, index) => (

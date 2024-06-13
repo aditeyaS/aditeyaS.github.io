@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import AdditionalIcon from "../../icons/AdditionalIcon";
+import { AdditionalIcon } from "./AdditionalIcon";
 import { AppScreenContainer, PageContainer } from "../../components";
 
 export const AdditionalScreen = () => {
@@ -11,7 +11,7 @@ export const AdditionalScreen = () => {
       body={
         <PageContainer
           title="Additional"
-          icon={<AdditionalIcon size="lg" />}
+          icon={<AdditionalIcon />}
           pageBody={
             <div className="flex flex-col gap-2">
               <div className="flex gap-4 justify-center">
