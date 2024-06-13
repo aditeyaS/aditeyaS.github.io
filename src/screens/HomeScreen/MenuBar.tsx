@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import favicon from "/favicon.png";
-import { WiFiIcon, BatterIcon, ControlCenterIcon } from "../../icons/system";
+import {
+  WiFiIcon,
+  BatterIcon,
+  ControlCenterIcon,
+  BluetoothIcon,
+} from "../../icons/system";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../common";
+import { ControlCenterDropdown } from "./ControlCenterDropdown";
 
 const MenuBar: React.FC = () => {
   const navigate = useNavigate();
@@ -30,7 +36,7 @@ const MenuBar: React.FC = () => {
     <div className="flex justify-between md:bg-base-200 text-md w-full py-1 items-center px-4 z-10">
       <div>
         <div className="hidden md:flex items-center gap-2">
-          <div className="dropdown">
+          <div className="dropdown dropdown-bottom">
             <div
               tabIndex={0}
               role="button"
@@ -72,16 +78,27 @@ const MenuBar: React.FC = () => {
         </span>
       </div>
       <div className="flex gap-2">
+        <div className="hidden md:flex">
+          <BluetoothIcon />
+        </div>
         <div>
           <WiFiIcon />
         </div>
         <div>
           <BatterIcon />
         </div>
-        <div className="hidden md:flex">
-          <ControlCenterIcon />
+        <div className="hidden md:flex dropdown dropdown-bottom dropdown-end">
+          <div tabIndex={0} role="button">
+            <ControlCenterIcon />
+          </div>
+          <div
+            tabIndex={0}
+            className="dropdown-content z-[1] bg-base-200 bg-opacity-40 p-2 rounded-box w-80"
+          >
+            <ControlCenterDropdown />
+          </div>
         </div>
-        <span className="hidden md:flex">{dateTime}</span>
+        <span className="hidden md:flex w-40">{dateTime}</span>
       </div>
     </div>
   );
