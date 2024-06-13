@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import favicon from "/favicon.png";
-import { WiFiIcon, BatterIcon } from "../../icons/system";
+import { WiFiIcon, BatterIcon, ControlCenterIcon } from "../../icons/system";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../../common";
 
 const MenuBar: React.FC = () => {
+  const navigate = useNavigate();
   const [dateTime, setDateTime] = useState<string>();
 
   useEffect(() => {
@@ -27,9 +30,35 @@ const MenuBar: React.FC = () => {
     <div className="flex justify-between md:bg-base-200 text-md w-full py-1 items-center px-4 z-10">
       <div>
         <div className="hidden md:flex items-center gap-2">
-          <button className="w-6 h-6">
-            <img src={favicon} />
-          </button>
+          <div className="dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="w-6 h-4 flex justify-center items-center"
+            >
+              <img src={favicon} />
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] bg-base-200 bg-opacity-40 p-2 shadow text-sm rounded-box w-52"
+            >
+              <li>
+                <button className="py-1" onClick={() => navigate(routes.ABOUT)}>
+                  About Aditeya
+                </button>
+              </li>
+              <li>
+                <button className="py-1" onClick={() => navigate(routes.LOCK)}>
+                  Lock screen
+                </button>
+              </li>
+              <li>
+                <button className="py-1" onClick={() => navigate(routes.POWER)}>
+                  Shut down...
+                </button>
+              </li>
+            </ul>
+          </div>
           <span>Finder</span>
           <span>File</span>
           <span>Edit</span>
@@ -48,6 +77,9 @@ const MenuBar: React.FC = () => {
         </div>
         <div>
           <BatterIcon />
+        </div>
+        <div className="hidden md:flex">
+          <ControlCenterIcon />
         </div>
         <span className="hidden md:flex">{dateTime}</span>
       </div>

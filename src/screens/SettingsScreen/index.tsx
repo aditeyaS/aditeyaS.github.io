@@ -39,7 +39,10 @@ export const SettingsScreen = () => {
       body={
         <section className="py-10">
           <div className="flex justify-center flex flex-col items-center py-10 gap-4">
-            <div className="motion-safe:animate-spin">
+            <div
+              className="motion-safe:animate-spin"
+              style={{ animationDuration: "3s" }}
+            >
               <SettingsIcon />
             </div>
             <h1 className="text-primary text-4xl md:text-7xl font-title">

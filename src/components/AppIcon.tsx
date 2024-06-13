@@ -14,7 +14,10 @@ export const AppIcon: React.FC<AppIconProps> = ({ url, icon }) => {
     navigate(url);
   };
   return (
-    <button className="bg-green-500 rounded-md p-2" onClick={onClick}>
+    <button
+      className="bg-green-500 rounded-md p-2 transition duration-200 md:hover:scale-125"
+      onClick={onClick}
+    >
       {icon}
     </button>
   );

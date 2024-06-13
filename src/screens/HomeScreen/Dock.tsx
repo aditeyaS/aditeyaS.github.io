@@ -14,7 +14,7 @@ import {
 const Dock = () => {
   return (
     <div className="flex justify-center w-full p-1">
-      <div className="flex w-full md:w-fit justify-around bg-base-200 p-2 rounded-2xl items-center gap-4">
+      <div className="flex w-full md:w-fit justify-around bg-base-200 bg-opacity-40 p-2 rounded-2xl items-center gap-4">
         <div>
           <AppIcon icon={<AboutIcon />} url={routes.ABOUT} />
         </div>
