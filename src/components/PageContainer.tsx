@@ -6,7 +6,7 @@ interface PageContainerProps {
   pageBody: React.ReactNode;
 }
 
-const PageContainer: React.FC<PageContainerProps> = ({
+export const PageContainer: React.FC<PageContainerProps> = ({
   title,
   icon,
   pageBody,
@@ -24,5 +24,3 @@ const PageContainer: React.FC<PageContainerProps> = ({
     </section>
   );
 };
-
-export default PageContainer;
