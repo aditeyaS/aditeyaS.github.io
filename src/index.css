@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html[data-theme='dark'] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+  }
+  html[data-theme='light'] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+  }
+  html[data-accent='blue'] {
+    --primary: 205 100% 50%;
+  }
+  html[data-accent='red'] {
+    --primary: 10 85% 55%;
+  }
+   html[data-accent='green'] {
+    --primary: 145 63% 49%;
+  }
+}
+
+@layer base {
+  * {
+    cursor: default;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

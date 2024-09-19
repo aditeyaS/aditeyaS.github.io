@@ -1,0 +1,10 @@
+export { AWS } from "./aws";
+export { AmazonAPIGateway } from "./amazonapigateway";
+export { AmazonCloudwatch } from "./amazoncloudwatch";
+export { AmazonDynamoDB } from "./amazondynamodb";
+export { AmazonEC2 } from "./amazonec2";
+export { AmazonRDS } from "./amazonrds";
+export { AWSLambda } from "./awslambda";
+export {} from "";
+export {} from "";
+export {} from "";
