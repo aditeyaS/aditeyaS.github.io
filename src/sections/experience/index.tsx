@@ -6,7 +6,7 @@ import HashedInLogo from "../../assets/experience/hashedin.png";
 import ClemsonLogo from "../../assets/experience/clemson.png";
 import ERPLogo from "../../assets/experience/erp.png";
 import { SectionContainer } from "../../components/layout/section-container";
-import { H1, H2 } from "../../components/ui";
+import { H1, H2, TXT, TXT2 } from "../../components/ui";
 import { Icon } from "./icon";
 import { ExperienceDetails } from "./experience-detail";
 
@@ -146,29 +146,27 @@ export const Experience: React.FC = () => {
                 <img className="w-12 h-12" srcSet={experience.logo} />
                 <div className="grow">
                   <H2>{experience.position}</H2>
-                  <div className="flex gap-1 text-sm font-thin">
+                  <div className="flex gap-1">
                     <a
-                      className="underline hover:text-primary"
+                      className="hover:underline"
                       target="_blank"
                       href={experience.organizationLink}
                     >
-                      {experience.organization}
+                      <TXT>{experience.organization}</TXT>
                     </a>
-                    <span>•</span>
-                    <span>{experience.positionType}</span>
+                    <TXT>•</TXT>
+                    <TXT>{experience.positionType}</TXT>
                   </div>
-                  <div className="flex gap-1 text-sm font-thin text-foreground/70">
-                    <span>{`${fromString} - ${toString}`}</span>
-                    <span>•</span>
-                    <span>{diffString}</span>
+                  <div className="flex gap-1">
+                    <TXT2>{`${fromString} - ${toString}`}</TXT2>
+                    <TXT2>•</TXT2>
+                    <TXT2>{diffString}</TXT2>
                   </div>
-                  <div className="flex gap-1 text-sm font-thin items-center text-foreground/70">
-                    <span>{experience.location}</span>
-                    <span className="text-xl">
-                      {experience.locationCountry}
-                    </span>
-                    <span>•</span>
-                    <span>{experience.locationType}</span>
+                  <div className="flex gap-1 items-center">
+                    <TXT2>{experience.location}</TXT2>
+                    <TXT2>{experience.locationCountry}</TXT2>
+                    <TXT2>•</TXT2>
+                    <TXT2>{experience.locationType}</TXT2>
                   </div>
                   {experience.responsibilities.length !== 0 && (
                     <ExperienceDetails list={experience.responsibilities} />

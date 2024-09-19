@@ -3,7 +3,7 @@ import { getMonthName } from "../../lib/utils";
 import ClemsonLogo from "../../assets/education/clemson.png";
 import AktuLogo from "../../assets/education/aktu.png";
 import { SectionContainer } from "../../components/layout/section-container";
-import { H1, H2 } from "../../components/ui";
+import { H1, H2, TXT, TXT2 } from "../../components/ui";
 import { Icon } from "./icon";
 
 type EducationType = {
@@ -61,23 +61,21 @@ export const Education: React.FC = () => {
                 <img className="w-12 h-12" srcSet={experience.logo} />
                 <div>
                   <H2>{experience.degree}</H2>
-                  <div className="flex gap-1 text-sm font-thin">
+                  <div className="flex gap-1">
                     <a
-                      className="underline hover:text-primary"
+                      className="hover:underline"
                       target="_blank"
                       href={experience.instituteLink}
                     >
-                      {experience.institute}
+                      <TXT>{experience.institute}</TXT>
                     </a>
                   </div>
-                  <div className="flex gap-1 text-sm font-thin text-foreground/70">
-                    <span>{`${fromString} - ${toString}`}</span>
-                  </div>
-                  <div className="flex gap-1 font-thin text-foreground/70 items-center">
-                    <span className="text-sm">{experience.location}</span>
-                    <span className="text-xl">
-                      {experience.locationCountry}
-                    </span>
+                  <TXT2>{`${fromString} - ${toString}`}</TXT2>
+
+                  <div className="flex gap-1 items-center">
+                    <TXT2>
+                      {experience.location + " " + experience.locationCountry}
+                    </TXT2>
                   </div>
                 </div>
               </div>
