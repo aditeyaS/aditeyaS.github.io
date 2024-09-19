@@ -4,9 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        code: ["Source Code Pro", "monospace"],
-        normal: ["Montserrat"],
-        description: ["Roboto"],
+        code: ["Roboto Mono", "Courier", "monospace"],
+        normal: ["Montserrat", "Arial", "Helvetica", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

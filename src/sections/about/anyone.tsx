@@ -8,26 +8,22 @@ import {
   Travel,
   Unsplash,
 } from "../../icons";
+import { TXT, TXT2 } from "../../components/ui";
 
 export const Anyone: React.FC = () => {
   return (
-    <div className="font-thin flex flex-col gap-2">
+    <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-1 border border-primary rounded-xl p-2 lg:p-4">
         <Quote />
-        <blockquote className="italic text-sm">
+        <blockquote className="font-code font-light">
           “Always believe in yourself. No matter who’s around you being negative
           or thrusting negative energy at you, totally block it off. Because
           whatever you believe, you become.”
         </blockquote>
-        <div className="text-xs">— Michael Jackson</div>
+        <TXT2>— Michael Jackson</TXT2>
       </div>
-      <span>
-        Passionate full-stack developer with a knack for building scalable web
-        apps and APIs, crafting seamless user experiences, and driving
-        innovation through automation.
-      </span>
-      <div className="flex gap-1 items-center text-sm flex-wrap">
-        <span>Hobbies:</span>
+      <div className="flex gap-1 items-center flex-wrap">
+        <TXT>Hobbies:</TXT>
         <div
           style={{ borderColor: "#6F4E37", color: "#6F4E37" }}
           className="px-1 rounded-lg border flex items-center gap-1"

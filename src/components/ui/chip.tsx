@@ -5,7 +5,7 @@ interface ChipProps extends React.HTMLAttributes<HTMLButtonElement> {
 export const Chip: React.FC<ChipProps> = ({ children, selected, ...props }) => {
   return (
     <button
-      className={`border border-primary px-2 py-0.5 rounded-xl font-thin  ${
+      className={`border border-primary px-2 py-0.5 rounded-xl font-light text-sm ${
         selected ? "bg-primary" : "hover:bg-primary/50"
       }`}
       {...props}

@@ -19,7 +19,7 @@ export const About: React.FC = () => {
           <Icon />
           <H1>About</H1>
         </div>
-        <div className="flex gap-1 text-xs items-center">
+        <div className="flex gap-1 items-center">
           <span>For</span>
           <Chip
             onClick={() => setViewerType("anyone")}

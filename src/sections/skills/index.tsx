@@ -419,7 +419,7 @@ export const Skills: React.FC = () => {
           <Icon />
           <H1>Skills</H1>
         </div>
-        <div className="flex gap-1 text-xs items-center flex-wrap">
+        <div className="flex gap-1 items-center flex-wrap">
           <Chip
             selected={viewerType === "languages"}
             onClick={() => setViewerType("languages")}
@@ -457,7 +457,7 @@ export const Skills: React.FC = () => {
             others
           </Chip>
         </div>
-        <div className="text-sm font-code flex gap-1 flex-wrap justify-stretch">
+        <div className="font-thin font-code flex gap-1 flex-wrap justify-stretch">
           {viewerType === "languages" &&
             languageList.map((l, index) => (
               <div

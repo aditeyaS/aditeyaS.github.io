@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { H2 } from "../ui";
 
 interface ModalContextType {
   open: boolean;
@@ -126,19 +127,11 @@ export const ModalBody = ({
               damping: 15,
             }}
           >
-            <div className="flex justify-between items-center">
-              <h2 className="text-lg cursor-pointer font-thin">{title}</h2>
+            <div className="flex justify-between items-center py-2">
+              <H2>{title}</H2>
               <CloseIcon />
             </div>
             <div>{children}</div>
-            <div className="flex justify-end">
-              <button
-                onClick={() => setOpen(false)}
-                className="bg-primary px-2 py-0.5 rounded font-thin text-sm"
-              >
-                Close
-              </button>
-            </div>
           </motion.div>
         </motion.div>
       )}
@@ -176,7 +169,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-4 w-4 stroke-foreground group-hover:scale-125 group-hover:rotate-3 transition duration-200"
+        className="h-4 w-4 stroke-primary group-hover:scale-125 group-hover:rotate-3 transition duration-200"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />

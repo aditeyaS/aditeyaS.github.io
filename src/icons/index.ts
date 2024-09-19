@@ -12,6 +12,8 @@ export { Hiking } from "./hiking";
 export { Trakt } from "./trakt";
 export { Travel } from "./travel";
 export { Quote } from "./quote";
+export { Resume } from "./resume";
+export { Copy } from "./copy";
 export * from "./be";
 export * from "./cloud";
 export * from "./fe";
