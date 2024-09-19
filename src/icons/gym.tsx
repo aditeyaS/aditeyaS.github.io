@@ -3,7 +3,7 @@ import React from "react";
 export const Gym: React.FC = () => {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-5 w-5"
       height="24px"
       viewBox="0 -960 960 960"
       fill="#C925D1"

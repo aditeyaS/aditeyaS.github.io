@@ -41,7 +41,7 @@ export const Education: React.FC = () => {
     },
   ];
   return (
-    <SectionContainer>
+    <SectionContainer sectionIndex={4}>
       <div className="flex flex-col gap-2">
         <div className="flex gap-2 items-center">
           <Icon />

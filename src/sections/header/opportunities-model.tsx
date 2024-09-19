@@ -49,7 +49,7 @@ export const OpportunitiesModel: React.FC = () => {
             <a
               href={USER_RESUME_URL}
               target="_blank"
-              className="cursor-pointer text-primary border border-primary px-2 py-1 flex gap-1 items-center rounded hover:underline"
+              className="cursor-pointer text-sm border border-primary px-2 py-1 flex gap-1 items-center rounded hover:bg-primary"
             >
               <Resume />
               View Resume

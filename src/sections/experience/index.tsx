@@ -112,7 +112,7 @@ export const Experience: React.FC = () => {
   const todaysDate = new Date();
 
   return (
-    <SectionContainer>
+    <SectionContainer sectionIndex={2}>
       <div className="flex flex-col gap-2">
         <div className="flex gap-2 items-center">
           <Icon />

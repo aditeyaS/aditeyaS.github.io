@@ -413,7 +413,7 @@ export const Skills: React.FC = () => {
     "languages" | "fe" | "be" | "cloud" | "testing" | "others"
   >("languages");
   return (
-    <SectionContainer>
+    <SectionContainer sectionIndex={3}>
       <section className="flex flex-col gap-2">
         <div className="flex gap-2 items-center">
           <Icon />

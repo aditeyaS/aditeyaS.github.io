@@ -24,37 +24,28 @@ export const Anyone: React.FC = () => {
       </div>
       <div className="flex gap-1 items-center flex-wrap">
         <TXT>Hobbies:</TXT>
-        <div
-          style={{ borderColor: "#6F4E37", color: "#6F4E37" }}
-          className="px-1 rounded-lg border flex items-center gap-1"
-        >
-          <Hiking /> Hiking
+        <div className="px-1 flex items-center gap-0.5 text-[#6F4E37]">
+          <Hiking />
+          Hiking
         </div>
-        <a
-          style={{ borderColor: "#1DB954", color: "#1DB954" }}
-          className="px-1 rounded-lg border flex items-center gap-1 hover:underline cursor-pointer"
-        >
+        <TXT>•</TXT>
+        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#1DB954]">
           <Spotify /> Music
         </a>
-        <div
-          style={{ borderColor: "#5A45FF", color: "#5A45FF" }}
-          className="px-1 rounded-lg border flex items-center gap-1"
-        >
+        <TXT>•</TXT>
+        <div className="px-1 flex items-center gap-0.5 text-[#5A45FF]">
           <Travel /> Traveling
         </div>
-        <div
-          style={{ borderColor: "#C925D1", color: "#C925D1" }}
-          className="px-1 rounded-lg border flex items-center gap-1"
-        >
+        <TXT>•</TXT>
+        <div className="px-1 flex items-center gap-0.5 text-[#C925D1]">
           <Gym /> Gym
         </div>
-        <a className="px-1 rounded-lg border border-foreground flex items-center gap-1 hover:underline cursor-pointer">
+        <TXT>•</TXT>
+        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer ">
           <Unsplash /> Photography
         </a>
-        <a
-          style={{ borderColor: "#ED1C24", color: "#ED1C24" }}
-          className="px-1 rounded-lg border flex items-center gap-1 hover:underline"
-        >
+        <TXT>•</TXT>
+        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#ED1C24]">
           <Trakt /> Entertainment
         </a>
       </div>

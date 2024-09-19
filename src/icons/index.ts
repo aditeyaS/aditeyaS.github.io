@@ -13,7 +13,7 @@ export { Trakt } from "./trakt";
 export { Travel } from "./travel";
 export { Quote } from "./quote";
 export { Resume } from "./resume";
-export { Copy } from "./copy";
+export { LeetCode } from "./leetcode";
 export * from "./be";
 export * from "./cloud";
 export * from "./fe";

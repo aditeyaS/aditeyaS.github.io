@@ -1,6 +1,6 @@
 import React from "react";
 import { TXT } from "../../components/ui";
-import { Copy } from "../../icons";
+import { Email, LinkedIn, Resume } from "../../icons";
 import {
   USER_EMAIL,
   USER_LINKEDIN_URL,
@@ -8,12 +8,8 @@ import {
 } from "../../user-data";
 
 export const Recruiter: React.FC = () => {
-  const onCopyEmail = () => {
-    navigator.clipboard.writeText(USER_EMAIL);
-  };
-
   return (
-    <div className=" flex flex-col gap-2">
+    <div className="flex flex-col gap-2">
       <TXT>
         Full Stack Developer with experience in building scalable web
         applications and serverless architectures using AWS, React, and various
@@ -35,36 +31,28 @@ export const Recruiter: React.FC = () => {
           </TXT>
         </li>
       </ul>
-      <div className="flex gap-4">
+      <div className="flex gap-2">
         <a
           href={USER_RESUME_URL}
           target="_blank"
-          className="underline underline-offset-4 hover:text-primary cursor-pointer"
+          className="text-[#4285F4] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
         >
-          <TXT>Resume</TXT>
+          <Resume />
         </a>
         <a
           href={USER_LINKEDIN_URL}
           target="_blank"
-          className="underline underline-offset-4 hover:text-primary cursor-pointer"
+          className="text-[#0e76a8] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
         >
-          <TXT>LinkedIn</TXT>
+          <LinkedIn />
         </a>
-        <div className="flex gap-1 items-center">
-          <a
-            href={`mailto:${USER_EMAIL}`}
-            target="_blank"
-            className="underline underline-offset-4 hover:text-primary cursor-pointer"
-          >
-            <TXT>Email</TXT>
-          </a>
-          <button
-            className="hover:bg-foreground/30 p-1 rounded-full"
-            onClick={onCopyEmail}
-          >
-            <Copy />
-          </button>
-        </div>
+        <a
+          href={`mailto:${USER_EMAIL}`}
+          target="_blank"
+          className="text-[#c71610] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
+        >
+          <Email />
+        </a>
       </div>
     </div>
   );

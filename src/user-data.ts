@@ -3,3 +3,4 @@ export const USER_EMAIL = "aditeyaaaa@gmail.com";
 export const USER_GITHUB_URL = "https://www.github.com/aditeyaS";
 export const USER_TWITTER_URL = "https://www.x.com/aditeyaaaa";
 export const USER_RESUME_URL = "";
+export const USER_LEETCODE_LINK = "https://leetcode.com/u/aditeyaaaa/";
