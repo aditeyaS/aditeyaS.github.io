@@ -419,7 +419,7 @@ export const Skills: React.FC = () => {
           <Icon />
           <H1>Skills</H1>
         </div>
-        <div className="flex gap-1 text-xs items-center flex-nowrap">
+        <div className="flex gap-1 text-xs items-center flex-wrap">
           <Chip
             selected={viewerType === "languages"}
             onClick={() => setViewerType("languages")}

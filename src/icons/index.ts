@@ -11,6 +11,7 @@ export { Gym } from "./gym";
 export { Hiking } from "./hiking";
 export { Trakt } from "./trakt";
 export { Travel } from "./travel";
+export { Quote } from "./quote";
 export * from "./be";
 export * from "./cloud";
 export * from "./fe";
