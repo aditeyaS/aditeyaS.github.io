@@ -80,6 +80,7 @@ import {
 import { SectionContainer } from "../../components/layout/section-container";
 import { Chip, H1 } from "../../components/ui";
 import { Icon } from "./icon";
+import { motion } from "framer-motion";
 
 type SkillType = {
   name: string;
@@ -460,64 +461,82 @@ export const Skills: React.FC = () => {
         <div className="font-thin font-code flex gap-1 flex-wrap justify-stretch">
           {viewerType === "languages" &&
             languageList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-language-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
           {viewerType === "fe" &&
             feList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-fe-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
           {viewerType === "be" &&
             beList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-be-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
           {viewerType === "cloud" &&
             cloudList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-cloud-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
 
           {viewerType === "testing" &&
             testingList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-testing-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
           {viewerType === "others" &&
             othersList.map((l, index) => (
-              <div
+              <motion.div
                 key={`skill-others-${index}`}
                 className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
                 {l.name}
-              </div>
+              </motion.div>
             ))}
         </div>
       </section>

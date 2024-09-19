@@ -6,6 +6,31 @@ import {
   USER_LINKEDIN_URL,
   USER_RESUME_URL,
 } from "../../user-data";
+import { MagneticLinks } from "./magnetic-links";
+
+type Link = {
+  icon: React.ReactNode;
+  link: string;
+  color: string;
+};
+
+const recruiterLinks: Link[] = [
+  {
+    icon: <Resume />,
+    link: USER_RESUME_URL,
+    color: "#4285F4",
+  },
+  {
+    icon: <LinkedIn />,
+    link: USER_LINKEDIN_URL,
+    color: "#0e76a8",
+  },
+  {
+    icon: <Email />,
+    link: `mailto:${USER_EMAIL}`,
+    color: "#c71610",
+  },
+];
 
 export const Recruiter: React.FC = () => {
   return (
@@ -32,27 +57,14 @@ export const Recruiter: React.FC = () => {
         </li>
       </ul>
       <div className="flex gap-2">
-        <a
-          href={USER_RESUME_URL}
-          target="_blank"
-          className="text-[#4285F4] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
-        >
-          <Resume />
-        </a>
-        <a
-          href={USER_LINKEDIN_URL}
-          target="_blank"
-          className="text-[#0e76a8] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
-        >
-          <LinkedIn />
-        </a>
-        <a
-          href={`mailto:${USER_EMAIL}`}
-          target="_blank"
-          className="text-[#c71610] cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
-        >
-          <Email />
-        </a>
+        {recruiterLinks.map((v, index) => (
+          <MagneticLinks
+            key={`recruiter-link-${index}`}
+            icon={v.icon}
+            color={v.color}
+            link={v.link}
+          />
+        ))}
       </div>
     </div>
   );

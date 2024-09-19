@@ -12,18 +12,17 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({
 }) => {
   return (
     <motion.section
-      className="p-2 lg:p-4 rounded bg-foreground/10 hover:shadow hover:shadow-foreground/20"
+      className="p-2 lg:p-4 rounded-xl bg-foreground/10 hover:shadow hover:shadow-foreground/20"
       initial={{
+        scale: 0.9,
         rotate: sectionIndex % 2 === 0 ? 1 : -1,
-        x: sectionIndex % 2 === 0 ? 10 : -10,
       }}
       whileInView={{
+        scale: 1,
         rotate: 0,
-        x: 0,
-        transition: {
-          duration: 1,
-        },
       }}
+      viewport={{ amount: 0.2 }}
+      transition={{ ease: "easeOut", duration: 0.8 }}
     >
       {children}
     </motion.section>

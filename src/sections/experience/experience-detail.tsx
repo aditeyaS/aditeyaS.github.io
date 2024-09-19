@@ -14,7 +14,7 @@ export const ExperienceDetails: React.FC<ExperienceDetailsProps> = ({
   };
   return (
     <>
-      <ul className="list-disc list-inside">
+      <ul className="list-disc lg:list-inside">
         {list.slice(0, show ? list.length : 1).map((item, index) => (
           <li key={index}>
             <TXT className="font-light">{item}</TXT>

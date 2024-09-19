@@ -9,6 +9,7 @@ import {
   Unsplash,
 } from "../../icons";
 import { TXT, TXT2 } from "../../components/ui";
+import { MagneticHover } from "../../components/layout/magnetic-hover";
 
 export const Anyone: React.FC = () => {
   return (
@@ -24,30 +25,42 @@ export const Anyone: React.FC = () => {
       </div>
       <div className="flex gap-1 items-center flex-wrap">
         <TXT>Hobbies:</TXT>
-        <div className="px-1 flex items-center gap-0.5 text-[#6F4E37]">
-          <Hiking />
-          Hiking
-        </div>
+        <MagneticHover>
+          <div className="px-1 flex items-center gap-0.5 text-[#6F4E37]">
+            <Hiking />
+            Hiking
+          </div>
+        </MagneticHover>
         <TXT>•</TXT>
-        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#1DB954]">
-          <Spotify /> Music
-        </a>
+        <MagneticHover>
+          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#1DB954]">
+            <Spotify /> Music
+          </a>
+        </MagneticHover>
         <TXT>•</TXT>
-        <div className="px-1 flex items-center gap-0.5 text-[#5A45FF]">
-          <Travel /> Traveling
-        </div>
+        <MagneticHover>
+          <div className="px-1 flex items-center gap-0.5 text-[#5A45FF]">
+            <Travel /> Traveling
+          </div>
+        </MagneticHover>
         <TXT>•</TXT>
-        <div className="px-1 flex items-center gap-0.5 text-[#C925D1]">
-          <Gym /> Gym
-        </div>
+        <MagneticHover>
+          <div className="px-1 flex items-center gap-0.5 text-[#C925D1]">
+            <Gym /> Gym
+          </div>
+        </MagneticHover>
         <TXT>•</TXT>
-        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer ">
-          <Unsplash /> Photography
-        </a>
+        <MagneticHover>
+          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer ">
+            <Unsplash /> Photography
+          </a>
+        </MagneticHover>
         <TXT>•</TXT>
-        <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#ED1C24]">
-          <Trakt /> Entertainment
-        </a>
+        <MagneticHover>
+          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#ED1C24]">
+            <Trakt /> Entertainment
+          </a>
+        </MagneticHover>
       </div>
     </div>
   );
