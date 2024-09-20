@@ -3,9 +3,9 @@ import React from "react";
 export const Twitter: React.FC = () => {
   return (
     <svg
-      className="w-5 h-5 stroke-foreground"
+      className="w-5 h-5"
+      fill="currentColor"
       viewBox="0 0 24 24"
-      fill="none"
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"

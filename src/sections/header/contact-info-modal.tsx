@@ -18,7 +18,7 @@ type Social = {
 const socialList: Social[] = [
   {
     name: USER_EMAIL,
-    url: `mailto:${USER_EMAIL}"`,
+    url: `mailto:${USER_EMAIL}`,
     icon: <Email />,
   },
   {

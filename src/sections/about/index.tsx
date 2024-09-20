@@ -6,14 +6,15 @@ import { Anyone } from "./anyone";
 import { Recruiter } from "./recruiter";
 import { Manager } from "./manager";
 import { Engineer } from "./engineer";
+import SectionProps from "../../types/section-props";
 
-export const About: React.FC = () => {
+export const About: React.FC<SectionProps> = ({ sectionIndex }) => {
   const [viewerType, setViewerType] = useState<
     "anyone" | "recruiter" | "manager" | "engineer"
   >("anyone");
 
   return (
-    <SectionContainer sectionIndex={1}>
+    <SectionContainer sectionIndex={sectionIndex}>
       <div className="flex flex-col gap-4">
         <div className="flex gap-2 items-center">
           <Icon />

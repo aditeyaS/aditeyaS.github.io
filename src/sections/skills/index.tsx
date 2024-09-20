@@ -76,11 +76,13 @@ import {
   Render,
   Vercel,
   Zod,
+  FramerMotion,
 } from "../../icons";
 import { SectionContainer } from "../../components/layout/section-container";
-import { Chip, H1 } from "../../components/ui";
+import { Chip, H1, TXT } from "../../components/ui";
 import { Icon } from "./icon";
 import { motion } from "framer-motion";
+import SectionProps from "../../types/section-props";
 
 type SkillType = {
   name: string;
@@ -148,6 +150,10 @@ const feList: SkillType[] = [
     icon: <TailwindCss />,
   },
   {
+    name: "Framer Motion",
+    icon: <FramerMotion />,
+  },
+  {
     name: "Bootstrap",
     icon: <Bootstrap />,
   },
@@ -184,12 +190,16 @@ const feList: SkillType[] = [
     icon: <DaisyUi />,
   },
   {
-    name: "Axios",
-    icon: <Axios />,
-  },
-  {
     name: "MUI",
     icon: <MUI />,
+  },
+  {
+    name: "shadcn/ui",
+    icon: <ShadcnUI />,
+  },
+  {
+    name: "Axios",
+    icon: <Axios />,
   },
   {
     name: "NgRx",
@@ -198,18 +208,6 @@ const feList: SkillType[] = [
   {
     name: "Chart.js",
     icon: <ChartJs />,
-  },
-  {
-    name: "Vite",
-    icon: <Vite />,
-  },
-  {
-    name: "shadcn/ui",
-    icon: <ShadcnUI />,
-  },
-  {
-    name: "Webpack",
-    icon: <Webpack />,
   },
   {
     name: "Autoprefixer",
@@ -222,6 +220,14 @@ const feList: SkillType[] = [
   {
     name: "Redux-Saga",
     icon: <ReduxSaga />,
+  },
+  {
+    name: "Vite",
+    icon: <Vite />,
+  },
+  {
+    name: "Webpack",
+    icon: <Webpack />,
   },
 ];
 
@@ -320,24 +326,16 @@ const testingList: SkillType[] = [
 
 const othersList: SkillType[] = [
   {
+    name: "Docker",
+    icon: <Docker />,
+  },
+  {
     name: "Android Development (Java)",
     icon: <AndroidStudio />,
   },
   {
-    name: "npm",
-    icon: <NPM />,
-  },
-  {
     name: "Zod",
     icon: <Zod />,
-  },
-  {
-    name: "Vercel",
-    icon: <Vercel />,
-  },
-  {
-    name: "Render",
-    icon: <Render />,
   },
   {
     name: "Qt",
@@ -388,10 +386,6 @@ const othersList: SkillType[] = [
     icon: <ChromeWebStore />,
   },
   {
-    name: "Docker",
-    icon: <Docker />,
-  },
-  {
     name: "ESLint",
     icon: <ESLint />,
   },
@@ -407,14 +401,26 @@ const othersList: SkillType[] = [
     name: "Linux",
     icon: <Linux />,
   },
+  {
+    name: "npm",
+    icon: <NPM />,
+  },
+  {
+    name: "Vercel",
+    icon: <Vercel />,
+  },
+  {
+    name: "Render",
+    icon: <Render />,
+  },
 ];
 
-export const Skills: React.FC = () => {
+export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
   const [viewerType, setViewerType] = useState<
     "languages" | "fe" | "be" | "cloud" | "testing" | "others"
   >("languages");
   return (
-    <SectionContainer sectionIndex={3}>
+    <SectionContainer sectionIndex={sectionIndex}>
       <section className="flex flex-col gap-2">
         <div className="flex gap-2 items-center">
           <Icon />
@@ -458,57 +464,57 @@ export const Skills: React.FC = () => {
             others
           </Chip>
         </div>
-        <div className="font-thin font-code flex gap-1 flex-wrap justify-stretch">
+        <div className="font-light font-code flex gap-1 flex-wrap justify-stretch">
           {viewerType === "languages" &&
             languageList.map((l, index) => (
               <motion.div
                 key={`skill-language-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "fe" &&
             feList.map((l, index) => (
               <motion.div
                 key={`skill-fe-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "be" &&
             beList.map((l, index) => (
               <motion.div
                 key={`skill-be-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "cloud" &&
             cloudList.map((l, index) => (
               <motion.div
                 key={`skill-cloud-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
 
@@ -516,26 +522,26 @@ export const Skills: React.FC = () => {
             testingList.map((l, index) => (
               <motion.div
                 key={`skill-testing-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "others" &&
             othersList.map((l, index) => (
               <motion.div
                 key={`skill-others-${index}`}
-                className="px-2 py-1 rounded flex items-center gap-2 hover:bg-background"
-                initial={{ opacity: 0, x: -100, scale: 0.5 }}
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
                 {l.icon}
-                {l.name}
+                <TXT className="text-foreground text-sm">{l.name}</TXT>
               </motion.div>
             ))}
         </div>

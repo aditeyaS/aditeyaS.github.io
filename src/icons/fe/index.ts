@@ -20,3 +20,4 @@ export { ChartJs } from "./chart-js";
 export { ReduxSaga } from "./redux-saga";
 export { ShadcnUI } from "./shadcn";
 export { Redux } from "./redux";
+export { FramerMotion } from "./framer-motion";

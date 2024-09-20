@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TXT, TXT2 } from "../../components/ui";
+import { TXT2 } from "../../components/ui";
 import { motion } from "framer-motion";
 
 interface ExperienceDetailsProps {
@@ -44,7 +44,7 @@ export const ExperienceDetails: React.FC<ExperienceDetailsProps> = ({
         >
           {list.map((item, index) => (
             <motion.li key={index} variants={LIST_ITEM_VARIANTS}>
-              <TXT className="font-light">{item}</TXT>
+              <TXT2 className="text-sm font-light">{item}</TXT2>
             </motion.li>
           ))}
         </motion.ul>

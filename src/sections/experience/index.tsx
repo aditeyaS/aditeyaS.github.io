@@ -9,6 +9,7 @@ import { SectionContainer } from "../../components/layout/section-container";
 import { H1, H2, TXT, TXT2 } from "../../components/ui";
 import { Icon } from "./icon";
 import { ExperienceDetails } from "./experience-detail";
+import SectionProps from "../../types/section-props";
 
 type ExperienceType = {
   position: string;
@@ -108,11 +109,11 @@ const experienceList: ExperienceType[] = [
   },
 ];
 
-export const Experience: React.FC = () => {
+export const Experience: React.FC<SectionProps> = ({ sectionIndex }) => {
   const todaysDate = new Date();
 
   return (
-    <SectionContainer sectionIndex={2}>
+    <SectionContainer sectionIndex={sectionIndex}>
       <div className="flex flex-col gap-2">
         <div className="flex gap-2 items-center">
           <Icon />
@@ -142,11 +143,14 @@ export const Experience: React.FC = () => {
               diffString = diffString + " " + diffMonths + "m";
             }
             return (
-              <div key={`experience-${index}`} className="flex gap-2">
+              <div
+                key={`experience-${index}`}
+                className="flex gap-2 p-0.5 lg:p-2 rounded-xl hover:bg-foreground/15"
+              >
                 <img className="w-12 h-12" srcSet={experience.logo} />
                 <div className="grow">
                   <H2>{experience.position}</H2>
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 flex-wrap">
                     <a
                       className="hover:underline"
                       target="_blank"

@@ -3,8 +3,8 @@ import React from "react";
 export const Spotify: React.FC = () => {
   return (
     <svg
-      className="w-5 h-5"
-      fill="#1DB954"
+      className="w-4 h-4"
+      fill="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

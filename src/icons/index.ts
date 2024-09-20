@@ -14,6 +14,7 @@ export { Travel } from "./travel";
 export { Quote } from "./quote";
 export { Resume } from "./resume";
 export { LeetCode } from "./leetcode";
+export { Web } from "./web";
 export * from "./be";
 export * from "./cloud";
 export * from "./fe";
