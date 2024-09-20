@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TXT, TXT2 } from "../../components/ui";
+import { motion } from "framer-motion";
 
 interface ExperienceDetailsProps {
   list: string[];
@@ -12,20 +13,48 @@ export const ExperienceDetails: React.FC<ExperienceDetailsProps> = ({
   const toggleShow = () => {
     setShow(!show);
   };
+
+  const LIST_CONTAINER_VARIANTS = {
+    visible: {
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.5,
+      },
+    },
+  };
+  const LIST_ITEM_VARIANTS = {
+    hidden: {
+      y: -10,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <>
-      <ul className="list-disc lg:list-inside">
-        {list.slice(0, show ? list.length : 1).map((item, index) => (
-          <li key={index}>
-            <TXT className="font-light">{item}</TXT>
-          </li>
-        ))}
-      </ul>
-      {list.length > 1 && (
+      {show && (
+        <motion.ul
+          className="list-disc lg:list-inside"
+          variants={LIST_CONTAINER_VARIANTS}
+          initial="hidden"
+          animate="visible"
+        >
+          {list.map((item, index) => (
+            <motion.li key={index} variants={LIST_ITEM_VARIANTS}>
+              <TXT className="font-light">{item}</TXT>
+            </motion.li>
+          ))}
+        </motion.ul>
+      )}
+
+      {list.length > 0 && (
         <div className="flex justify-end">
           <button className="underline cursor-pointer" onClick={toggleShow}>
-            <TXT2 className="cursor-pointer">
-              {show ? "Show less" : "Show more"}
+            <TXT2 className="cursor-pointer text-sm">
+              {show ? "Hide details" : "Show details"}
             </TXT2>
           </button>
         </div>
