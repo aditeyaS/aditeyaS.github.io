@@ -10,10 +10,21 @@ import {
 } from "../../icons";
 import { TXT, TXT2 } from "../../components/ui";
 import { MagneticHover } from "../../components/layout/magnetic-hover";
+import {
+  USER_SPOTIFY_URL,
+  USER_TRAKT_URL,
+  USER_UNSPLASH_URL,
+} from "../../user-data";
+import { motion } from "framer-motion";
 
 export const Anyone: React.FC = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <motion.div
+      className="flex flex-col gap-2"
+      initial={{ scale: 0.5 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+    >
       <div className="flex flex-col gap-1 border border-primary rounded-xl p-2 lg:p-4">
         <Quote />
         <blockquote className="font-code font-light">
@@ -33,7 +44,11 @@ export const Anyone: React.FC = () => {
         </MagneticHover>
         <TXT>•</TXT>
         <MagneticHover>
-          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#1DB954]">
+          <a
+            href={USER_SPOTIFY_URL}
+            target="_blank"
+            className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#1DB954]"
+          >
             <Spotify /> Music
           </a>
         </MagneticHover>
@@ -51,17 +66,25 @@ export const Anyone: React.FC = () => {
         </MagneticHover>
         <TXT>•</TXT>
         <MagneticHover>
-          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer ">
+          <a
+            href={USER_UNSPLASH_URL}
+            target="_blank"
+            className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer "
+          >
             <Unsplash /> Photography
           </a>
         </MagneticHover>
         <TXT>•</TXT>
         <MagneticHover>
-          <a className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#ED1C24]">
+          <a
+            href={USER_TRAKT_URL}
+            target="_blank"
+            className="px-1 flex items-center gap-0.5 hover:underline cursor-pointer text-[#ED1C24]"
+          >
             <Trakt /> Entertainment
           </a>
         </MagneticHover>
       </div>
-    </div>
+    </motion.div>
   );
 };

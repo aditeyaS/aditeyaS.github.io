@@ -5,23 +5,30 @@ import {
   USER_LINKEDIN_URL,
   USER_TWITTER_URL,
 } from "../../user-data";
+import { MagneticHover } from "../../components/layout/magnetic-hover";
 
 export const Footer: React.FC = () => {
   const date = new Date();
   return (
-    <footer className="flex flex-col items-center gap-2 py-2 lg:py-4">
+    <footer className="flex flex-col items-center gap-2 py-4 lg:py-8">
       <span className="font-thin">
         &copy; Aditeya Srivastava, {date.getFullYear()}
       </span>
-      <div className="flex gap-2 ">
+      <div className="flex gap-3">
         <a href={USER_LINKEDIN_URL} target="_blank" className="cursor-pointer">
-          <LinkedIn />
+          <MagneticHover>
+            <LinkedIn />
+          </MagneticHover>
         </a>
         <a href={USER_GITHUB_URL} target="_blank" className="cursor-pointer">
-          <GitHub />
+          <MagneticHover>
+            <GitHub />
+          </MagneticHover>
         </a>
         <a href={USER_TWITTER_URL} target="_blank" className="cursor-pointer">
-          <Twitter />
+          <MagneticHover>
+            <Twitter />
+          </MagneticHover>
         </a>
       </div>
     </footer>

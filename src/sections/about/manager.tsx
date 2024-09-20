@@ -7,6 +7,7 @@ import {
 } from "../../user-data";
 import { Email, LinkedIn, Resume } from "../../icons";
 import { MagneticLinks } from "./magnetic-links";
+import { motion } from "framer-motion";
 
 type Link = {
   icon: React.ReactNode;
@@ -34,7 +35,12 @@ const managerLinks: Link[] = [
 
 export const Manager: React.FC = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <motion.div
+      className="flex flex-col gap-2"
+      initial={{ scale: 0.5 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+    >
       <TXT>
         Driven by a blend of technical expertise and leadership, I’ve led teams
         to build efficient, user-centered solutions while improving processes
@@ -70,6 +76,6 @@ export const Manager: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -7,6 +7,7 @@ import {
   USER_RESUME_URL,
 } from "../../user-data";
 import { MagneticLinks } from "./magnetic-links";
+import { motion } from "framer-motion";
 
 type Link = {
   icon: React.ReactNode;
@@ -34,7 +35,12 @@ const recruiterLinks: Link[] = [
 
 export const Recruiter: React.FC = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <motion.div
+      className="flex flex-col gap-2"
+      initial={{ scale: 0.5 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+    >
       <TXT>
         Full Stack Developer with experience in building scalable web
         applications and serverless architectures using AWS, React, and various
@@ -66,6 +72,6 @@ export const Recruiter: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
