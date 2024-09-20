@@ -1,6 +1,16 @@
 {
   "name": "portfolio",
-  "private": true,
+  "description": "My portfolio website to showcase my projects, skills, etc.",
+  "private": false,
+  "author": {
+    "name": "Aditeya Srivastava",
+    "email": "aditeyaaaa@gmail.com"
+  },
+  "homepage": "https://aditeyaS.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aditeyaS/aditeyaS.github.io.git"
+  },
   "version": "0.0.0",
   "type": "module",
   "scripts": {
