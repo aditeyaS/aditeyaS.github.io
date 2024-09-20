@@ -40,6 +40,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [accent, setAccent] = useState<Accent>(
     (localStorage.getItem("data-accent") as Accent) || defaultAccent
   );
+  const faviconEl = document.querySelector('link[rel="icon"]');
 
   const setNewTheme = (theme: Theme) => {
     setTheme(theme);
@@ -52,12 +53,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [theme]);
 
   const setNewAccent = (accent: Accent) => {
+    faviconEl?.setAttribute("href", `favicon-${accent}.svg`);
     setAccent(accent);
     localStorage.setItem("data-accent", accent);
     document.querySelector("html")?.setAttribute("data-accent", accent);
   };
 
   useEffect(() => {
+    faviconEl?.setAttribute("href", `favicon-${accent}.svg`);
     document.querySelector("html")?.setAttribute("data-accent", accent);
   }, [accent]);
 
