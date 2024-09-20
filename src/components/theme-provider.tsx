@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 export type Theme = "light" | "dark" | "system";
-export type Accent = "red" | "green" | "blue";
+export type Accent = "blue" | "yellow" | "orange" | "pink" | "purple" | "green";
+const defaultAccent: Accent = "purple";
 
 interface ThemeContextType {
   theme: Theme;
@@ -12,7 +13,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: "system",
-  accent: "blue",
+  accent: defaultAccent,
   setTheme: () => {},
   setAccent: () => {},
 });
@@ -37,7 +38,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     (localStorage.getItem("data-theme") as Theme) || getInitialTheme()
   );
   const [accent, setAccent] = useState<Accent>(
-    (localStorage.getItem("data-accent") as Accent) || "blue"
+    (localStorage.getItem("data-accent") as Accent) || defaultAccent
   );
 
   const setNewTheme = (theme: Theme) => {

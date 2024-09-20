@@ -9,7 +9,9 @@ export const Header: React.FC = () => {
   return (
     <SectionContainer sectionIndex={0}>
       <div className="flex flex-col items-center gap-2">
-        <img className="w-48 h-48" srcSet="profile.png" />
+        <div className="bg-primary/25 rounded rounded-full ring ring-primary ring-offset-4 ring-offset-background">
+          <img className="w-48 h-48 rounded rounded-full" srcSet="avatar.png" />
+        </div>
         <div className="flex gap-1 items-center">
           <span className="text-2xl">Aditeya (Adi) Srivastava</span>
           <Verified />

@@ -10,9 +10,12 @@ type AccentListType = {
   color: string;
 };
 const accentList: AccentListType[] = [
-  { accent: "red", color: "#EE4B2B" },
+  { accent: "purple", color: "#8338EC" },
+  { accent: "yellow", color: "#FFBE0B" },
+  { accent: "orange", color: "#FB5607" },
+  { accent: "pink", color: "#FF006E" },
+  { accent: "blue", color: "#3A86FF" },
   { accent: "green", color: "#2ECC71" },
-  { accent: "blue", color: "#0096FF" },
 ];
 
 export const ThemeModal: React.FC = () => {

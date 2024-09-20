@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* theme colors */
   html[data-theme='dark'] {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
@@ -14,13 +15,23 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
   }
+  /* accent colors */
+  html[data-accent='purple'] {
+    --primary: 265 83% 57%;
+  }
+  html[data-accent='yellow'] {
+    --primary: 44 100% 52%;
+  }
+  html[data-accent='orange'] {
+    --primary: 19 97% 51%;
+  }
+  html[data-accent='pink'] {
+    --primary: 334 100% 50%;
+  }
   html[data-accent='blue'] {
-    --primary: 205 100% 50%;
+    --primary: 217 100% 61%;
   }
-  html[data-accent='red'] {
-    --primary: 10 85% 55%;
-  }
-   html[data-accent='green'] {
+  html[data-accent='green'] {
     --primary: 145 63% 49%;
   }
 }
