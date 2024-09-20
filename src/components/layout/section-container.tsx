@@ -21,7 +21,7 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({
         scale: 1,
         rotate: 0,
       }}
-      viewport={{ amount: 0.2 }}
+      viewport={{ amount: 0.1 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
     >
       {children}

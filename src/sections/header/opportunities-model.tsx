@@ -16,18 +16,19 @@ export const OpportunitiesModel: React.FC = () => {
     <Modal>
       <ModalTrigger>
         <motion.div
-          className="flex items-center gap-2 bg-background px-2 py-1 rounded-2xl font-thin hover:underline"
-          animate={{ x: [0, 5] }}
+          className="flex items-center gap-2 bg-background border border-primary px-2 py-1 rounded-2xl font-thin hover:underline border"
+          animate={{ scale: [0.9, 1, 0.9] }}
           transition={{
             duration: 1,
             repeat: Infinity,
-            type: "spring",
-            stiffness: 150,
+            // type: "spring",
+            // damping: 1,
+            // stiffness: 150,
           }}
         >
           <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-100"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-100"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-green"></span>
           </span>
           Open for work
         </motion.div>
@@ -37,7 +38,7 @@ export const OpportunitiesModel: React.FC = () => {
           <motion.div
             className={cn(
               "flex justify-center font-medium py-0.5",
-              "border border-green-500 text-green-500"
+              "border border-green text-green"
             )}
             animate={{
               scale: [0.8, 1, 0.8],

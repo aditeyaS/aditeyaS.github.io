@@ -41,14 +41,13 @@ export const Engineer: React.FC = () => {
       animate={{ scale: 1 }}
       transition={{ duration: 1, type: "spring" }}
     >
-      <div className="flex flex-col gap-1 border border-primary rounded-xl p-2 lg:p-4">
+      <div className="flex flex-col gap-1 border-l border-primary px-1 lg:px-2">
         <Quote />
         <blockquote className="font-code font-light">
-          “Always believe in yourself. No matter who’s around you being negative
-          or thrusting negative energy at you, totally block it off. Because
-          whatever you believe, you become.”
+          “Always code as if the guy who ends up maintaining your code will be a
+          violent psychopath who knows where you live.”
         </blockquote>
-        <TXT2>— Michael Jackson</TXT2>
+        <TXT2>— John Woods</TXT2>
       </div>
       <span>
         From optimizing RESTful APIs to automating workflows with Python

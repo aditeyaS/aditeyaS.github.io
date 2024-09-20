@@ -25,7 +25,7 @@ export const Anyone: React.FC = () => {
       animate={{ scale: 1 }}
       transition={{ duration: 1, type: "spring" }}
     >
-      <div className="flex flex-col gap-1 border border-primary rounded-xl p-2 lg:p-4">
+      <div className="flex flex-col gap-1 border-l border-primary px-1 lg:px-2">
         <Quote />
         <blockquote className="font-code font-light">
           “Always believe in yourself. No matter who’s around you being negative
