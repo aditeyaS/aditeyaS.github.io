@@ -3,41 +3,9 @@ import { SectionContainer } from "../../components/layout/section-container";
 import { getMonthName } from "../../lib/utils";
 import { H1, H2, TXT, TXT2 } from "../../components/ui";
 import { Icon } from "./icon";
-
-import ClemsonLogo from "../../assets/education/clemson.png";
-import AktuLogo from "../../assets/education/aktu.png";
 import SectionProps from "../../types/section-props";
 import { useAppScroll } from "../app-scroll-context";
-
-type EducationType = {
-  degree: string;
-  logo: string;
-  institute: string;
-  instituteLink: string;
-  from: Date;
-  to: Date;
-  location: string;
-};
-const educationList: EducationType[] = [
-  {
-    degree: "MS, Computer Science",
-    logo: ClemsonLogo,
-    institute: "Clemson University",
-    instituteLink: "https://www.clemson.edu/",
-    from: new Date(2022, 7),
-    to: new Date(2024, 4),
-    location: "Clemson, SC 🇺🇸",
-  },
-  {
-    degree: "BS, Computer Science",
-    logo: AktuLogo,
-    institute: "Dr. APJ Abdul Kalam Technical University",
-    instituteLink: "https://aktu.ac.in/",
-    from: new Date(2017, 7),
-    to: new Date(2021, 4),
-    location: "Lucknow, UP 🇮🇳",
-  },
-];
+import { EDUCATION_LIST } from "./data";
 
 export const Education: React.FC<SectionProps> = ({ sectionIndex }) => {
   const { appSectionRefs } = useAppScroll();
@@ -53,7 +21,7 @@ export const Education: React.FC<SectionProps> = ({ sectionIndex }) => {
           <H1>Education</H1>
         </div>
         <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
-          {educationList.map((education, index) => {
+          {EDUCATION_LIST.map((education, index) => {
             const fromMonth = education.from.getMonth();
             const fromYear = education.from.getFullYear();
             const fromString = `${getMonthName(fromMonth)}, ${fromYear}`;

@@ -1,37 +1,14 @@
 import React from "react";
 import { TXT, TXT2 } from "../../components/ui";
-import {
-  USER_EMAIL,
-  USER_LINKEDIN_URL,
-  USER_RESUME_URL,
-} from "../../user-data";
-import { Email, LinkedIn, Quote, Resume } from "../../icons";
+import { Quote } from "../../icons";
 import { MagneticLinks } from "./magnetic-links";
 import { motion } from "framer-motion";
-
-type Link = {
-  icon: React.ReactNode;
-  link: string;
-  color: string;
-};
-
-const managerLinks: Link[] = [
-  {
-    icon: <Resume />,
-    link: USER_RESUME_URL,
-    color: "#4285F4",
-  },
-  {
-    icon: <LinkedIn />,
-    link: USER_LINKEDIN_URL,
-    color: "#0e76a8",
-  },
-  {
-    icon: <Email />,
-    link: `mailto:${USER_EMAIL}`,
-    color: "#c71610",
-  },
-];
+import {
+  DESCRIPTION_MANAGER,
+  KEY_POINTS_MANAGER,
+  LINKS_MANAGER,
+  QUOTE_MANAGER,
+} from "./data";
 
 export const Manager: React.FC = () => {
   return (
@@ -44,40 +21,23 @@ export const Manager: React.FC = () => {
       <div className="flex flex-col gap-1 border-l border-primary px-1 lg:px-2">
         <Quote />
         <blockquote className="font-code font-light">
-          “The cost of adding a feature isn’t just the time it takes to code it.
-          The cost also includes the addition of an obstacle to future
-          expansion. The trick is to pick the features that don’t fight each
-          other.”
+          {QUOTE_MANAGER.text}
         </blockquote>
-        <TXT2>— John Carmack</TXT2>
+        <TXT2>— {QUOTE_MANAGER.author}</TXT2>
       </div>
-      <TXT>
-        Driven by a blend of technical expertise and leadership, I’ve led teams
-        to build efficient, user-centered solutions while improving processes
-        and performance across web and mobile platforms.
-      </TXT>
+      <TXT>{DESCRIPTION_MANAGER}</TXT>
       <div>
         <TXT>My values</TXT>
         <ul className="list-disc list-inside">
-          <li>
-            <TXT>Teamwork and Collaboration</TXT>
-          </li>
-          <li>
-            <TXT>Continuous Learning and Improvement</TXT>
-          </li>
-          <li>
-            <TXT>Work Ethic</TXT>
-          </li>
-          <li>
-            <TXT>Adaptability and Flexibility</TXT>
-          </li>
-          <li>
-            <TXT>Integrity</TXT>
-          </li>
+          {KEY_POINTS_MANAGER.map((text, index) => (
+            <li key={`manager-key-point-${index}`}>
+              <TXT>{text}</TXT>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex gap-2">
-        {managerLinks.map((v, index) => (
+        {LINKS_MANAGER.map((v, index) => (
           <MagneticLinks
             key={`manager-link-${index}`}
             icon={v.icon}

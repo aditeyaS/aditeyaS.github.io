@@ -16,6 +16,7 @@ import {
   USER_UNSPLASH_URL,
 } from "../../user-data";
 import { motion } from "framer-motion";
+import { QUOTE_ANYONE } from "./data";
 
 export const Anyone: React.FC = () => {
   return (
@@ -28,11 +29,9 @@ export const Anyone: React.FC = () => {
       <div className="flex flex-col gap-1 border-l border-primary px-1 lg:px-2">
         <Quote />
         <blockquote className="font-code font-light">
-          “Always believe in yourself. No matter who’s around you being negative
-          or thrusting negative energy at you, totally block it off. Because
-          whatever you believe, you become.”
+          {QUOTE_ANYONE.text}
         </blockquote>
-        <TXT2>— Michael Jackson</TXT2>
+        <TXT2>— {QUOTE_ANYONE.author}</TXT2>
       </div>
       <div className="flex gap-1 items-center flex-wrap">
         <TXT>Hobbies:</TXT>

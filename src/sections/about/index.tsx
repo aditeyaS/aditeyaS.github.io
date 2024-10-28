@@ -10,11 +10,11 @@ import SectionProps from "../../types/section-props";
 import { useAppScroll } from "../app-scroll-context";
 
 export const About: React.FC<SectionProps> = ({ sectionIndex }) => {
+  const { appSectionRefs } = useAppScroll();
+
   const [viewerType, setViewerType] = useState<
     "anyone" | "recruiter" | "manager" | "engineer"
   >("anyone");
-
-  const { appSectionRefs } = useAppScroll();
 
   return (
     <SectionContainer sectionIndex={sectionIndex} ref={appSectionRefs.about}>

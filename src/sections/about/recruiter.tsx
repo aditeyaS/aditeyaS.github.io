@@ -1,37 +1,12 @@
 import React from "react";
 import { TXT } from "../../components/ui";
-import { Email, LinkedIn, Resume } from "../../icons";
-import {
-  USER_EMAIL,
-  USER_LINKEDIN_URL,
-  USER_RESUME_URL,
-} from "../../user-data";
 import { MagneticLinks } from "./magnetic-links";
 import { motion } from "framer-motion";
-
-type Link = {
-  icon: React.ReactNode;
-  link: string;
-  color: string;
-};
-
-const recruiterLinks: Link[] = [
-  {
-    icon: <Resume />,
-    link: USER_RESUME_URL,
-    color: "#4285F4",
-  },
-  {
-    icon: <LinkedIn />,
-    link: USER_LINKEDIN_URL,
-    color: "#0e76a8",
-  },
-  {
-    icon: <Email />,
-    link: `mailto:${USER_EMAIL}`,
-    color: "#c71610",
-  },
-];
+import {
+  DESCRIPTION_RECRUITER,
+  KEY_POINTS_RECRUITER,
+  LINKS_RECRUITER,
+} from "./data";
 
 export const Recruiter: React.FC = () => {
   return (
@@ -41,29 +16,16 @@ export const Recruiter: React.FC = () => {
       animate={{ scale: 1 }}
       transition={{ duration: 1, type: "spring" }}
     >
-      <TXT>
-        Full Stack Developer with experience in building scalable web
-        applications and serverless architectures using AWS, React, and various
-        back-end frameworks.
-      </TXT>
+      <TXT>{DESCRIPTION_RECRUITER}</TXT>
       <ul className="list-disc list-inside">
-        <li>
-          <TXT>2+ years of experience as Software Engineer</TXT>
-        </li>
-        <li>
-          <TXT>Masters in Computer Science</TXT>
-        </li>
-        <li>
-          <TXT>Open to relocation</TXT>
-        </li>
-        <li>
-          <TXT>
-            Python, Java, React, AWS, Angular, TypeScript, JavaScript, HTML, CSS
-          </TXT>
-        </li>
+        {KEY_POINTS_RECRUITER.map((text, index) => (
+          <li key={`recruiter-key-point-${index}`}>
+            <TXT>{text}</TXT>
+          </li>
+        ))}
       </ul>
       <div className="flex gap-2">
-        {recruiterLinks.map((v, index) => (
+        {LINKS_RECRUITER.map((v, index) => (
           <MagneticLinks
             key={`recruiter-link-${index}`}
             icon={v.icon}
