@@ -8,6 +8,7 @@ import { useAppScroll } from "../app-scroll-context";
 import {
   BACKEND_LIST,
   CLOUD_LIST,
+  CURRENT_LIST,
   FRONT_END_LIST,
   LANGUAGE_LIST,
   OTHERS_LIST,
@@ -16,8 +17,8 @@ import {
 
 export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
   const [viewerType, setViewerType] = useState<
-    "languages" | "fe" | "be" | "cloud" | "testing" | "others"
-  >("languages");
+    "current" | "languages" | "fe" | "be" | "cloud" | "testing" | "others"
+  >("current");
 
   const { appSectionRefs } = useAppScroll();
 
@@ -29,6 +30,12 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
           <H1>Skills</H1>
         </div>
         <div className="flex gap-1 items-center flex-wrap">
+          <Chip
+            selected={viewerType === "current"}
+            onClick={() => setViewerType("current")}
+          >
+            current
+          </Chip>
           <Chip
             selected={viewerType === "languages"}
             onClick={() => setViewerType("languages")}
@@ -66,83 +73,131 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             others
           </Chip>
         </div>
-        <div className="font-light font-code flex gap-1 flex-wrap justify-stretch">
+        <div className="font-light font-code flex gap-2 flex-wrap justify-stretch">
+          {viewerType === "current" &&
+            CURRENT_LIST.map((l, index) => (
+              <motion.div
+                key={`skill-fe-${index}`}
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
+                initial={{ opacity: 0, x: 100, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1, type: "spring" }}
+              >
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
+              </motion.div>
+            ))}
           {viewerType === "languages" &&
             LANGUAGE_LIST.map((l, index) => (
               <motion.div
                 key={`skill-language-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "fe" &&
             FRONT_END_LIST.map((l, index) => (
               <motion.div
                 key={`skill-fe-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "be" &&
             BACKEND_LIST.map((l, index) => (
               <motion.div
                 key={`skill-be-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "cloud" &&
             CLOUD_LIST.map((l, index) => (
               <motion.div
                 key={`skill-cloud-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "testing" &&
             TESTING_LIST.map((l, index) => (
               <motion.div
                 key={`skill-testing-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
           {viewerType === "others" &&
             OTHERS_LIST.map((l, index) => (
               <motion.div
                 key={`skill-others-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
+                className="p-1 rounded flex items-center gap-2 border border-background-3 hover:bg-background-3 text-foreground"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
               >
-                {l.icon}
-                <TXT className="text-foreground text-sm">{l.name}</TXT>
+                <div
+                  className="p-1 rounded"
+                  style={{ background: l.color, opacity: 0.85 }}
+                >
+                  {l.icon}
+                </div>
+                <TXT className="text-xs">{l.name}</TXT>
               </motion.div>
             ))}
         </div>
