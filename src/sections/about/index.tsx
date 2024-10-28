@@ -20,7 +20,7 @@ export const About: React.FC<SectionProps> = ({ sectionIndex }) => {
           <Icon />
           <H1>About</H1>
         </div>
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-1 items-center flex-wrap">
           <span>For</span>
           <Chip
             onClick={() => setViewerType("anyone")}

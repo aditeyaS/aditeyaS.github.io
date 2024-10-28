@@ -16,7 +16,7 @@ export const OpportunitiesModel: React.FC = () => {
     <Modal>
       <ModalTrigger>
         <motion.div
-          className="flex items-center gap-2 bg-background border border-primary px-2 py-1 rounded-2xl font-thin hover:underline border"
+          className="flex items-center gap-2 border border-primary px-2 py-1 rounded-2xl font-thin hover:underline border"
           animate={{ scale: [0.9, 1, 0.9] }}
           transition={{
             duration: 1,
@@ -35,18 +35,14 @@ export const OpportunitiesModel: React.FC = () => {
       </ModalTrigger>
       <ModalBody title="Job preferences">
         <div className="flex flex-col gap-4">
-          <motion.div
+          <div
             className={cn(
               "flex justify-center font-medium py-0.5",
               "border border-green text-green"
             )}
-            animate={{
-              scale: [0.8, 1, 0.8],
-            }}
-            transition={{ repeat: Infinity }}
           >
             Open for work
-          </motion.div>
+          </div>
           <div className="flex gap-1 flex-wrap">
             <TXT>Job titles:</TXT>
             <TXT2>
@@ -74,7 +70,7 @@ export const OpportunitiesModel: React.FC = () => {
               </a>
             </MagneticHover>
           </div>
-          <p className="cursor-default flex justify-center items-center flex-wrap text-foreground/70">
+          <p className="cursor-default flex justify-center items-center flex-wrap text-foreground-2">
             Liked my profile? Please message me on &nbsp;
             <a
               href={USER_LINKEDIN_URL}

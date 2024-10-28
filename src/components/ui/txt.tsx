@@ -1,9 +1,11 @@
 import React from "react";
 import { cn } from "../../lib/utils";
 
-interface TXTProps extends React.HTMLAttributes<HTMLSpanElement> {}
-
-export const TXT: React.FC<TXTProps> = ({ className, children, ...props }) => {
+export const TXT: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
     <span className={cn("text-md lg:text-normal", className)} {...props}>
       {children}

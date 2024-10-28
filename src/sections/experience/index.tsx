@@ -145,7 +145,7 @@ export const Experience: React.FC<SectionProps> = ({ sectionIndex }) => {
             return (
               <div
                 key={`experience-${index}`}
-                className="flex gap-2 p-0.5 lg:p-2 rounded-xl hover:bg-foreground/15"
+                className="flex gap-2 p-0.5 lg:p-2 rounded-xl hover:bg-background-3"
               >
                 <img className="w-12 h-12" srcSet={experience.logo} />
                 <div className="grow">

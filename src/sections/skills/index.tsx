@@ -469,7 +469,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             languageList.map((l, index) => (
               <motion.div
                 key={`skill-language-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
@@ -482,7 +482,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             feList.map((l, index) => (
               <motion.div
                 key={`skill-fe-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
@@ -495,7 +495,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             beList.map((l, index) => (
               <motion.div
                 key={`skill-be-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
@@ -508,7 +508,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             cloudList.map((l, index) => (
               <motion.div
                 key={`skill-cloud-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
@@ -522,7 +522,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             testingList.map((l, index) => (
               <motion.div
                 key={`skill-testing-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: -100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}
@@ -535,7 +535,7 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
             othersList.map((l, index) => (
               <motion.div
                 key={`skill-others-${index}`}
-                className="px-2 py-1 rounded-2xl flex items-center gap-2 bg-background text-primary"
+                className="px-2 py-1 rounded-2xl flex items-center gap-2 border border-background-3 text-primary hover:bg-background-3"
                 initial={{ opacity: 0, x: 100, scale: 0.5 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1, type: "spring" }}

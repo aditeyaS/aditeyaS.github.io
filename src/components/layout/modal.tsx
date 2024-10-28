@@ -1,6 +1,6 @@
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import React, {
+import {
   ReactNode,
   createContext,
   useContext,
@@ -9,6 +9,7 @@ import React, {
   useState,
 } from "react";
 import { H2 } from "../ui";
+import { useOutsideClick } from "../../hooks/outside-click";
 
 interface ModalContextType {
   open: boolean;
@@ -100,7 +101,7 @@ export const ModalBody = ({
             ref={modalRef}
             className={cn(
               // "min-h-[50%] max-h-[90%] bg-white dark:bg-neutral-950 border-transparent dark:border-neutral-800",
-              "bg-background border border-foreground/15 rounded-lg m-2 p-2 lg:p-4",
+              "bg-background border border-background-3 rounded-lg m-2 p-2 lg:p-4",
               "md:max-w-[40%] relative z-50 flex flex-col gap-2 flex-1 overflow-hidden",
               className
             )}
@@ -177,29 +178,4 @@ const CloseIcon = () => {
       </svg>
     </button>
   );
-};
-
-// Hook to detect clicks outside of a component.
-// Add it in a separate file, I've added here for simplicity
-export const useOutsideClick = (
-  ref: React.RefObject<HTMLDivElement>,
-  callback: Function
-) => {
-  useEffect(() => {
-    const listener = (event: any) => {
-      // DO NOTHING if the element being clicked is the target element or their children
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-      callback(event);
-    };
-
-    document.addEventListener("mousedown", listener);
-    document.addEventListener("touchstart", listener);
-
-    return () => {
-      document.removeEventListener("mousedown", listener);
-      document.removeEventListener("touchstart", listener);
-    };
-  }, [ref, callback]);
 };

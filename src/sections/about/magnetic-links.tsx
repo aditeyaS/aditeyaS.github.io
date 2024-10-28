@@ -17,9 +17,7 @@ export const MagneticLinks: React.FC<MagneticLinksProps> = ({
     <a
       href={link}
       target="_blank"
-      className={cn(
-        "cursor-pointer p-1.5 rounded-full bg-foreground/10 hover:bg-background"
-      )}
+      className={cn("cursor-pointer p-1.5 rounded-full hover:bg-background-3")}
       style={{ color }}
     >
       <MagneticHover>{icon}</MagneticHover>

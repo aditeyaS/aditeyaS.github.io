@@ -5,18 +5,17 @@ import { Experience } from "./sections/experience";
 import { Education } from "./sections/education";
 import { Skills } from "./sections/skills";
 import { Footer } from "./sections/footer";
-import { ThemeModal } from "./sections/theme-modal";
-import { Progress } from "./sections/progress";
 import { useScroll } from "framer-motion";
 import { Projects } from "./sections/projects";
+import { TopNav } from "./sections/top-nav";
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   return (
     <>
-      <Progress scrollYProgress={scrollYProgress} />
-      <div className="px-2 pt-2 lg:px-36 lg:pt-4 flex flex-col gap-2 lg:gap-4 mt-3">
+      <TopNav scrollYProgress={scrollYProgress} />
+      <div className="px-2 pt-2 lg:px-36 lg:pt-4 flex flex-col gap-2 lg:gap-4 mt-14">
         <Header sectionIndex={0} />
         <About sectionIndex={1} />
         <Experience sectionIndex={2} />
@@ -25,7 +24,6 @@ const App: React.FC = () => {
         <Education sectionIndex={5} />
       </div>
       <Footer />
-      <ThemeModal />
     </>
   );
 };

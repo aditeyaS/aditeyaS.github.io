@@ -120,7 +120,7 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
           {projectList.map((project, index) => (
             <div
               key={`project-${index}`}
-              className="flex gap-2 p-0.5 lg:p-2 rounded-xl hover:bg-foreground/15"
+              className="flex gap-2 p-0.5 lg:p-2 rounded-xl hover:bg-background-3"
             >
               <img className="w-12 h-12" srcSet={project.logo} />
               <div className="flex flex-col gap-1">
@@ -129,7 +129,7 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
                   <a
                     href={project.githubLink}
                     target="_blank"
-                    className="cursor-pointer p-1 rounded-full bg-foreground/10 hover:bg-background"
+                    className="cursor-pointer p-1 rounded-full hover:bg-background"
                   >
                     <MagneticHover>
                       <GitHub />
@@ -139,7 +139,7 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
                     <a
                       href={project.liveLink}
                       target="_blank"
-                      className="cursor-pointer p-1 rounded-full bg-foreground/10 hover:bg-background"
+                      className="cursor-pointer p-1 rounded-full hover:bg-background"
                     >
                       <MagneticHover>
                         <Web />
@@ -151,33 +151,13 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
                   {project.description}
                 </TXT2>
                 <div className="flex gap-2 flex-wrap items-center">
-                  {project.skills.map((skill, index) => {
-                    const [isHovered, setIsHovered] = useState<boolean>(false);
-                    return (
-                      <motion.div
-                        key={`project-${project.name}-skill-${index}`}
-                        className="relative text-primary cursor-pointer"
-                        onHoverStart={() => setIsHovered(true)}
-                        onHoverEnd={() => setIsHovered(false)}
-                      >
-                        {skill.icon}
-                        {isHovered && (
-                          <motion.div
-                            className={cn(
-                              "absolute bottom-full mb-2",
-                              "left-1/2 transform -translate-x-1/2",
-                              "bg-background text-xs font-code rounded-md py-1 px-2 shadow-lg z-10"
-                            )}
-                            animate={{
-                              rotate: [0, 10, -10, 0],
-                            }}
-                          >
-                            {skill.name}
-                          </motion.div>
-                        )}
-                      </motion.div>
-                    );
-                  })}
+                  {project.skills.map((skill, skillIndex) => (
+                    <ProjectSkill
+                      key={`project-${index}-skill-${skillIndex}`}
+                      icon={skill.icon}
+                      name={skill.name}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -185,5 +165,37 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
         </div>
       </div>
     </SectionContainer>
+  );
+};
+
+interface ProjectSkillProps {
+  icon: React.ReactNode;
+  name: string;
+}
+
+const ProjectSkill = ({ icon, name }: ProjectSkillProps) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  return (
+    <motion.div
+      className="relative text-primary cursor-pointer"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+    >
+      {icon}
+      {isHovered && (
+        <motion.div
+          className={cn(
+            "absolute bottom-full mb-2",
+            "left-1/2 transform -translate-x-1/2",
+            "bg-background text-xs font-code rounded-md py-1 px-2 shadow-lg z-10"
+          )}
+          animate={{
+            rotate: [0, 10, -10, 0],
+          }}
+        >
+          {name}
+        </motion.div>
+      )}
+    </motion.div>
   );
 };

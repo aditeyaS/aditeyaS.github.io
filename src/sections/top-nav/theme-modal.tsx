@@ -3,7 +3,7 @@ import { Modal, ModalBody, ModalTrigger } from "../../components/layout/modal";
 import { Moon, Pallette, Sun } from "../../icons";
 import { Accent, useTheme } from "../../components/theme-provider";
 import { cn } from "../../lib/utils";
-import { TXT, TXT2 } from "../../components/ui";
+import { TXT } from "../../components/ui";
 
 type AccentListType = {
   accent: Accent;
@@ -22,10 +22,10 @@ export const ThemeModal: React.FC = () => {
   const { theme, accent, setTheme, setAccent } = useTheme();
   return (
     <Modal>
-      <ModalTrigger className="z-10 rounded-full fixed bg-primary bottom-0 left-0 m-4 p-2">
+      <ModalTrigger className="rounded bg-primary p-2">
         <Pallette />
       </ModalTrigger>
-      <ModalBody title="Contact Info">
+      <ModalBody title="App Theme">
         <div className="flex flex-col gap-2">
           <TXT>Theme</TXT>
           <div className="grid grid-flow-col justify-stretch border border-primary rounded">
@@ -37,7 +37,7 @@ export const ThemeModal: React.FC = () => {
               )}
             >
               <Moon />
-              <TXT2>Dark</TXT2>
+              <TXT>Dark</TXT>
             </button>
             <button
               onClick={() => setTheme("light")}
@@ -47,7 +47,7 @@ export const ThemeModal: React.FC = () => {
               )}
             >
               <Sun />
-              <TXT2>Light</TXT2>
+              <TXT>Light</TXT>
             </button>
           </div>
           <TXT>Accent</TXT>
