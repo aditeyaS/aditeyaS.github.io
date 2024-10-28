@@ -1,8 +1,8 @@
 import { motion, MotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Logo } from "./logo";
-import { ThemeModal } from "./theme-modal";
 import { SearchCommandDialog } from "./search-command-dialog";
+import { ThemeDialog } from "./theme-dialog";
 
 interface TopNavProps {
   scrollYProgress: MotionValue<number>;
@@ -50,7 +50,7 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollYProgress }) => {
             <Logo />
           </button>
           <button
-            className="bg-background-3 px-2 py-1 rounded text-md flex items-center text-foreground-2"
+            className="bg-background-3 px-2 py-1 rounded text-sm flex items-center text-foreground-2"
             onClick={() => setShowSearch(true)}
           >
             <svg
@@ -66,10 +66,12 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollYProgress }) => {
               <path d="m21 21-4.3-4.3" />
             </svg>
             <p className="ml-2 mr-10 cursor-text">Search...</p>
-            <kbd>{isMac ? "⌘" : "⌃"}k</kbd>
+            <kbd className="bg-background px-1 rounded">
+              {isMac ? "⌘" : "⌃"}K
+            </kbd>
           </button>
         </div>
-        <ThemeModal />
+        <ThemeDialog />
       </div>
       <motion.div className="h-2 bg-primary " style={{ scaleX }} />
       <SearchCommandDialog

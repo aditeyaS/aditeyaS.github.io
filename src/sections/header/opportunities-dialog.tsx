@@ -1,5 +1,4 @@
 import React from "react";
-import { Modal, ModalBody, ModalTrigger } from "../../components/layout/modal";
 import { TXT, TXT2 } from "../../components/ui";
 import { Resume } from "../../icons";
 import { cn } from "../../lib/utils";
@@ -10,20 +9,25 @@ import {
 } from "../../user-data";
 import { MagneticHover } from "../../components/layout/magnetic-hover";
 import { motion } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../components/ui/dialog";
 
-export const OpportunitiesModel: React.FC = () => {
+export const OpportunitiesDialog: React.FC = () => {
   return (
-    <Modal>
-      <ModalTrigger>
-        <motion.div
+    <Dialog>
+      <DialogTrigger asChild>
+        <motion.button
           className="flex items-center gap-2 border border-primary px-2 py-1 rounded-2xl font-thin hover:underline border"
           animate={{ scale: [0.9, 1, 0.9] }}
           transition={{
             duration: 1,
             repeat: Infinity,
-            // type: "spring",
-            // damping: 1,
-            // stiffness: 150,
           }}
         >
           <span className="relative flex h-3 w-3">
@@ -31,9 +35,13 @@ export const OpportunitiesModel: React.FC = () => {
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green"></span>
           </span>
           Open for work
-        </motion.div>
-      </ModalTrigger>
-      <ModalBody title="Job preferences">
+        </motion.button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Job Preferences</DialogTitle>
+          <DialogDescription>My job preferences.</DialogDescription>
+        </DialogHeader>
         <div className="flex flex-col gap-4">
           <div
             className={cn(
@@ -43,21 +51,21 @@ export const OpportunitiesModel: React.FC = () => {
           >
             Open for work
           </div>
-          <div className="flex gap-1 flex-wrap">
-            <TXT>Job titles:</TXT>
-            <TXT2>
+          <span>
+            <TXT2>Job titles:</TXT2>
+            <TXT className="ml-1">
               Software Engineer, Software Developer, Full Stack Developer, Web
               Developer
-            </TXT2>
-          </div>
-          <div className="flex gap-1">
-            <TXT>Location:</TXT>
-            <TXT2>Anywhere in US</TXT2>
-          </div>
-          <div className="flex gap-1">
-            <TXT>Relocation:</TXT>
-            <TXT2>Willing to relocate</TXT2>
-          </div>
+            </TXT>
+          </span>
+          <span>
+            <TXT2>Location:</TXT2>
+            <TXT className="ml-1">Anywhere in US 🇺🇸</TXT>
+          </span>
+          <span>
+            <TXT2>Relocation:</TXT2>
+            <TXT className="ml-1">Willing to relocate</TXT>
+          </span>
           <div className="flex justify-center">
             <MagneticHover>
               <a
@@ -90,7 +98,7 @@ export const OpportunitiesModel: React.FC = () => {
             .
           </p>
         </div>
-      </ModalBody>
-    </Modal>
+      </DialogContent>
+    </Dialog>
   );
 };

@@ -1,9 +1,16 @@
 import React from "react";
-import { Modal, ModalBody, ModalTrigger } from "../../components/layout/modal";
 import { Moon, Pallette, Sun } from "../../icons";
 import { Accent, useTheme } from "../../components/theme-provider";
 import { cn } from "../../lib/utils";
 import { TXT } from "../../components/ui";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../components/ui/dialog";
 
 type AccentListType = {
   accent: Accent;
@@ -18,14 +25,21 @@ const accentList: AccentListType[] = [
   { accent: "green", color: "#2ECC71" },
 ];
 
-export const ThemeModal: React.FC = () => {
+export const ThemeDialog: React.FC = () => {
   const { theme, accent, setTheme, setAccent } = useTheme();
+
   return (
-    <Modal>
-      <ModalTrigger className="rounded bg-primary p-2">
-        <Pallette />
-      </ModalTrigger>
-      <ModalBody title="App Theme">
+    <Dialog>
+      <DialogTrigger asChild>
+        <button className="rounded bg-primary p-2">
+          <Pallette />
+        </button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>App Theme</DialogTitle>
+          <DialogDescription>Change theme and accent color.</DialogDescription>
+        </DialogHeader>
         <div className="flex flex-col gap-2">
           <TXT>Theme</TXT>
           <div className="grid grid-flow-col justify-stretch border border-primary rounded">
@@ -64,7 +78,7 @@ export const ThemeModal: React.FC = () => {
             ))}
           </div>
         </div>
-      </ModalBody>
-    </Modal>
+      </DialogContent>
+    </Dialog>
   );
 };

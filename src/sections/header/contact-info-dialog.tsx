@@ -1,5 +1,4 @@
 import React from "react";
-import { Modal, ModalBody, ModalTrigger } from "../../components/layout/modal";
 import { Email, GitHub, LinkedIn, Twitter } from "../../icons";
 import { TXT } from "../../components/ui";
 import {
@@ -8,6 +7,14 @@ import {
   USER_LINKEDIN_URL,
   USER_TWITTER_URL,
 } from "../../user-data";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../components/ui/dialog";
 
 type Social = {
   name: string;
@@ -38,13 +45,17 @@ const socialList: Social[] = [
   },
 ];
 
-export const ContactInfoModal: React.FC = () => {
+export const ContactInfoDialog: React.FC = () => {
   return (
-    <Modal>
-      <ModalTrigger className="hover:underline text-primary">
-        Contact Info
-      </ModalTrigger>
-      <ModalBody title="Contact Info">
+    <Dialog>
+      <DialogTrigger asChild>
+        <button className="hover:underline text-primary">Contact Info</button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Contact</DialogTitle>
+          <DialogDescription>Ways to contact me.</DialogDescription>
+        </DialogHeader>
         <div className="flex flex-col gap-2 flex-wrap items-center">
           {socialList.map((social) => (
             <a
@@ -58,7 +69,7 @@ export const ContactInfoModal: React.FC = () => {
             </a>
           ))}
         </div>
-      </ModalBody>
-    </Modal>
+      </DialogContent>
+    </Dialog>
   );
 };

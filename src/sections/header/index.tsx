@@ -1,11 +1,11 @@
 import React from "react";
 import { Verified } from "../../icons";
 import { SectionContainer } from "../../components/layout/section-container";
-import { ContactInfoModal } from "./contact-info-modal";
-import { OpportunitiesModel } from "./opportunities-model";
 import { TXT } from "../../components/ui";
 import SectionProps from "../../types/section-props";
 import { useAppScroll } from "../app-scroll-context";
+import { ContactInfoDialog } from "./contact-info-dialog";
+import { OpportunitiesDialog } from "./opportunities-dialog";
 
 export const Header: React.FC<SectionProps> = ({ sectionIndex }) => {
   const { appSectionRefs } = useAppScroll();
@@ -24,9 +24,9 @@ export const Header: React.FC<SectionProps> = ({ sectionIndex }) => {
         <div className="flex gap-1 flex-wrap">
           <TXT>United States 🇺🇸</TXT>
           <TXT>•</TXT>
-          <ContactInfoModal />
+          <ContactInfoDialog />
         </div>
-        <OpportunitiesModel />
+        <OpportunitiesDialog />
       </div>
     </SectionContainer>
   );
