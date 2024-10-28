@@ -11,7 +11,7 @@ export const SectionContainer = forwardRef<
 >(({ sectionIndex = 0, children }, ref) => {
   return (
     <motion.section
-      className="p-2 lg:p-4 rounded-xl bg-background-2 shadow shadow-background-3"
+      className="p-4 lg:p-8 rounded-xl bg-background-2 border border-background-3"
       initial={{
         scale: 0.9,
         rotate: sectionIndex % 2 === 0 ? 1 : -1,
