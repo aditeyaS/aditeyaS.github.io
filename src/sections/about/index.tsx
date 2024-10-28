@@ -7,16 +7,19 @@ import { Recruiter } from "./recruiter";
 import { Manager } from "./manager";
 import { Engineer } from "./engineer";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 export const About: React.FC<SectionProps> = ({ sectionIndex }) => {
   const [viewerType, setViewerType] = useState<
     "anyone" | "recruiter" | "manager" | "engineer"
   >("anyone");
 
+  const { appSectionRefs } = useAppScroll();
+
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer sectionIndex={sectionIndex} ref={appSectionRefs.about}>
       <div className="flex flex-col gap-4">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-foreground-2">
           <Icon />
           <H1>About</H1>
         </div>

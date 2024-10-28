@@ -30,6 +30,7 @@ import mcl from "../../assets/projects/my_cover_letter.png";
 import clemson from "../../assets/education/clemson.png";
 import { USER_TWITTER_URL } from "../../user-data";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 type ProjectType = {
   name: string;
@@ -109,10 +110,12 @@ const projectList: ProjectType[] = [
 ];
 
 export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
+  const { appSectionRefs } = useAppScroll();
+
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer sectionIndex={sectionIndex} ref={appSectionRefs.projects}>
       <div className="flex flex-col gap-2">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-foreground-2">
           <Icon />
           <H1>Projects</H1>
         </div>

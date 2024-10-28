@@ -83,6 +83,7 @@ import { Chip, H1, TXT } from "../../components/ui";
 import { Icon } from "./icon";
 import { motion } from "framer-motion";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 type SkillType = {
   name: string;
@@ -419,10 +420,13 @@ export const Skills: React.FC<SectionProps> = ({ sectionIndex }) => {
   const [viewerType, setViewerType] = useState<
     "languages" | "fe" | "be" | "cloud" | "testing" | "others"
   >("languages");
+
+  const { appSectionRefs } = useAppScroll();
+
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer sectionIndex={sectionIndex} ref={appSectionRefs.skills}>
       <section className="flex flex-col gap-2">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-foreground-2">
           <Icon />
           <H1>Skills</H1>
         </div>

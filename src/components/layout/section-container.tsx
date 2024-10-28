@@ -1,15 +1,14 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 
-interface SectionContainerProps {
-  children: React.ReactNode;
+interface SectionContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   sectionIndex?: number;
 }
 
-export const SectionContainer: React.FC<SectionContainerProps> = ({
-  sectionIndex = 0,
-  children,
-}) => {
+export const SectionContainer = forwardRef<
+  HTMLDivElement,
+  SectionContainerProps
+>(({ sectionIndex = 0, children }, ref) => {
   return (
     <motion.section
       className="p-2 lg:p-4 rounded-xl bg-background-2 shadow shadow-background-3"
@@ -23,8 +22,11 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({
       }}
       viewport={{ amount: 0.1 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
+      ref={ref}
     >
       {children}
     </motion.section>
   );
-};
+});
+
+SectionContainer.displayName = "SectionContainer";

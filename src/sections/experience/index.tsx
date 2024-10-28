@@ -10,6 +10,7 @@ import { H1, H2, TXT, TXT2 } from "../../components/ui";
 import { Icon } from "./icon";
 import { ExperienceDetails } from "./experience-detail";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 type ExperienceType = {
   position: string;
@@ -111,11 +112,15 @@ const experienceList: ExperienceType[] = [
 
 export const Experience: React.FC<SectionProps> = ({ sectionIndex }) => {
   const todaysDate = new Date();
+  const { appSectionRefs } = useAppScroll();
 
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer
+      sectionIndex={sectionIndex}
+      ref={appSectionRefs.experience}
+    >
       <div className="flex flex-col gap-2">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-foreground-2">
           <Icon />
           <H1>Experience</H1>
         </div>

@@ -5,10 +5,13 @@ import { ContactInfoModal } from "./contact-info-modal";
 import { OpportunitiesModel } from "./opportunities-model";
 import { TXT } from "../../components/ui";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 export const Header: React.FC<SectionProps> = ({ sectionIndex }) => {
+  const { appSectionRefs } = useAppScroll();
+
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer sectionIndex={sectionIndex} ref={appSectionRefs.intro}>
       <div className="flex flex-col items-center gap-2">
         <div className="bg-primary/25 rounded rounded-full ring ring-primary ring-offset-4 ring-offset-background">
           <img className="w-48 h-48 rounded rounded-full" srcSet="avatar.png" />

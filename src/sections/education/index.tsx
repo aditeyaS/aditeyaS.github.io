@@ -7,6 +7,7 @@ import { Icon } from "./icon";
 import ClemsonLogo from "../../assets/education/clemson.png";
 import AktuLogo from "../../assets/education/aktu.png";
 import SectionProps from "../../types/section-props";
+import { useAppScroll } from "../app-scroll-context";
 
 type EducationType = {
   degree: string;
@@ -39,10 +40,15 @@ const educationList: EducationType[] = [
 ];
 
 export const Education: React.FC<SectionProps> = ({ sectionIndex }) => {
+  const { appSectionRefs } = useAppScroll();
+
   return (
-    <SectionContainer sectionIndex={sectionIndex}>
+    <SectionContainer
+      sectionIndex={sectionIndex}
+      ref={appSectionRefs.education}
+    >
       <div className="flex flex-col gap-2">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-foreground-2">
           <Icon />
           <H1>Education</H1>
         </div>
