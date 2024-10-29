@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/aditeyaS/aditeyaS.github.io.git"
   },
+  "bugs": {
+    "url": "https://github.com/aditeyaS/aditeyaS.github.io/issues"
+  },
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -26,6 +29,7 @@
     "framer-motion": "^11.5.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-ga4": "^2.1.0",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
@@ -43,5 +47,32 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  }
+  },
+  "keywords": [
+    "portfolio",
+    "personal-site",
+    "resume",
+    "cv",
+    "personal-website",
+    "portfolio-website",
+    "portfolio-site",
+    "portfolio-template",
+    "portfolio-page",
+    "developer-portfolio",
+    "portfolio-project",
+    "tailwind-portfolio",
+    "vite-portfolio",
+    "projects",
+    "open-source",
+    "git",
+    "react-portfolio",
+    "github",
+    "github-page",
+    "github-pages",
+    "github-portfolio",
+    "vite-portfolio",
+    "academic-portfolio",
+    "github-api",
+    "animated-portfolio"
+  ]
 }

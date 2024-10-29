@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "./sections/header";
 import { About } from "./sections/about";
 import { Experience } from "./sections/experience";
@@ -9,9 +9,30 @@ import { useScroll } from "framer-motion";
 import { Projects } from "./sections/projects";
 import { TopNav } from "./sections/top-nav";
 import { AppScrollProvider } from "./sections/app-scroll-context";
+import { initGA, trackPageViewWithUTM } from "./lib/google-analytics";
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    initGA("G-03ZF737H5N");
+    const getUTMParams = (): Record<string, string | null> => {
+      const searchParams = new URLSearchParams(window.location.search);
+      return {
+        utm_source: searchParams.get("utm_source"),
+        utm_medium: searchParams.get("utm_medium"),
+        utm_campaign: searchParams.get("utm_campaign"),
+        utm_content: searchParams.get("utm_content"),
+        utm_term: searchParams.get("utm_term"),
+      };
+    };
+    const utmParams = getUTMParams();
+    trackPageViewWithUTM(
+      window.location.pathname + window.location.search,
+      utmParams
+    );
+  }, []);
+
   return (
     <AppScrollProvider>
       <TopNav scrollYProgress={scrollYProgress} />
