@@ -1,62 +1,65 @@
 import { useEffect, useRef, useState } from "react";
-import { useTheme } from "./theme-provider";
-import { accentList } from "../sections/top-nav/theme-dialog";
+import { useTheme } from "../theme-provider";
+import { accentList } from "../../sections/top-nav/theme-dialog";
 
-const PARTICLE_COUNT = 250;
-const MAX_RADIUS = 10;
-const PARTICLE_COLORS = accentList.map((a) => a.color);
+const RIPPLE_COUNT = 50;
+const MAX_RADIUS = 100;
+const RIPPLE_COLORS = accentList.map((a) => a.color);
 
-type Particle = {
+type Ripple = {
   x: number;
   y: number;
   radius: number;
+  opacity: number;
   color: string;
-  angle: number;
-  speed: number;
 };
 
-export const ParticleBackground = () => {
+export const RippleWallpaper = () => {
   const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const themeRef = useRef<string>("light");
   const [isSafari, setIsSafari] = useState(false);
 
-  const particles = useRef<Particle[]>([]);
+  const ripples = useRef<Ripple[]>([]);
   let animationId: number;
   let w: number, h: number;
 
-  const initParticles = () => {
-    particles.current = Array.from({ length: PARTICLE_COUNT }, () => ({
+  // Initialize ripples with random properties
+  const initRipples = () => {
+    ripples.current = Array.from({ length: RIPPLE_COUNT }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      radius: Math.random() * MAX_RADIUS + 1,
-      color:
-        PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
-      angle: Math.random() * Math.PI * 2,
-      speed: 0.01 + Math.random() * 0.02,
+      radius: Math.random() * 10, // Start with small radius
+      opacity: 1, // Start fully opaque
+      color: RIPPLE_COLORS[Math.floor(Math.random() * RIPPLE_COLORS.length)],
     }));
   };
 
-  const drawParticles = () => {
+  const drawRipples = () => {
     const ctx = ctxRef.current;
     if (!ctx) return;
 
-    particles.current.forEach((particle) => {
-      particle.angle += particle.speed;
-      const offsetX = Math.cos(particle.angle) * 20;
-      const offsetY = Math.sin(particle.angle) * 20;
+    ripples.current.forEach((ripple) => {
+      // Increase radius and decrease opacity
+      ripple.radius += 0.5; // Controls the speed of expansion
+      ripple.opacity -= 0.005; // Controls the fade-out speed
 
+      // Reset ripple when it fades out or reaches max radius
+      if (ripple.opacity <= 0 || ripple.radius > MAX_RADIUS) {
+        ripple.x = Math.random() * w;
+        ripple.y = Math.random() * h;
+        ripple.radius = Math.random() * 10;
+        ripple.opacity = 1;
+      }
+
+      // Draw ripple
+      ctx.globalAlpha = ripple.opacity;
       ctx.beginPath();
-      ctx.arc(
-        particle.x + offsetX,
-        particle.y + offsetY,
-        particle.radius,
-        0,
-        Math.PI * 2
-      );
-      ctx.fillStyle = particle.color;
-      ctx.fill();
+      ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = ripple.color;
+      ctx.lineWidth = 2; // Thickness of ripple line
+      ctx.stroke();
       ctx.closePath();
     });
   };
@@ -64,10 +67,14 @@ export const ParticleBackground = () => {
   const render = () => {
     const ctx = ctxRef.current;
     if (!ctx) return;
+
+    // Clear canvas and fill background
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = themeRef.current === "light" ? "white" : "black";
     ctx.fillRect(0, 0, w, h);
-    drawParticles();
+
+    // Draw ripples
+    drawRipples();
     animationId = requestAnimationFrame(render);
   };
 
@@ -83,9 +90,10 @@ export const ParticleBackground = () => {
     window.onresize = () => {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
-      initParticles();
+      initRipples(); // Reinitialize ripples on resize
     };
-    initParticles();
+
+    initRipples(); // Initialize ripples initially
     render();
   };
 

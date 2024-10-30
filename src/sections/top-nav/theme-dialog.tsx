@@ -1,6 +1,6 @@
 import React from "react";
 import { Moon, Pallette, Sun } from "../../icons";
-import { Accent, useTheme } from "../../components/theme-provider";
+import { Accent, useTheme, Wallpaper } from "../../components/theme-provider";
 import { cn } from "../../lib/utils";
 import { TXT } from "../../components/ui";
 import {
@@ -25,8 +25,21 @@ export const accentList: AccentListType[] = [
   { accent: "green", color: "#2ECC71" },
 ];
 
+const wallpaperList: Wallpaper[] = [
+  "none",
+  "accent",
+  "particle",
+  "wave",
+  "ripple",
+];
+
 export const ThemeDialog: React.FC = () => {
-  const { theme, accent, setTheme, setAccent } = useTheme();
+  const { theme, accent, wallpaper, setTheme, setAccent, setWallpaper } =
+    useTheme();
+
+  const onWallpaperChange = (wallpaper: Wallpaper) => {
+    setWallpaper(wallpaper);
+  };
 
   return (
     <Dialog>
@@ -77,6 +90,18 @@ export const ThemeDialog: React.FC = () => {
               ></button>
             ))}
           </div>
+          <TXT>Wallpaper</TXT>
+          <select
+            className="py-2 px-0.5 bg-background border border-primary rounded capitalize"
+            value={wallpaper}
+            onChange={(e) => onWallpaperChange(e.target.value as Wallpaper)}
+          >
+            {wallpaperList.map((w) => (
+              <option key={`wallpaper-name-${w}`} disabled={wallpaper === w}>
+                {w}
+              </option>
+            ))}
+          </select>
         </div>
       </DialogContent>
     </Dialog>

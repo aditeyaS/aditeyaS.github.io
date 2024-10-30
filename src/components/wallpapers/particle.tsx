@@ -1,40 +1,64 @@
 import { useEffect, useRef, useState } from "react";
-import { createNoise3D } from "simplex-noise";
-import { useTheme } from "./theme-provider";
-import { accentList } from "../sections/top-nav/theme-dialog";
+import { useTheme } from "../theme-provider";
+import { accentList } from "../../sections/top-nav/theme-dialog";
 
-const BLUR = 10;
-const WAVE_COLORS = accentList.map((a) => a.color);
+const PARTICLE_COUNT = 250;
+const MAX_RADIUS = 10;
+const PARTICLE_COLORS = accentList.map((a) => a.color);
 
-export const WavyBackground = () => {
-  let w: number, h: number, nt: number, animationId: number;
+type Particle = {
+  x: number;
+  y: number;
+  radius: number;
+  color: string;
+  angle: number;
+  speed: number;
+};
 
+export const ParticleWallpaper = () => {
   const { theme } = useTheme();
-  const noise = createNoise3D();
-
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const themeRef = useRef<string>("light");
   const [isSafari, setIsSafari] = useState(false);
 
-  const drawWave = () => {
+  const particles = useRef<Particle[]>([]);
+  let animationId: number;
+  let w: number, h: number;
+
+  const initParticles = () => {
+    particles.current = Array.from({ length: PARTICLE_COUNT }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      radius: Math.random() * MAX_RADIUS + 1,
+      color:
+        PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+      angle: Math.random() * Math.PI * 2,
+      speed: 0.01 + Math.random() * 0.02,
+    }));
+  };
+
+  const drawParticles = () => {
     const ctx = ctxRef.current;
     if (!ctx) return;
-    nt += 0.005; // wave speed
-    ctx.globalAlpha = 0.75; // wave opacity
-    for (let i = 0; i < WAVE_COLORS.length; i++) {
+
+    particles.current.forEach((particle) => {
+      particle.angle += particle.speed;
+      const offsetX = Math.cos(particle.angle) * 20;
+      const offsetY = Math.sin(particle.angle) * 20;
+
       ctx.beginPath();
-      ctx.lineWidth = 50; // wave width
-      ctx.lineCap = "round";
-      ctx.strokeStyle = WAVE_COLORS[i];
-      for (let x = 0; x < w; x += 5) {
-        const y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height
-      }
-      ctx.stroke();
+      ctx.arc(
+        particle.x + offsetX,
+        particle.y + offsetY,
+        particle.radius,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = particle.color;
+      ctx.fill();
       ctx.closePath();
-    }
-    ctx.globalAlpha = 1.0;
+    });
   };
 
   const render = () => {
@@ -43,29 +67,30 @@ export const WavyBackground = () => {
     ctx.clearRect(0, 0, w, h);
     ctx.fillStyle = themeRef.current === "light" ? "white" : "black";
     ctx.fillRect(0, 0, w, h);
-    drawWave();
+    drawParticles();
     animationId = requestAnimationFrame(render);
   };
 
-  const init = () => {
+  const initCanvas = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
+
     ctxRef.current = ctx;
     w = ctx.canvas.width = window.innerWidth;
     h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${BLUR}px)`;
-    nt = 0;
+
     window.onresize = () => {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
-      ctx.filter = `blur(${BLUR}px)`;
+      initParticles();
     };
+    initParticles();
     render();
   };
 
   useEffect(() => {
-    init();
+    initCanvas();
     return () => cancelAnimationFrame(animationId);
   }, []);
 
@@ -86,7 +111,7 @@ export const WavyBackground = () => {
       className="fixed inset-0 z-0"
       ref={canvasRef}
       style={{
-        ...(isSafari ? { filter: `blur(${BLUR}px)` } : {}),
+        ...(isSafari ? { filter: "blur(10px)" } : {}),
       }}
     />
   );
