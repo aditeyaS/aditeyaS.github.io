@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Background = () => {
-  const backgroundRed = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export const Background = () => {
   };
 
   return (
-    <div ref={backgroundRed} className="fixed inset-0 h-screen w-screen">
+    <>
       <motion.svg
         className="w-10 h-10 fixed left-0 top-0"
         variants={variants}
@@ -65,6 +64,6 @@ export const Background = () => {
           className="fill-primary/30"
         />
       </motion.svg>
-    </div>
+    </>
   );
 };
