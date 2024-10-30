@@ -60,6 +60,7 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
                       key={`project-${index}-skill-${skillIndex}`}
                       icon={skill.icon}
                       name={skill.name}
+                      color={skill.color}
                     />
                   ))}
                 </div>
@@ -75,13 +76,15 @@ export const Projects: React.FC<SectionProps> = ({ sectionIndex }) => {
 interface ProjectSkillProps {
   icon: React.ReactNode;
   name: string;
+  color?: string;
 }
 
-const ProjectSkill = ({ icon, name }: ProjectSkillProps) => {
+const ProjectSkill = ({ icon, name, color }: ProjectSkillProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   return (
     <motion.div
-      className="relative text-primary cursor-pointer"
+      className="relative cursor-pointer"
+      style={{ color }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >

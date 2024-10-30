@@ -26,7 +26,7 @@ type ProjectType = {
   description: string;
   githubLink: string;
   liveLink?: string;
-  skills: { name: string; icon: React.ReactNode }[];
+  skills: { name: string; icon: React.ReactNode; color?: string }[];
 };
 
 export const PROJECT_LIST: ProjectType[] = [
@@ -37,10 +37,10 @@ export const PROJECT_LIST: ProjectType[] = [
     githubLink: "https://github.com/aditeyaS/aditeyaS.github.io",
     liveLink: "https://aditeyaS.github.io",
     skills: [
-      { name: "React", icon: <ReactIcon /> },
-      { name: "Typescript", icon: <Typescript /> },
-      { name: "Tailwind CSS", icon: <TailwindCss /> },
-      { name: "Framer Motion", icon: <FramerMotion /> },
+      { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
+      { name: "Typescript", icon: <Typescript />, color: "#3178C6" },
+      { name: "Tailwind CSS", icon: <TailwindCss />, color: "#06B6D4" },
+      { name: "Framer Motion", icon: <FramerMotion />, color: "#0055FF" },
     ],
   },
   {
@@ -51,10 +51,10 @@ export const PROJECT_LIST: ProjectType[] = [
     githubLink: "https://github.com/aditeyaS/grow-your-x",
     liveLink: USER_TWITTER_URL,
     skills: [
-      { name: "Python", icon: <Python /> },
+      { name: "Python", icon: <Python />, color: "#3776AB" },
       { name: "Flask", icon: <Flask /> },
-      { name: "OpenAI API", icon: <OpenAI /> },
-      { name: "GitHub Actions", icon: <GitHubActions /> },
+      { name: "OpenAI API", icon: <OpenAI />, color: "#412991" },
+      { name: "GitHub Actions", icon: <GitHubActions />, color: "#2088FF" },
     ],
   },
   {
@@ -65,9 +65,9 @@ export const PROJECT_LIST: ProjectType[] = [
     liveLink: "https://mycoverletter-client.onrender.com/",
     skills: [
       { name: "Express", icon: <Express /> },
-      { name: "MongoDB", icon: <MongoDb /> },
-      { name: "React", icon: <ReactIcon /> },
-      { name: "Typescript", icon: <Typescript /> },
+      { name: "MongoDB", icon: <MongoDb />, color: "#47A248" },
+      { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
+      { name: "Typescript", icon: <Typescript />, color: "#3178C6" },
     ],
   },
   {
@@ -78,9 +78,9 @@ export const PROJECT_LIST: ProjectType[] = [
     githubLink: "https://github.com/aditeyaS/JobCredFill",
     liveLink: "https://jobcredfill.onrender.com/",
     skills: [
-      { name: "React", icon: <ReactIcon /> },
-      { name: "Typescript", icon: <Typescript /> },
-      { name: "Chrome Extensions", icon: <ChromeWebStore /> },
+      { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
+      { name: "Typescript", icon: <Typescript />, color: "#3178C6" },
+      { name: "Chrome Extensions", icon: <ChromeWebStore />, color: "#4285F4" },
     ],
   },
   {
@@ -90,10 +90,10 @@ export const PROJECT_LIST: ProjectType[] = [
       "All the assignments and projects that I did during my Master's at Clemson University.",
     githubLink: "https://github.com/aditeyaS/MSCS-Clemson",
     skills: [
-      { name: "AWS", icon: <AWS /> },
-      { name: "Java", icon: <Java /> },
-      { name: "Python", icon: <Python /> },
-      { name: "C++", icon: <Cpp /> },
+      { name: "AWS", icon: <AWS />, color: "#FF9900" },
+      { name: "Java", icon: <Java />, color: " #F89820" },
+      { name: "Python", icon: <Python />, color: "#3776AB" },
+      { name: "C++", icon: <Cpp />, color: "#00599C" },
     ],
   },
 ];
