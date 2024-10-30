@@ -38,6 +38,8 @@ const App: React.FC = () => {
     <AppScrollProvider>
       {/* <Background /> */}
       <WavyBackground />
+      {/* <ParticleBackground /> */}
+      {/* <RippleBackground /> */}
       <TopNav scrollYProgress={scrollYProgress} />
       <div className="px-2 pt-2 lg:px-36 lg:pt-4 flex flex-col gap-2 lg:gap-4 mt-14">
         <Header sectionIndex={0} />
