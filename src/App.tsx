@@ -10,7 +10,7 @@ import { Projects } from "./sections/projects";
 import { TopNav } from "./sections/top-nav";
 import { AppScrollProvider } from "./sections/app-scroll-context";
 import { initGA, trackPageViewWithUTM } from "./lib/google-analytics";
-import { Background } from "./components/background";
+import { WavyBackground } from "./components/wavy-background";
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -36,7 +36,8 @@ const App: React.FC = () => {
 
   return (
     <AppScrollProvider>
-      <Background />
+      {/* <Background /> */}
+      <WavyBackground />
       <TopNav scrollYProgress={scrollYProgress} />
       <div className="px-2 pt-2 lg:px-36 lg:pt-4 flex flex-col gap-2 lg:gap-4 mt-14">
         <Header sectionIndex={0} />

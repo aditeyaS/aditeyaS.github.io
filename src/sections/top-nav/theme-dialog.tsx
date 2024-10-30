@@ -16,7 +16,7 @@ type AccentListType = {
   accent: Accent;
   color: string;
 };
-const accentList: AccentListType[] = [
+export const accentList: AccentListType[] = [
   { accent: "purple", color: "#8338EC" },
   { accent: "yellow", color: "#FFBE0B" },
   { accent: "orange", color: "#FB5607" },

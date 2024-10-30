@@ -39,7 +39,7 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollYProgress }) => {
   return (
     <div
       id="app-top-nav"
-      className="fixed top-0 left-0 right-0 z-50 h-14 bg-background-2"
+      className="fixed top-0 left-0 right-0 z-50 h-14 bg-background-2 border-b border-background-3"
     >
       <div className="px-2 lg:px-36 py-2 h-12 flex items-center justify-between">
         <div className="flex gap-2 items-center">

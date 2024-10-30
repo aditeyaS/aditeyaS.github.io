@@ -12,7 +12,7 @@
     --background-2: 0 0% 5%;
     --background-3: 0 0% 10%;
     --foreground: 0 0% 100%;
-    --foreground-2: 0 0% 50%;
+    --foreground-2: 0 0% 75%;
     --green: 145 63% 49%;
   }
   html[data-theme='light'] {
@@ -20,7 +20,7 @@
     --background-2: 0 0% 95%;
     --background-3: 0 0% 90%;
     --foreground: 0 0% 0%;
-    --foreground-2: 0 0% 50%;
+    --foreground-2: 0 0% 25%;
     --green: 145 63% 49%;
   }
   /* accent colors */
