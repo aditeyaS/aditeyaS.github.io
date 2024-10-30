@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   const date = new Date();
   return (
     <footer className="flex flex-col items-center gap-2 py-4 lg:py-8">
-      <span className="font-thin">
+      <span className="font-thin z-10">
         &copy; Aditeya Srivastava, {date.getFullYear()}
       </span>
       <div className="flex gap-3">
