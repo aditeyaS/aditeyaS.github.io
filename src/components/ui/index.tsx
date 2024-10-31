@@ -1,5 +1,2 @@
-export { H1 } from "./h1";
-export { H2 } from "./h2";
+export { H1, H2, TXT, TXT2 } from "./typography";
 export { Chip } from "./chip";
-export { TXT } from "./txt";
-export { TXT2 } from "./txt2";
