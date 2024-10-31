@@ -2,7 +2,13 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 export type Theme = "light" | "dark" | "system";
 export type Accent = "blue" | "yellow" | "orange" | "pink" | "purple" | "green";
-export type Wallpaper = "none" | "accent" | "wave" | "ripple" | "particle";
+export type Wallpaper =
+  | "none"
+  | "accent"
+  | "wave"
+  | "ripple"
+  | "particle"
+  | "interactive";
 
 const defaultAccent: Accent = "purple";
 const defaultWallpaper: Wallpaper = "wave";

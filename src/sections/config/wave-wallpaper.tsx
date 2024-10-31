@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
-import { useTheme } from "../theme-provider";
 import { accentList } from "../../sections/top-nav/theme-dialog";
+import { useTheme } from "../../components/theme-provider";
 
-const BLUR = 10;
 const WAVE_COLORS = accentList.map((a) => a.color);
 
 export const WaveWallpaper = () => {
@@ -15,7 +14,6 @@ export const WaveWallpaper = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const themeRef = useRef<string>("light");
-  const [isSafari, setIsSafari] = useState(false);
 
   const drawWave = () => {
     const ctx = ctxRef.current;
@@ -54,12 +52,10 @@ export const WaveWallpaper = () => {
     ctxRef.current = ctx;
     w = ctx.canvas.width = window.innerWidth;
     h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${BLUR}px)`;
     nt = 0;
     window.onresize = () => {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
-      ctx.filter = `blur(${BLUR}px)`;
     };
     render();
   };
@@ -73,21 +69,13 @@ export const WaveWallpaper = () => {
     themeRef.current = theme;
   }, [theme]);
 
-  useEffect(() => {
-    setIsSafari(
-      typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome")
-    );
-  }, []);
-
   return (
     <canvas
+      // style={{
+      //   filter: "blur(5px)",
+      // }}
       className="fixed inset-0 z-0"
       ref={canvasRef}
-      style={{
-        ...(isSafari ? { filter: `blur(${BLUR}px)` } : {}),
-      }}
     />
   );
 };

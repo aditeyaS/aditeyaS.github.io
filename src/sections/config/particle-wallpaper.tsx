@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { useTheme } from "../theme-provider";
+import { useEffect, useRef } from "react";
 import { accentList } from "../../sections/top-nav/theme-dialog";
+import { useTheme } from "../../components/theme-provider";
 
 const PARTICLE_COUNT = 250;
 const MAX_RADIUS = 10;
@@ -20,7 +20,6 @@ export const ParticleWallpaper = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const themeRef = useRef<string>("light");
-  const [isSafari, setIsSafari] = useState(false);
 
   const particles = useRef<Particle[]>([]);
   let animationId: number;
@@ -46,7 +45,6 @@ export const ParticleWallpaper = () => {
       particle.angle += particle.speed;
       const offsetX = Math.cos(particle.angle) * 20;
       const offsetY = Math.sin(particle.angle) * 20;
-
       ctx.beginPath();
       ctx.arc(
         particle.x + offsetX,
@@ -75,11 +73,9 @@ export const ParticleWallpaper = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
-
     ctxRef.current = ctx;
     w = ctx.canvas.width = window.innerWidth;
     h = ctx.canvas.height = window.innerHeight;
-
     window.onresize = () => {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
@@ -98,21 +94,5 @@ export const ParticleWallpaper = () => {
     themeRef.current = theme;
   }, [theme]);
 
-  useEffect(() => {
-    setIsSafari(
-      typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome")
-    );
-  }, []);
-
-  return (
-    <canvas
-      className="fixed inset-0 z-0"
-      ref={canvasRef}
-      style={{
-        ...(isSafari ? { filter: "blur(10px)" } : {}),
-      }}
-    />
-  );
+  return <canvas className="fixed inset-0 z-0" ref={canvasRef} />;
 };

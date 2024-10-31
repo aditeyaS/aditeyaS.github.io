@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { useTheme } from "../theme-provider";
+import { useEffect, useRef } from "react";
 import { accentList } from "../../sections/top-nav/theme-dialog";
+import { useTheme } from "../../components/theme-provider";
 
 const RIPPLE_COUNT = 50;
 const MAX_RADIUS = 100;
@@ -19,7 +19,6 @@ export const RippleWallpaper = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const themeRef = useRef<string>("light");
-  const [isSafari, setIsSafari] = useState(false);
 
   const ripples = useRef<Ripple[]>([]);
   let animationId: number;
@@ -106,21 +105,5 @@ export const RippleWallpaper = () => {
     themeRef.current = theme;
   }, [theme]);
 
-  useEffect(() => {
-    setIsSafari(
-      typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome")
-    );
-  }, []);
-
-  return (
-    <canvas
-      className="fixed inset-0 z-0"
-      ref={canvasRef}
-      style={{
-        ...(isSafari ? { filter: "blur(10px)" } : {}),
-      }}
-    />
-  );
+  return <canvas className="fixed inset-0 z-0" ref={canvasRef} />;
 };

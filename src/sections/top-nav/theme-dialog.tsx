@@ -31,6 +31,7 @@ const wallpaperList: Wallpaper[] = [
   "particle",
   "wave",
   "ripple",
+  "interactive",
 ];
 
 export const ThemeDialog: React.FC = () => {
@@ -44,7 +45,7 @@ export const ThemeDialog: React.FC = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="rounded bg-primary p-2">
+        <button className="rounded bg-primary p-2 hover:bg-primary/80">
           <Pallette />
         </button>
       </DialogTrigger>

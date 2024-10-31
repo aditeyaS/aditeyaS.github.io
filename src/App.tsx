@@ -11,10 +11,12 @@ import { TopNav } from "./sections/top-nav";
 import { AppScrollProvider } from "./sections/app-scroll-context";
 import { initGA, trackPageViewWithUTM } from "./lib/google-analytics";
 import { useTheme } from "./components/theme-provider";
-import { AccentWallpaper } from "./components/wallpapers/accent";
-import { ParticleWallpaper } from "./components/wallpapers/particle";
-import { RippleWallpaper } from "./components/wallpapers/ripple";
-import { WaveWallpaper } from "./components/wallpapers/wave";
+import { NewUserMessage } from "./sections/config/new-user-message";
+import { AccentWallpaper } from "./sections/config/accent-wallpaper";
+import { InteractiveWallpaper } from "./sections/config/interactive-wallpaper";
+import { ParticleWallpaper } from "./sections/config/particle-wallpaper";
+import { RippleWallpaper } from "./sections/config/ripple-wallpaper";
+import { WaveWallpaper } from "./sections/config/wave-wallpaper";
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -45,6 +47,8 @@ const App: React.FC = () => {
       {wallpaper === "particle" && <ParticleWallpaper />}
       {wallpaper === "ripple" && <RippleWallpaper />}
       {wallpaper === "wave" && <WaveWallpaper />}
+      {wallpaper === "interactive" && <InteractiveWallpaper />}
+      <NewUserMessage />
       <TopNav scrollYProgress={scrollYProgress} />
       <div className="px-2 pt-2 lg:px-36 lg:pt-4 flex flex-col gap-2 lg:gap-4 mt-14">
         <Header sectionIndex={0} />
