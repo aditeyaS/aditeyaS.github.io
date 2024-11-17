@@ -3,7 +3,7 @@ export const USER_EMAIL = "aditeyaaaa@gmail.com";
 export const USER_GITHUB_URL = "https://www.github.com/aditeyaS";
 export const USER_TWITTER_URL = "https://www.x.com/aditeyaaaa";
 export const USER_RESUME_URL =
-  "https://drive.google.com/file/d/1tzveHUC7HB9iWXSCh8TWLoGNEDXa_thc";
+  "https://github.com/aditeyaS/resume/blob/main/resume.pdf";
 export const USER_LEETCODE_LINK = "https://leetcode.com/u/aditeyaaaa/";
 export const USER_SPOTIFY_URL =
   "https://open.spotify.com/user/8nebx4r1q84ksgldsdzxdv15m";
