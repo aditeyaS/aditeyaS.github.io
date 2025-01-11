@@ -28,7 +28,7 @@ export default function Projects() {
                 <Link2 className="size-4" /> {project.name}
               </a>
               <p className="text-muted-foreground">{project.description}</p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap items-center">
                 {project.skills.map((skill, i2) => (
                   <Badge
                     key={`project-${i}-skill-${i2}`}

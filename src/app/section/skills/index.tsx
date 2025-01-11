@@ -1,4 +1,4 @@
-import { Code } from "lucide-react";
+import { Code, TriangleAlert } from "lucide-react";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { useAppScroll } from "../../providers/scroll";
 import { useState } from "react";
@@ -10,6 +10,9 @@ import { Language } from "./languages";
 import { Others } from "./others";
 import { Testing } from "./testing";
 import { Current } from "./current";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 type Tab =
   | "current"
@@ -32,15 +35,35 @@ const tabs: Tab[] = [
 
 export default function Skills() {
   const { appSectionRefs } = useAppScroll();
+  const { toast } = useToast();
 
   const [viewerType, setViewerType] = useState<Tab>("current");
+
+  function handleWarningClick() {
+    toast({
+      variant: "default",
+      title: "Waning",
+      description: `These are all the technologies that I have used at some point.`,
+      action: <ToastAction altText="I understand">I understand</ToastAction>,
+    });
+  }
 
   return (
     <Section ref={appSectionRefs.skills}>
       <div className="flex flex-col gap-6">
-        <SectionHeader>
-          <Code />
-          Skills
+        <SectionHeader className="justify-between">
+          <div className="flex items-center gap-2">
+            <Code />
+            Skills
+          </div>
+          <Button
+            variant={"outline"}
+            size={"icon"}
+            className="size-6"
+            onClick={handleWarningClick}
+          >
+            <TriangleAlert />
+          </Button>
         </SectionHeader>
 
         <div className="flex flex-col gap-4">

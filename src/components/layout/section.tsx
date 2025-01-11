@@ -21,7 +21,10 @@ function SectionHeader({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("flex items-center gap-2 [&_svg]:size-4")} {...props} />
+    <div
+      className={cn("flex items-center gap-2 [&_svg]:size-4", className)}
+      {...props}
+    />
   );
 }
 

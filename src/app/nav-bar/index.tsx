@@ -60,7 +60,9 @@ export function NavBar({ scrollYProgress }: Props) {
           >
             <Search className="size-4" />
             <p className="ml-2 mr-10 cursor-text">Search...</p>
-            <kbd className="bg-muted px-2 rounded">{isMac ? "⌘" : "⌃"}k</kbd>
+            <kbd className="bg-muted px-2 rounded text-sm font-semibold">
+              {isMac ? "⌘" : "⌃"}K
+            </kbd>
           </Button>
         </div>
         <ThemeDialog />
