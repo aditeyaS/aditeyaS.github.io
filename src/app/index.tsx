@@ -2,17 +2,20 @@ import { useScroll } from "framer-motion";
 import { ThemeProvider } from "./providers/theme";
 import { ScrollProvider } from "./providers/scroll";
 import { NavBar } from "./nav-bar";
-import { Introduction } from "./section/introduction";
-import { Contact } from "./section/contact";
+import {
+  Introduction,
+  About,
+  Carousel,
+  Contact,
+  Education,
+  Experience,
+  Projects,
+  Skills,
+} from "./section";
 import { Toaster } from "@/components/ui/toaster";
-import { About } from "./section/about";
-import { Carousel } from "./section/carousel";
-import { Experience } from "./section/experience";
-import { Projects } from "./section/projects";
-import { Education } from "./section/education";
-import { Skills } from "./section/skills";
 import { Footer } from "./footer";
 import Wallpapers from "./wallpapers";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -33,6 +36,7 @@ function App() {
         </div>
         <Footer />
         <Toaster />
+        <ScrollToTop />
       </ScrollProvider>
     </ThemeProvider>
   );

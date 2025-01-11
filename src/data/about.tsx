@@ -12,7 +12,12 @@ import {
 } from "lucide-react";
 import USER from "./user";
 import Linkedin from "@/components/icons/linkedin";
-import { SiGithub, SiLeetcode } from "@icons-pack/react-simple-icons";
+import {
+  SiGithub,
+  SiGoogledocsHex,
+  SiLeetcode,
+  SiLeetcodeHex,
+} from "@icons-pack/react-simple-icons";
 
 export const QUOTE_ANYONE: Quote = {
   quote:
@@ -59,11 +64,13 @@ export const LINKS_RECRUITER: Contact[] = [
     title: "Resume",
     url: USER.resumeUrl,
     icon: <File />,
+    color: SiGoogledocsHex,
   },
   {
     title: "Linkedin",
     url: USER.social.linkedin,
     icon: <Linkedin />,
+    color: "#0a66c2",
   },
 ];
 
@@ -86,11 +93,13 @@ export const LINKS_MANAGER: Contact[] = [
     icon: <File />,
     url: USER.resumeUrl,
     title: "Resume",
+    color: SiGoogledocsHex,
   },
   {
     icon: <Linkedin />,
     url: USER.social.linkedin,
     title: "Linkedin",
+    color: "#0a66c2",
   },
 ];
 
@@ -106,15 +115,18 @@ export const LINKS_ENGINEER: Contact[] = [
     icon: <File />,
     url: USER.resumeUrl,
     title: "Resume",
+    color: SiGoogledocsHex,
   },
   {
     icon: <SiGithub />,
     url: USER.github.url,
     title: "Github",
+    color: "",
   },
   {
     icon: <SiLeetcode />,
     url: USER.leetcode,
     title: "Leetcode",
+    color: SiLeetcodeHex,
   },
 ];

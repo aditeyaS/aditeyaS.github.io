@@ -8,7 +8,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import USER from "@/data/user";
 import { Button } from "@/components/ui/button";
-import { SiGmail } from "@icons-pack/react-simple-icons";
+import { SiGmail, SiGmailHex } from "@icons-pack/react-simple-icons";
 
 export const Recruiter: React.FC = () => {
   const { toast } = useToast();
@@ -42,6 +42,9 @@ export const Recruiter: React.FC = () => {
           size={"icon"}
           title="Copy email"
           aria-label="Copy email"
+          style={{
+            color: SiGmailHex,
+          }}
         >
           <SiGmail />
         </Button>
@@ -52,6 +55,9 @@ export const Recruiter: React.FC = () => {
               size={"icon"}
               title={c.title}
               aria-label={c.title}
+              style={{
+                color: c.color,
+              }}
             >
               {c.icon}
             </Button>

@@ -3,11 +3,15 @@ import USER from "@/data/user";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/layout/section";
 import { useAppScroll } from "../providers/scroll";
-import { SiGmail, SiOnlyfans } from "@icons-pack/react-simple-icons";
+import {
+  SiGmail,
+  SiGmailHex,
+  SiOnlyfans,
+} from "@icons-pack/react-simple-icons";
 import CONTACT from "@/data/contact";
 import { useToast } from "@/hooks/use-toast";
 
-export function Contact() {
+export default function Contact() {
   const { appSectionRefs } = useAppScroll();
 
   const { toast } = useToast();
@@ -43,7 +47,7 @@ export function Contact() {
             size={"icon"}
             title="Copy email"
             style={{
-              color: "#BB001B",
+              color: SiGmailHex,
             }}
             aria-label="Copy email"
           >

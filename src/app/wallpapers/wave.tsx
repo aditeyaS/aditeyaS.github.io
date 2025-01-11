@@ -5,7 +5,7 @@ import { accentList } from "./particle";
 
 const WAVE_COLORS = accentList.map((a) => a.color);
 
-export function Wave() {
+export default function Wave() {
   let w: number, h: number, nt: number, animationId: number;
 
   const { theme } = useTheme();

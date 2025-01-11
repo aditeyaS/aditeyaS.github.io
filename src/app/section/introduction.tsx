@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Section } from "@/components/layout/section";
 import { useAppScroll } from "../providers/scroll";
 
-export function Introduction() {
+export default function Introduction() {
   const { appSectionRefs } = useAppScroll();
 
   return (

@@ -23,7 +23,7 @@ type Particle = {
   speed: number;
 };
 
-export function Particle() {
+export default function Particle() {
   const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);

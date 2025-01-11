@@ -30,7 +30,7 @@ const tabs: Tab[] = [
   "others",
 ];
 
-export function Skills() {
+export default function Skills() {
   const { appSectionRefs } = useAppScroll();
 
   const [viewerType, setViewerType] = useState<Tab>("current");

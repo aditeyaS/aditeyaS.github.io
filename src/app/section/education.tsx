@@ -4,7 +4,7 @@ import { useAppScroll } from "../providers/scroll";
 import { month } from "@/lib/utils";
 import EDUCATION from "@/data/education";
 
-export function Education() {
+export default function Education() {
   const { appSectionRefs } = useAppScroll();
 
   return (

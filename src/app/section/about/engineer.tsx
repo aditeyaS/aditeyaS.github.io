@@ -25,6 +25,9 @@ export function Engineer() {
               size={"icon"}
               title={c.title}
               aria-label={c.title}
+              style={{
+                color: c.color,
+              }}
             >
               {c.icon}
             </Button>

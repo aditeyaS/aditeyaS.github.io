@@ -4,7 +4,7 @@ import { useAppScroll } from "../providers/scroll";
 import EXPERIENCES from "@/data/experience";
 import { month } from "@/lib/utils";
 
-export function Experience() {
+export default function Experience() {
   const { appSectionRefs } = useAppScroll();
   const todaysDate = new Date();
 

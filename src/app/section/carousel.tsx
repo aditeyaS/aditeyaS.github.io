@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import IMAGES from "@/data/images";
 import { ExternalLink } from "lucide-react";
 
-export function Carousel() {
+export default function Carousel() {
   return (
     <div className="relative overflow-x-scroll py-2 carousel-scrollbar">
       <div className="flex items-center gap-6">

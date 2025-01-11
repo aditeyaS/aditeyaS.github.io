@@ -4,7 +4,7 @@ import { useAppScroll } from "../providers/scroll";
 import PROJECTS from "@/data/project";
 import { Badge } from "@/components/ui/badge";
 
-export function Projects() {
+export default function Projects() {
   const { appSectionRefs } = useAppScroll();
 
   return (

@@ -10,7 +10,7 @@ import { Engineer } from "./engineer";
 type Tab = "anyone" | "recruiter" | "manager" | "engineer";
 const tabs: Tab[] = ["anyone", "recruiter", "manager", "engineer"];
 
-export function About() {
+export default function About() {
   const { appSectionRefs } = useAppScroll();
 
   const [viewerType, setViewerType] = useState<Tab>("anyone");
