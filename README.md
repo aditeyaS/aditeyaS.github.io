@@ -1,7 +1,7 @@
 <br/>
 
 <p align="center">
-  <img src="https://github.com/aditeyaS/aditeyaS.github.io/blob/main/public/logo.png" width="10%" />
+  <img src="https://github.com/aditeyaS/aditeyaS.github.io/blob/main/public/logo.svg" width="10%" />
   <h1 align="center">portfolio</h1>
   <div>
     <h4 align="center">Tech Stack</h4>

@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getMonthName(index: number) {
+export function month(index: number) {
   const monthNames = [
     "Jan",
     "Feb",
