@@ -51,7 +51,7 @@ export function NavBar({ scrollYProgress }: Props) {
             size={"icon"}
             onClick={scrollToTop}
           >
-            <Logo />
+            <Logo className="text-primary" />
           </Button>
           <Button
             className="text-muted-foreground"

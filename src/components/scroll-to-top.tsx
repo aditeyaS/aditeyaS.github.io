@@ -30,8 +30,9 @@ export const ScrollToTop: React.FC = () => {
 
   return (
     <Button
-      className="z-10 fixed right-10 bottom-10"
+      className="z-10 fixed right-8 bottom-8"
       style={{ display: visible ? "flex" : "none" }}
+      size={"sm"}
       aria-label="Scroll to top"
       onClick={scrollToTop}
     >

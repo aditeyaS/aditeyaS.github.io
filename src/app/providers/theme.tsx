@@ -62,7 +62,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
         },
         wallpaper: currentWallpaper,
         setWallpaper: (wallpaper: Wallpaper) => {
-          console.log(wallpaper); // TODO: remove this later
           localStorage.setItem(WALLPAPER_LOCAL_STORAGE_KEY, wallpaper);
           setCurrentWallpaper(wallpaper);
         },

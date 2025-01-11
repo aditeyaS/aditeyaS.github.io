@@ -25,12 +25,14 @@ const wallpaperList: Wallpaper[] = ["none", "accent", "particle", "wave"];
 export function ThemeDialog() {
   const { theme, wallpaper, setTheme, setWallpaper } = useTheme();
 
-  function handleWallpaperChange(wallpaper: Wallpaper) {
-    setWallpaper(wallpaper);
+  function handleWallpaperChange(w: Wallpaper) {
+    setWallpaper(w);
   }
 
-  function handleThemeChange(theme: Theme) {
-    setTheme(theme);
+  function handleThemeChange(t: Theme) {
+    if (t === "dark" || t === "light") {
+      setTheme(t);
+    }
   }
 
   return (
