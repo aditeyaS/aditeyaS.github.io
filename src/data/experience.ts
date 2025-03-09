@@ -2,7 +2,7 @@ import Experience from "@/types/experience";
 
 const EXPERIENCES: Experience[] = [
   {
-    position: "Full Stack Software Engineer Intern",
+    position: "Full Stack Software Engineer",
     positionType: "Part-time",
     organization: "Gen 3 Learning",
     organizationLink: "https://www.gen3learning.com/",

@@ -3,10 +3,10 @@ import { Section, SectionHeader } from "@/components/layout/section";
 import { useAppScroll } from "../providers/scroll";
 import EXPERIENCES from "@/data/experience";
 import { month } from "@/lib/utils";
+import Experience from "@/types/experience";
 
-export default function Experience() {
+export default function ExperienceSection() {
   const { appSectionRefs } = useAppScroll();
-  const todaysDate = new Date();
 
   return (
     <Section ref={appSectionRefs.experience}>
@@ -17,62 +17,70 @@ export default function Experience() {
         </SectionHeader>
 
         <div className="grid lg:grid-cols-2 gap-4">
-          {EXPERIENCES.map((e, i) => {
-            const fromMonth = e.from.getMonth();
-            const fromYear = e.from.getFullYear();
-            const fromString = `${month(fromMonth)}, ${fromYear}`;
-            const toMonth = e.to.getMonth();
-            const toYear = e.to.getFullYear();
-            const toString =
-              toMonth === todaysDate.getMonth() &&
-              toYear === todaysDate.getFullYear()
-                ? "Present"
-                : `${month(toMonth)}, ${toYear}`;
-
-            let diffMonths = (toYear - fromYear) * 12 + (toMonth - fromMonth);
-            let diffString = "";
-            if (diffMonths >= 12) {
-              diffString = diffString + Math.floor(diffMonths / 12) + "y";
-              diffMonths = diffMonths % 12;
-            }
-            if (diffMonths != 0) {
-              diffString = diffString + " " + diffMonths + "m";
-            }
-            return (
-              <div
-                key={`experience-${i}`}
-                className="flex flex-col items-start gap-2 p-4 border rounded"
-              >
-                <h2 className="text-primary">{e.position}</h2>
-                <div className="flex items-center flex-wrap">
-                  <a
-                    className="hover:underline underline-offset-4"
-                    target="_blank"
-                    href={e.organizationLink}
-                  >
-                    {e.organization}
-                  </a>
-                  <Dot />
-                  {e.positionType}
-                </div>
-                <span className="flex gap-2 items-center text-sm text-muted-foreground">
-                  <Calendar className="size-3" />
-                  <span className="flex items-center">
-                    {`${fromString} - ${toString}`} <Dot /> {diffString}
-                  </span>
-                </span>
-                <span className="flex gap-2 items-center text-sm text-muted-foreground">
-                  <MapPin className="size-3" />
-                  <span className="flex items-center">
-                    {e.location} <Dot />
-                    {e.locationType}
-                  </span>
-                </span>
-              </div>
-            );
-          })}
+          {EXPERIENCES.map((e, i) => (
+            <ExperienceCard experience={e} key={`experience-${i}`} />
+          ))}
         </div>
       </div>
     </Section>
+  );
+}
+
+interface ExperienceCardProps {
+  experience: Experience;
+}
+
+function ExperienceCard({ experience }: ExperienceCardProps) {
+  const todaysDate = new Date();
+
+  const fromMonth = experience.from.getMonth();
+  const fromYear = experience.from.getFullYear();
+  const fromString = `${month(fromMonth)}, ${fromYear}`;
+
+  const toMonth = experience.to.getMonth();
+  const toYear = experience.to.getFullYear();
+  const toString =
+    toMonth === todaysDate.getMonth() && toYear === todaysDate.getFullYear()
+      ? "Present"
+      : `${month(toMonth)}, ${toYear}`;
+
+  let diffMonths = (toYear - fromYear) * 12 + (toMonth - fromMonth);
+  let diffString = "";
+  if (diffMonths >= 12) {
+    diffString = diffString + Math.floor(diffMonths / 12) + "y";
+    diffMonths = diffMonths % 12;
+  }
+  if (diffMonths != 0) {
+    diffString = diffString + " " + diffMonths + "m";
+  }
+
+  return (
+    <div className="flex flex-col items-start gap-1 p-4 border rounded">
+      <h2 className="text-primary">{experience.position}</h2>
+      <div className="flex items-center flex-wrap text-sm">
+        <a
+          className="hover:underline underline-offset-2"
+          target="_blank"
+          href={experience.organizationLink}
+        >
+          {experience.organization}
+        </a>
+        <Dot />
+        {experience.positionType}
+      </div>
+      <span className="flex gap-2 items-center text-sm text-muted-foreground">
+        <Calendar className="size-3" />
+        <span className="flex items-center">
+          {`${fromString} - ${toString}`} <Dot /> {diffString}
+        </span>
+      </span>
+      <span className="flex gap-2 items-center text-sm text-muted-foreground">
+        <MapPin className="size-3" />
+        <span className="flex items-center">
+          {experience.location} <Dot />
+          {experience.locationType}
+        </span>
+      </span>
+    </div>
   );
 }

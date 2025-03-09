@@ -11,8 +11,9 @@ export function Testing() {
       transition={{ duration: 1, type: "spring" }}
     >
       <Badge
-        className="[&_svg]:size-4 flex items-center gap-1 text-sm font-mono font-thin"
+        className="[&_svg]:size-4 flex items-center gap-1 font-mono font-thin py-1"
         variant={"secondary"}
+        style={{ borderColor: skill.color }}
       >
         <span style={{ color: skill.color }}>{skill.icon}</span>
         <span>{skill.name}</span>

@@ -32,6 +32,8 @@ import {
   SiSpringbootHex,
   SiSupabase,
   SiSupabaseHex,
+  SiDrizzle,
+  SiDrizzleHex,
 } from "@icons-pack/react-simple-icons";
 
 export const DOT_NET: Skill = {
@@ -129,8 +131,15 @@ const S_Supabase: Skill = {
   color: SiSupabaseHex,
 };
 
+export const S_Drizzle: Skill = {
+  name: "Drizzle",
+  icon: <SiDrizzle />,
+  color: SiDrizzleHex,
+};
+
 export const SKILL_BACK_END = [
   S_Express,
+  S_Drizzle,
   S_Mongodb,
   S_Flask,
   SPRING_BOOT,
